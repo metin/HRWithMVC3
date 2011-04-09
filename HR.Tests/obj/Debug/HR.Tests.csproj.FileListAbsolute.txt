@@ -1,0 +1,8 @@
+D:\NJIT\631\Projects\HR\HR.Tests\bin\Debug\HR.Tests.dll.config
+D:\NJIT\631\Projects\HR\HR.Tests\bin\Debug\HR.Tests.dll
+D:\NJIT\631\Projects\HR\HR.Tests\bin\Debug\HR.Tests.pdb
+D:\NJIT\631\Projects\HR\HR.Tests\bin\Debug\HR.dll
+D:\NJIT\631\Projects\HR\HR.Tests\bin\Debug\HR.pdb
+D:\NJIT\631\Projects\HR\HR.Tests\obj\Debug\ResolveAssemblyReference.cache
+D:\NJIT\631\Projects\HR\HR.Tests\obj\Debug\HR.Tests.dll
+D:\NJIT\631\Projects\HR\HR.Tests\obj\Debug\HR.Tests.pdb
