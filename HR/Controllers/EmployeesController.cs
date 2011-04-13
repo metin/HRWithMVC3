@@ -48,6 +48,7 @@ namespace HR.Controllers
         public ActionResult Create(FormCollection collection)
         {
             Employee e = new Employee();
+
             e.first_name = collection["first_name"];
             e.last_name = collection["last_name"];
             EmployeeData d = new EmployeeData();
@@ -61,8 +62,7 @@ namespace HR.Controllers
         public ActionResult Edit(int id)
         {
             EmployeeData d = new EmployeeData();
-            ViewBag.employee = d.FindById(id);
-            return View();
+            return View(d.FindById(id));
         }
 
         //

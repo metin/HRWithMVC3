@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<HR.Models.Employee>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Edit
@@ -7,23 +7,42 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <h2>Edit</h2>
-<% using (Html.BeginForm("Edit", "Employees", FormMethod.Post, new { id = ViewBag.employee.id })) %>
-<% { %>
-    <table>
-        <tr>
-            <td> First Name </td>
-            <td> <%= Html.TextBox("first_name", (string) ViewBag.employee.first_name) %> </td>
-        </tr>
 
-        <tr>
-            <td> Last Name </td>
-             <td> <%= Html.TextBox("last_name", (string) ViewBag.employee.last_name)%> </td>
-        </tr>
+<script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
+<script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
-    </table>
+<% using (Html.BeginForm()) { %>
+    <%: Html.ValidationSummary(true) %>
+    <fieldset>
+        <legend>Employee</legend>
 
-    <div>
-        <input type="submit" value="Update" /> 
-    </div>
+        <%: Html.HiddenFor(model => model.id) %>
+
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.first_name) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.first_name) %>
+            <%: Html.ValidationMessageFor(model => model.first_name) %>
+        </div>
+
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.last_name) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.last_name) %>
+            <%: Html.ValidationMessageFor(model => model.last_name) %>
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
 <% } %>
+
+<div>
+    <%: Html.ActionLink("Back to List", "Index") %>
+</div>
+
 </asp:Content>
+
