@@ -11,27 +11,25 @@
 </div>
 
 <div class="grid_10">
-    <h2>List Of Employees</h2>
+    <h2>List Of Projects</h2>
     <table width="100%">
         <thead>
             <tr>
-                <th> Empoyee ID </th>
-                <th> First Name </th>
-                <th> Last Name </th>
+                <th> Project ID </th>
+                <th> Name </th>
                 <th>Show</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-            <% foreach (HR.Data.Employee e in ViewBag.employees)  { %>
+            <% foreach (HR.Data.Project p in ViewBag.projects)  { %>
                 <tr>
-                    <td><%: e.id %> </td>
-                    <td><%: e.first_name %> </td>
-                    <td><%: e.last_name %> </td>
-                    <td><%: Html.ActionLink("Show", "Details", new { id = e.id} ) %></td>
-                    <td><%: Html.ActionLink("Edit", "Edit", new { id = e.id} ) %></td>
-                    <td><%: Html.ActionLink("Delete", "Delete", new { id = e.id} ) %></td>
+                    <td><%: p.id %> </td>
+                    <td><%: p.name %> </td>
+                    <td><%: Html.ActionLink("Show", "Details", new { id = p.id} ) %></td>
+                    <td><%: Html.ActionLink("Edit", "Edit", new { id = p.id} ) %></td>
+                    <td><%: Html.ActionLink("Delete", "Delete", new { id = p.id} ) %></td>
                 </tr>
             <% } %>
         </tbody>

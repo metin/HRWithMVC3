@@ -6,3 +6,8 @@ D:\NJIT\CS631\Projects\HR\HR.Data\obj\Debug\HR.Data.pdb
 D:\NJIT\CS631\Projects\HR\HR.Data\bin\Debug\MySql.Data.dll
 D:\NJIT\CS631\Projects\HR\HR.Data\bin\Debug\MySql.Data.Entity.dll
 D:\NJIT\CS631\Projects\HR\HR.Data\bin\Debug\MySql.Web.dll
+D:\NJIT\631\Projects\HR\HR.Data\bin\Debug\HR.Data.dll
+D:\NJIT\631\Projects\HR\HR.Data\bin\Debug\HR.Data.pdb
+D:\NJIT\631\Projects\HR\HR.Data\obj\Debug\ResolveAssemblyReference.cache
+D:\NJIT\631\Projects\HR\HR.Data\obj\Debug\HR.Data.dll
+D:\NJIT\631\Projects\HR\HR.Data\obj\Debug\HR.Data.pdb

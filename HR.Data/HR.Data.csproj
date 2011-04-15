@@ -51,6 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="DepartmentData.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="ProjectData.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

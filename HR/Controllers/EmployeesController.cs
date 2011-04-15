@@ -70,15 +70,13 @@ namespace HR.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-
-                Employee e = new Employee();
-                e.first_name = collection["first_name"];
-                e.last_name = collection["last_name"];
-                e.id = id;
-                EmployeeData d = new EmployeeData();
-                d.Update(e);
-                return RedirectToAction("Index");
-
+            Employee e = new Employee();
+            e.first_name = collection["first_name"];
+            e.last_name = collection["last_name"];
+            e.id = id;
+            EmployeeData d = new EmployeeData();
+            d.Update(e);
+            return RedirectToAction("Index");
         }
 
         //

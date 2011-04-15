@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<HR.Data.Employee>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<HR.Data.Department>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Edit
@@ -11,28 +11,19 @@
     </div>
 
     <div class="grid_10">
-
         <% using (Html.BeginForm()) { %>
             <%: Html.ValidationSummary(true) %>
             <fieldset>
-                <legend>Edit Employee</legend>
+                <legend>Edit Department</legend>
 
                 <%: Html.HiddenFor(model => model.id) %>
 
                 <div class="editor-label">
-                    <%: Html.LabelFor(model => model.first_name) %>
+                    <%: Html.LabelFor(model => model.name) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.EditorFor(model => model.first_name) %>
-                    <%: Html.ValidationMessageFor(model => model.first_name) %>
-                </div>
-
-                <div class="editor-label">
-                    <%: Html.LabelFor(model => model.last_name) %>
-                </div>
-                <div class="editor-field">
-                    <%: Html.EditorFor(model => model.last_name) %>
-                    <%: Html.ValidationMessageFor(model => model.last_name) %>
+                    <%: Html.EditorFor(model => model.name) %>
+                    <%: Html.ValidationMessageFor(model => model.name) %>
                 </div>
 
                 <p>
