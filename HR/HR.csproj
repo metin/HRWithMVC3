@@ -35,21 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=6.2.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\MySQL\MySQL Connector Net 6.2.4\Assemblies\MySql.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MySql.Data.Entity, Version=6.2.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\MySQL\MySQL Connector Net 6.2.4\Assemblies\MySql.Data.Entity.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MySql.Web, Version=6.2.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\MySQL\MySQL Connector Net 6.2.4\Assemblies\MySql.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages" />
     <Reference Include="System.Web.Helpers" />
@@ -79,14 +64,47 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Data\Base.cs" />
-    <Compile Include="Models\Data\EmployeeData.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\scheme.sql" />
     <Content Include="Global.asax" />
+    <Content Include="Public\Stylesheets\Site.css" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Public\Stylesheets\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Public\Stylesheets\themes\base\jquery-ui.css" />
+    <Content Include="Public\Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Public\Scripts\jquery-1.4.4.js" />
+    <Content Include="Public\Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Public\Scripts\jquery-ui.js" />
+    <Content Include="Public\Scripts\jquery-ui.min.js" />
+    <Content Include="Public\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Public\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Public\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Public\Scripts\jquery.validate.js" />
+    <Content Include="Public\Scripts\jquery.validate.min.js" />
+    <Content Include="Public\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Public\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Public\Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Public\Scripts\MicrosoftAjax.js" />
+    <Content Include="Public\Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Public\Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Public\Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Public\Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Public\Stylesheets\960.css" />
+    <Content Include="Public\Stylesheets\reset.css" />
+    <Content Include="Public\Stylesheets\text.css" />
     <Content Include="Views\Employees\Create.aspx" />
     <Content Include="Views\Employees\Details.aspx" />
     <Content Include="Views\Employees\Edit.aspx" />
@@ -113,24 +131,6 @@
     <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Scripts\jquery-1.4.4.js" />
-    <Content Include="Scripts\jquery-1.4.4.min.js" />
-    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-ui.js" />
-    <Content Include="Scripts\jquery-ui.min.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\Account\ChangePassword.aspx" />
     <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
     <Content Include="Views\Account\LogOn.aspx" />
@@ -142,7 +142,15 @@
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HR.Data\HR.Data.csproj">
+      <Project>{0E0FECBA-ED8F-4F52-857B-1C1E20F11F49}</Project>
+      <Name>HR.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Copy of Site.Master" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

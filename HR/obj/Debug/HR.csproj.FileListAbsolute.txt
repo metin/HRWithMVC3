@@ -11,3 +11,6 @@ D:\NJIT\CS631\Projects\HR\HR\bin\HR.pdb
 D:\NJIT\CS631\Projects\HR\HR\obj\Debug\ResolveAssemblyReference.cache
 D:\NJIT\CS631\Projects\HR\HR\obj\Debug\HR.dll
 D:\NJIT\CS631\Projects\HR\HR\obj\Debug\HR.pdb
+D:\NJIT\CS631\Projects\HR\HR\bin\HR.Data.dll
+D:\NJIT\CS631\Projects\HR\HR\bin\MySql.Data.dll
+D:\NJIT\CS631\Projects\HR\HR\bin\HR.Data.pdb
