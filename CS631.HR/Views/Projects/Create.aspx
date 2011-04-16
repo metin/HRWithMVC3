@@ -13,9 +13,7 @@
         });
 	</script>
 
-    <div class="grid_2">
-        <% Html.RenderPartial("LeftMenu"); %>
-    </div>
+    <% Html.RenderPartial("SubMenu"); %>
 
     <div class="grid_10">
 
@@ -63,6 +61,6 @@
             </fieldset>
         <% } %>
     </div>
-
+    <div class="clear"></div> 
 </asp:Content>
 

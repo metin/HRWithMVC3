@@ -6,21 +6,16 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+    <% Html.RenderPartial("SubMenu"); %>
 
-    <div class="grid_2">
-        <% Html.RenderPartial("LeftMenu"); %>
-    </div>
-
-    <div class="grid_10">
+    <div class="grid_12">
         <h2>List Of Divisions</h2>
         <table width="100%">
             <thead>
                 <tr>
                     <th>Division No</th>
                     <th>Name</th>
-                    <th>Show</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,15 +23,19 @@
                     <tr>
                         <td><%: d.DivisionNo %> </td>
                         <td><%: d.name %> </td>
-                        <td><%: Html.ActionLink("Show", "Details", new { id = d.id} ) %></td>
-                        <td><%: Html.ActionLink("Edit", "Edit", new { id = d.id} ) %></td>
-                        <td><%: Html.ActionLink("Delete", "Delete", new { id = d.id} ) %></td>
+                        <td class="action_buttons"> 
+
+                            <%: Html.ActionLink("Show", "Details", new { id = d.id }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
+                            <%: Html.ActionLink("Edit", "Edit", new { id = d.id }, new { @class = "jqui_button_edit" })%> 
+                            <%: Html.ActionLink("Delete", "Delete", new { id = d.id }, new { @class = "jqui_button_delete" })%>
+
+                        </td>
                     </tr>
                 <% } %>
             </tbody>
         </table>
 
     </div>
-     <div class="clear"></div> 
+    <div class="clear"></div> 
 
 </asp:Content>

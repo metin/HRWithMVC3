@@ -5,3 +5,4 @@ D:\NJIT\CS631\Projects\CS631\CS631.HR\bin\CS631.HR.dll
 D:\NJIT\CS631\Projects\CS631\CS631.HR\bin\CS631.HR.pdb
 D:\NJIT\CS631\Projects\CS631\CS631.HR\obj\Debug\CS631.HR.dll
 D:\NJIT\CS631\Projects\CS631\CS631.HR\obj\Debug\CS631.HR.pdb
+D:\NJIT\CS631\Projects\CS631\CS631.HR\bin\MySql.Data.dll

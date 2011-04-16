@@ -5,9 +5,10 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <% Html.RenderPartial("SubMenu"); %>
 
     <div class="grid_2">
-        <% Html.RenderPartial("LeftMenu"); %>
+        <% Html.RenderPartial("LeftMenu", Model, new ViewDataDictionary(Model)); %>
     </div>
 
     <div class="grid_10">
@@ -34,13 +35,13 @@
                     <%: Html.EditorFor(model => model.last_name) %>
                     <%: Html.ValidationMessageFor(model => model.last_name) %>
                 </div>
-
+                <br />
                 <p>
-                    <input type="submit" value="Save" />
+                    <input type="submit" value="Save" class="action_button"/>
                 </p>
             </fieldset>
         <% } %>
     </div>
-
+     <div class="clear"></div> 
 </asp:Content>
 

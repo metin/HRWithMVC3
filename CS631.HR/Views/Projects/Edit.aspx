@@ -12,9 +12,12 @@
         });
 	</script>
 
+    <% Html.RenderPartial("SubMenu"); %>
+
     <div class="grid_2">
-        <% Html.RenderPartial("LeftMenu"); %>
+        <% Html.RenderPartial("LeftMenu", Model, new ViewDataDictionary(Model)); %>
     </div>
+
 
     <div class="grid_10">
         <% using (Html.BeginForm()) { %>
@@ -61,6 +64,7 @@
             </fieldset>
         <% } %>
     </div>
+    <div class="clear"></div> 
 
 </asp:Content>
 

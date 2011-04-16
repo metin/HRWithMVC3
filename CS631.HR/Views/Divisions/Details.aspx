@@ -6,8 +6,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+    <% Html.RenderPartial("SubMenu"); %>
+
     <div class="grid_2">
-        <% Html.RenderPartial("LeftMenu"); %>
+        <% Html.RenderPartial("LeftMenu", Model, new ViewDataDictionary(Model)); %>
     </div>
 
     <div class="grid_10">
@@ -21,13 +23,8 @@
             <div class="display-label">DivisionNo</div>
             <div class="display-field"><%: Model.DivisionNo %></div>
         </fieldset>
-        <p>
-
-            <%: Html.ActionLink("Edit", "Edit", new { id=Model.id }) %> |
-            <%: Html.ActionLink("Back to List", "Index") %>
-        </p>
 
     </div>
-
+    <div class="clear"></div> 
 </asp:Content>
 

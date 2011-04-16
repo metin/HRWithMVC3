@@ -48,6 +48,6 @@
        
     </div>
     
-    <div class="clear"/>
+    <div class="clear"></div> 
 
 </asp:Content>

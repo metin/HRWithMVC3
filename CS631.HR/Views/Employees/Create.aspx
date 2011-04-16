@@ -6,11 +6,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="grid_2">
-        <% Html.RenderPartial("LeftMenu"); %>
-    </div>
+    <% Html.RenderPartial("SubMenu"); %>
 
-    <div class="grid_10">
+    <div class="grid_12">
+
          <% using (Html.BeginForm()) { %>
             <%: Html.ValidationSummary(true) %>
             <fieldset>
@@ -31,13 +30,14 @@
                     <%: Html.EditorFor(model => model.last_name) %>
                     <%: Html.ValidationMessageFor(model => model.last_name) %>
                 </div>
-
+                <br />
                 <p>
-                    <input type="submit" value="Create" />
+                    <input type="submit" value="Create" class="action_button"/>
                 </p>
             </fieldset>
         <% } %>
     </div>
+    <div class="clear"></div> 
 
 </asp:Content>
 
