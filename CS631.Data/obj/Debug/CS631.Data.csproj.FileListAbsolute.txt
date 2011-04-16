@@ -1,0 +1,5 @@
+D:\NJIT\CS631\Projects\CS631\CS631.Data\obj\Debug\ResolveAssemblyReference.cache
+D:\NJIT\CS631\Projects\CS631\CS631.Data\bin\Debug\CS631.Data.dll
+D:\NJIT\CS631\Projects\CS631\CS631.Data\bin\Debug\CS631.Data.pdb
+D:\NJIT\CS631\Projects\CS631\CS631.Data\obj\Debug\CS631.Data.dll
+D:\NJIT\CS631\Projects\CS631\CS631.Data\obj\Debug\CS631.Data.pdb
