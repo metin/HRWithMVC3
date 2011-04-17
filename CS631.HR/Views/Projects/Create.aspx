@@ -15,7 +15,7 @@
 
     <% Html.RenderPartial("SubMenu"); %>
 
-    <div class="grid_10">
+    <div class="grid_12">
 
         <% using (Html.BeginForm()) { %>
             <%: Html.ValidationSummary(true) %>

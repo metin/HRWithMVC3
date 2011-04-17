@@ -13,26 +13,27 @@
     </div>
 
     <div class="grid_10">
-        <% using (Html.BeginForm()) { %>
-            <%: Html.ValidationSummary(true) %>
-            <fieldset>
-                <legend>Division</legend>
-                <%: Html.HiddenFor(model => model.id) %>
+        <div class="form">
+            <h1>Edit Division</h1>
+            <p>Edit division <%: Model.name %></p>
+            <br />
 
-                <div class="editor-label">
+
+            <% using (Html.BeginForm()) { %>
+                <%: Html.HiddenFor(model => model.id) %>
+                <%: Html.ValidationSummary(true) %>
+                <div>
                     <%: Html.LabelFor(model => model.name) %>
-                </div>
-                <div class="editor-field">
                     <%: Html.EditorFor(model => model.name) %>
                     <%: Html.ValidationMessageFor(model => model.name) %>
                 </div>
-                <br />
-                <p>
+                <div class="clear"></div> 
+                <div>
                     <input type="submit" value="Save" class="action_button"/>
-                </p>
-            </fieldset>
-        <% } %>
-
+                </div>
+                <div class="clear"></div> 
+            <% } %>
+        </div>
     </div>
     <div class="clear"></div> 
 </asp:Content>

@@ -13,17 +13,22 @@
     </div>
 
     <div class="grid_10">
+        <div class="form">
+            <h1>Show Division</h1>
+            <p>Details of division</p>
+            <br />
 
-        <fieldset>
-            <legend>Division</legend>
-
-            <div class="display-label">name</div>
-            <div class="display-field"><%: Model.name %></div>
-
-            <div class="display-label">DivisionNo</div>
-            <div class="display-field"><%: Model.DivisionNo %></div>
-        </fieldset>
-
+            <div>
+                <label>Divison Name</label>
+                 : <%: Model.name %>
+            </div>
+            <div class="clear"></div> 
+            <div>
+                <label>Divison No</label>
+                : <%: Model.DivisionNo %>
+            </div>
+            <div class="clear"></div> 
+        </div>
     </div>
     <div class="clear"></div> 
 </asp:Content>

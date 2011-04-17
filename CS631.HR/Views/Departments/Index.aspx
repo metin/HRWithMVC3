@@ -6,36 +6,37 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<div class="grid_2">
-    <% Html.RenderPartial("LeftMenu"); %>
-</div>
+    <% Html.RenderPartial("SubMenu"); %>
 
-<div class="grid_10">
-    <h2>List Of Departments</h2>
-    <table width="100%">
-        <thead>
-            <tr>
-                <th> Department ID </th>
-                <th> Name </th>
-                <th>Show</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% foreach (var d in ViewBag.departments) { %>
+    <div class="grid_12">
+
+        <h2>List Of Departments</h2>
+        <table width="100%">
+            <thead>
                 <tr>
-                    <td><%: d.id %> </td>
-                    <td><%: d.name %> </td>
-                    <td><%: Html.ActionLink("Show", "Details", new { id = d.id} ) %></td>
-                    <td><%: Html.ActionLink("Edit", "Edit", new { id = d.id} ) %></td>
-                    <td><%: Html.ActionLink("Delete", "Delete", new { id = d.id} ) %></td>
+                    <th> Department ID </th>
+                    <th> Name </th>
+                    <th>Actions</th>
                 </tr>
-            <% } %>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <% foreach (var d in ViewBag.departments) { %>
+                    <tr>
+                        <td><%: d.id %> </td>
+                        <td><%: d.name %> </td>
 
-</div>
- <div class="clear"></div> 
+                        <td class="action_buttons"> 
+                            <%: Html.ActionLink("Show", "Details", new { id = d.id }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
+                            <%: Html.ActionLink("Edit", "Edit", new { id = d.id }, new { @class = "jqui_button_edit" })%> 
+                            <%: Html.ActionLink("Delete", "Delete", new { id = d.id }, new { @class = "jqui_button_delete" })%>
+                        </td>
+
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+    </div>
+     <div class="clear"></div> 
 
 </asp:Content>

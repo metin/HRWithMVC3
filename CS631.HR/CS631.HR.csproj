@@ -128,6 +128,7 @@
     <Content Include="Views\Projects\Edit.aspx" />
     <Content Include="Views\Projects\Index.aspx" />
     <Content Include="Views\Projects\LeftMenu.ascx" />
+    <Content Include="Views\Projects\SubMenu.ascx" />
     <Content Include="Views\Shared\Header.ascx" />
     <Content Include="Views\Shared\TopMenu.ascx" />
     <Content Include="Web.config" />

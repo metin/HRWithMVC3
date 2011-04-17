@@ -9,26 +9,25 @@
     <% Html.RenderPartial("SubMenu"); %>
 
     <div class="grid_12">
+        <div class="form" > 
+            <h1>New Division</h1>
+            <p>Create new division</p>
+            <br />
 
-        <% using (Html.BeginForm()) { %>
-            <%: Html.ValidationSummary(true) %>
-            <fieldset>
-                <legend>Division</legend>
-
-                <div class="editor-label">
+            <% using (Html.BeginForm()) { %>
+                <%: Html.ValidationSummary(true) %>
+                <div>
                     <%: Html.LabelFor(model => model.name) %>
-                </div>
-                <div class="editor-field">
                     <%: Html.EditorFor(model => model.name) %>
                     <%: Html.ValidationMessageFor(model => model.name) %>
                 </div>
-                <br />
-                <p>
+                <div class="clear"></div> 
+                <div>
                     <input type="submit" value="Create" class="action_button"/>
-                </p>
-            </fieldset>
-        <% } %>
-
+                </div>
+                <div class="clear"></div>
+            <% } %>
+        </div>
     </div>
 
     <div class="clear"></div> 

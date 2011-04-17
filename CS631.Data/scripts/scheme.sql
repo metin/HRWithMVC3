@@ -35,10 +35,13 @@ create table projects(
 
 drop table if exists departments;
 create table departments(
+ id int NOT NULL AUTO_INCREMENT, 
  name varchar(255),
  division_no int,
  budget decimal(17,2),
- primary key (name)
+ primary key (id),
+ unique(name)
+
 );
 
 drop table if exists rooms;
