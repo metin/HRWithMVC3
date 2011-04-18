@@ -70,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Public\Stylesheets\Site.css" />
+    <Content Include="Public\Stylesheets\site.css" />
     <Content Include="Public\Stylesheets\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Public\Stylesheets\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Public\Stylesheets\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

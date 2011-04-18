@@ -51,6 +51,10 @@ namespace CS631.Data
             {
                 this.id = dr.GetInt32("id");
                 this.name = dr.GetString("name");
+                this.DateStarted = dr.GetDateTime("date_started");
+                this.DateEnded = dr.GetDateTime("date_ended");
+                this.Budget = dr.GetDecimal("budget");
+
             }
             connection.Close();
             return this;

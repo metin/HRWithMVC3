@@ -35,6 +35,7 @@
                         <td>
                             <%: Html.EditorFor(model => model.name) %>
                             <%: Html.ValidationMessageFor(model => model.name) %>
+                            <%: Model.DateStarted %>
                         </td>
                     </tr>
                     <tr>
