@@ -12,15 +12,18 @@
         <div class="section">
             <h1>New Department</h1>
             <p>Create new department</p>
-            <br />
  
             <% using (Html.BeginForm()) { %>
                 <%: Html.ValidationSummary(true) %>
-                <div>
-                    <%: Html.LabelFor(model => model.name) %>
-                    <%: Html.EditorFor(model => model.name) %>
-                    <%: Html.ValidationMessageFor(model => model.name) %>
-                </div>
+                <table class="details">
+                    <tr>
+                        <th> <%: Html.LabelFor(model => model.name) %></th>
+                        <td>
+                            <%: Html.EditorFor(model => model.name) %>
+                            <%: Html.ValidationMessageFor(model => model.name) %>
+                        </td>
+                    </tr>
+                </table>
                 <div class="clear"></div> 
                 <div>
                     <input type="submit" value="Create" class="action_button"/>

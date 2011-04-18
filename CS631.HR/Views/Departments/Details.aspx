@@ -16,12 +16,23 @@
         <div class="section">
             <h1>Show Department</h1>
             <p>Details of department</p>
-            <br />
-            <div>
-                <label>Department Name</label>
-                 : <%: Model.name %>
-            </div>
-            <div class="clear"></div> 
+  
+
+            <table class="details">
+                <tr>
+                    <th> <label>Departmen No</label> </th>
+                    <td>
+                        <%: Model.DepartmentNo %>
+                    </td>
+                </tr>
+                <tr>
+                    <th> <label>Departmen Name</label> </th>
+                    <td>
+                        <%: Model.name %>
+                    </td>
+                </tr>
+            </table>
+
 
         </div>
                 

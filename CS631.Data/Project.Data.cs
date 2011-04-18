@@ -54,7 +54,6 @@ namespace CS631.Data
                 this.DateStarted = dr.GetDateTime("date_started");
                 this.DateEnded = dr.GetDateTime("date_ended");
                 this.Budget = dr.GetDecimal("budget");
-
             }
             connection.Close();
             return this;

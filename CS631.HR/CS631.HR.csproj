@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Public\Images\calendar.gif" />
     <Content Include="Public\Stylesheets\site.css" />
     <Content Include="Public\Stylesheets\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Public\Stylesheets\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -111,6 +112,7 @@
     <Content Include="Views\Departments\Edit.aspx" />
     <Content Include="Views\Departments\Index.aspx" />
     <Content Include="Views\Departments\LeftMenu.ascx" />
+    <Content Include="Views\Departments\SubMenu.ascx" />
     <Content Include="Views\Divisions\Create.aspx" />
     <Content Include="Views\Divisions\Details.aspx" />
     <Content Include="Views\Divisions\Edit.aspx" />

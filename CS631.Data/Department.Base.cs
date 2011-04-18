@@ -16,6 +16,13 @@ namespace CS631.Data
         [DisplayName("Department Name")]
         public string name { get; set; }
 
+        public string DepartmentNo
+        {
+            get
+            {
+                return "DP-" + id;
+            }
+        }
 
         public Department() 
         { 

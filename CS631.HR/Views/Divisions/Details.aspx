@@ -16,17 +16,22 @@
         <div class="section">
             <h1>Show Division</h1>
             <p>Details of division</p>
-            <br />
 
-            <div>
-                <label>Divison Name</label>
-                 : <%: Model.name %>
-            </div>
-            <div class="clear"></div> 
-            <div>
-                <label>Divison No</label>
-                : <%: Model.DivisionNo %>
-            </div>
+            <table class="details">
+                <tr>
+                    <th> <label>Divison No</label> </th>
+                    <td>
+                        <%: Model.DivisionNo %>
+                    </td>
+                </tr>
+                <tr>
+                    <th> <label>Divison Name</label> </th>
+                    <td>
+                        <%: Model.name %>
+                    </td>
+                </tr>
+            </table>
+
             <div class="clear"></div> 
         </div>
     </div>

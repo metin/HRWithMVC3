@@ -7,8 +7,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script type="text/javascript">
         $(function () {
-            $("#DateStarted").datepicker({ showOn: 'both', buttonImage: "/Public/Images/calendar.gif", buttonImageOnly: true });
-            $("#DateEnded").datepicker({ showOn: 'both', buttonImage: "/Public/Images/calendar.gif", buttonImageOnly: true });
+            $("#DateStarted").datepicker({ showOn: 'both', buttonImage: "/Public/Images/calendar.gif", buttonImageOnly: true, dateFormat: 'mm/dd/yy' });
+            $("#DateStarted").datepicker("option", "dateFormat", 'mm/dd/yy');
+
+            $("#DateEnded").datepicker({ showOn: 'both', buttonImage: "/Public/Images/calendar.gif", buttonImageOnly: true, dateFormat: 'mm/dd/yy' });
+            $("#DateEnded").datepicker("option", "dateFormat", 'mm/dd/yy');
         });
 	</script>
 

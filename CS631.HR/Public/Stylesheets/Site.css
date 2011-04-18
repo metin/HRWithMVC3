@@ -204,7 +204,7 @@ p, ul
 
 #submenu_container ul li a:hover
 {
-    background-color: #669;
+    background-color: #33bbbb;
     color: #fff;
 }
 
@@ -213,6 +213,7 @@ p, ul
     background-color: #da8;
     color: #fff;
 }
+
 
 /* LEFT MENU */
 #left_menu
