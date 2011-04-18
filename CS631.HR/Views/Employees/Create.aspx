@@ -9,33 +9,31 @@
     <% Html.RenderPartial("SubMenu"); %>
 
     <div class="grid_12">
+        <div class="section"> 
+            <h1>New Employee</h1>
+            <p>Add new employee</p>
+            <br />
 
-         <% using (Html.BeginForm()) { %>
-            <%: Html.ValidationSummary(true) %>
-            <fieldset>
-                <legend>New Employee</legend>
-
-                <div class="editor-label">
+             <% using (Html.BeginForm()) { %>
+                <%: Html.ValidationSummary(true) %>
+                <div>
                     <%: Html.LabelFor(model => model.first_name) %>
-                </div>
-                <div class="editor-field">
                     <%: Html.EditorFor(model => model.first_name) %>
                     <%: Html.ValidationMessageFor(model => model.first_name) %>
                 </div>
-
-                <div class="editor-label">
+                <div class="clear"></div> 
+                <div>
                     <%: Html.LabelFor(model => model.last_name) %>
-                </div>
-                <div class="editor-field">
                     <%: Html.EditorFor(model => model.last_name) %>
                     <%: Html.ValidationMessageFor(model => model.last_name) %>
                 </div>
-                <br />
-                <p>
+                <div class="clear"></div> 
+                <div>
                     <input type="submit" value="Create" class="action_button"/>
-                </p>
-            </fieldset>
-        <% } %>
+                </div>
+                <div class="clear"></div>
+            <% } %>
+        </div>
     </div>
     <div class="clear"></div> 
 

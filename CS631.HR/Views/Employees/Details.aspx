@@ -7,27 +7,31 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <% Html.RenderPartial("SubMenu"); %>
 
-    <div class="grid_2">
+    <div class="grid_2 nopadding">
         <% Html.RenderPartial("LeftMenu", Model, new ViewDataDictionary(Model)); %>
     </div>
 
     <div class="grid_10">
-        <fieldset>
-            <legend>Employee</legend>
+        <div class="section">
+
+            <h1>Show Employee</h1>
+            <p>Details of employee</p>
             
-            <div class="display-label">Employee NO</div>
-            <div class="display-field"><%: Model.EmployeeNO%></div>
-
-            <div class="display-label">Fist Name</div>
-            <div class="display-field"><%: Model.first_name %></div>
-
-            <div class="display-label">last_name</div>
-            <div class="display-field"><%: Model.last_name %></div>
-        </fieldset>
-        <p>
-            <%: Html.ActionLink("Edit", "Edit", new { id=Model.id }) %> |
-            <%: Html.ActionLink("Back to List", "Index") %>
-        </p>
+            <table class="details">
+                <tr>
+                    <th><label>Employee NO:</label></th>
+                    <td><%: Model.EmployeeNO %></td>
+                </tr>
+                <tr>
+                    <th><label>Fist Name</label>:</th>
+                    <td><%: Model.first_name %></td>
+                </tr>
+                <tr>
+                    <th><label> Last Name </label>:</th>
+                    <td><%: Model.last_name %></td>
+                </tr>
+            </table>
+        </div>
     </div>
     <div class="clear"></div> 
 </asp:Content>

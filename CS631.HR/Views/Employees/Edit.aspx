@@ -7,40 +7,39 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <% Html.RenderPartial("SubMenu"); %>
 
-    <div class="grid_2">
+    <div class="grid_2 nopadding">
         <% Html.RenderPartial("LeftMenu", Model, new ViewDataDictionary(Model)); %>
     </div>
 
     <div class="grid_10">
+        <div class="section">
+            <h1>Edit Employee</h1>
+            <p>Edit employee <%: Model.first_name %></p>
+            <br />
 
-        <% using (Html.BeginForm()) { %>
-            <%: Html.ValidationSummary(true) %>
-            <fieldset>
-                <legend>Edit Employee</legend>
+            <% using (Html.BeginForm()) { %>
+                <%: Html.ValidationSummary(true) %>
 
                 <%: Html.HiddenFor(model => model.id) %>
 
-                <div class="editor-label">
+                <div>
                     <%: Html.LabelFor(model => model.first_name) %>
-                </div>
-                <div class="editor-field">
                     <%: Html.EditorFor(model => model.first_name) %>
                     <%: Html.ValidationMessageFor(model => model.first_name) %>
                 </div>
-
-                <div class="editor-label">
+                <div class="clear"></div> 
+                <div>
                     <%: Html.LabelFor(model => model.last_name) %>
-                </div>
-                <div class="editor-field">
                     <%: Html.EditorFor(model => model.last_name) %>
                     <%: Html.ValidationMessageFor(model => model.last_name) %>
                 </div>
-                <br />
-                <p>
+                <div class="clear"></div> 
+                <div>
                     <input type="submit" value="Save" class="action_button"/>
-                </p>
-            </fieldset>
-        <% } %>
+                </div>
+                <div class="clear"></div> 
+            <% } %>
+        </div>
     </div>
      <div class="clear"></div> 
 </asp:Content>

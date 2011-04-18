@@ -9,7 +9,7 @@
     <% Html.RenderPartial("SubMenu"); %>
 
     <div class="grid_12">
-        <div class="form" > 
+        <div class="section"> 
             <h1>New Division</h1>
             <p>Create new division</p>
             <br />

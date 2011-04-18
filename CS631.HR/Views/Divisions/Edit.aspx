@@ -8,16 +8,15 @@
 
     <% Html.RenderPartial("SubMenu"); %>
 
-    <div class="grid_2">
+    <div class="grid_2 nopadding">
         <% Html.RenderPartial("LeftMenu", Model, new ViewDataDictionary(Model)); %>
     </div>
 
     <div class="grid_10">
-        <div class="form">
+        <div class="section">
             <h1>Edit Division</h1>
             <p>Edit division <%: Model.name %></p>
             <br />
-
 
             <% using (Html.BeginForm()) { %>
                 <%: Html.HiddenFor(model => model.id) %>

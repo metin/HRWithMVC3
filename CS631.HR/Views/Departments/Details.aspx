@@ -8,19 +8,26 @@
 
     <% Html.RenderPartial("SubMenu"); %>
 
-    <div class="grid_2">
+    <div class="grid_2 nopadding">
         <% Html.RenderPartial("LeftMenu", Model, new ViewDataDictionary(Model)); %>
     </div>
 
     <div class="grid_10">
-        
-        <fieldset>
-            <legend>Deparment Details</legend>
-            <div class="display-label">name</div>
-            <div class="display-field"><%: Model.name %></div>
-        </fieldset>
-        
+        <div class="section">
+            <h1>Show Department</h1>
+            <p>Details of department</p>
+            <br />
+            <div>
+                <label>Department Name</label>
+                 : <%: Model.name %>
+            </div>
+            <div class="clear"></div> 
+
+        </div>
+                
     </div>
-    <div class="clear" />
+    
+    <div class="clear"></div> 
+
 </asp:Content>
 

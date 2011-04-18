@@ -8,31 +8,33 @@
 
     <% Html.RenderPartial("SubMenu"); %>
 
-    <div class="grid_2">
+    <div class="grid_2 nopadding">
         <% Html.RenderPartial("LeftMenu", Model, new ViewDataDictionary(Model)); %>
     </div>
 
     <div class="grid_10">
-        <% using (Html.BeginForm()) { %>
-            <%: Html.ValidationSummary(true) %>
-            <fieldset>
-                <legend>Edit Department</legend>
+        <div class="section">
+            <h1>Edit Department</h1>
+            <p>Edit department <%: Model.name %></p>
+            <br />
 
-                <%: Html.HiddenFor(model => model.id) %>
+            <% using (Html.BeginForm()) { %>
+                <%: Html.ValidationSummary(true) %>
 
-                <div class="editor-label">
+                <div>
                     <%: Html.LabelFor(model => model.name) %>
-                </div>
-                <div class="editor-field">
                     <%: Html.EditorFor(model => model.name) %>
                     <%: Html.ValidationMessageFor(model => model.name) %>
                 </div>
-                <br />
-                <p>
+
+                <div class="clear"></div> 
+                <div>
                     <input type="submit" value="Save" class="action_button"/>
-                </p>
-            </fieldset>
-        <% } %>
+                </div>
+                <div class="clear"></div> 
+
+            <% } %>
+        </div>
     </div>
     <div class="clear"></div> 
 </asp:Content>

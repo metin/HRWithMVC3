@@ -9,29 +9,32 @@
     <% Html.RenderPartial("SubMenu"); %>
 
     <div class="grid_12">
-        <h2>List Of Divisions</h2>
-        <table width="100%">
-            <thead>
-                <tr>
-                    <th>Division No</th>
-                    <th>Name</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% foreach (var d in ViewBag.divisions)  { %>
+        <div class="section" > 
+            <h1>List Of Divisions</h1>
+            <p />
+            <table width="100%">
+                <thead>
                     <tr>
-                        <td><%: d.DivisionNo %> </td>
-                        <td><%: d.name %> </td>
-                        <td class="action_buttons"> 
-                            <%: Html.ActionLink("Show", "Details", new { id = d.id }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
-                            <%: Html.ActionLink("Edit", "Edit", new { id = d.id }, new { @class = "jqui_button_edit" })%> 
-                            <%: Html.ActionLink("Delete", "Delete", new { id = d.id }, new { @class = "jqui_button_delete" })%>
-                        </td>
+                        <th>Division No</th>
+                        <th>Name</th>
+                        <th>Actions</th>
                     </tr>
-                <% } %>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <% foreach (var d in ViewBag.divisions)  { %>
+                        <tr>
+                            <td><%: d.DivisionNo %> </td>
+                            <td><%: d.name %> </td>
+                            <td class="action_buttons"> 
+                                <%: Html.ActionLink("Show", "Details", new { id = d.id }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
+                                <%: Html.ActionLink("Edit", "Edit", new { id = d.id }, new { @class = "jqui_button_edit" })%> 
+                                <%: Html.ActionLink("Delete", "Delete", new { id = d.id }, new { @class = "jqui_button_delete" })%>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
 
     </div>
     <div class="clear"></div> 
