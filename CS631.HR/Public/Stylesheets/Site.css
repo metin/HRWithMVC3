@@ -60,12 +60,22 @@ p, ul
     border-bottom:solid 1px #dbd4fb;/*#b7ddf2;*/
     padding-bottom:5px;
 }
+
 .section label{
     display:block;
     font-weight:bold;
     float:left;
+    font-size:11px;
     
 }
+.section input{
+    float:left;
+    font-size:12px;
+    border:solid 1px #aacfe4;
+    width:200px;
+
+}
+/*
 .section .small{
     color:#666666;
     display:block;
@@ -74,14 +84,7 @@ p, ul
     text-align:right;
     width:140px;
 }
-.section input{
-    float:left;
-    font-size:12px;
 
-    border:solid 1px #aacfe4;
-    width:200px;
-    margin:2px 0 10px 10px;
-}
 .section button{
     clear:both;
     margin-left:150px;
@@ -95,7 +98,7 @@ p, ul
     font-weight:bold;
 }
 
-
+*/
 
 .section .details
 {

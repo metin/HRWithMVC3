@@ -22,17 +22,23 @@
 
                 <%: Html.HiddenFor(model => model.id) %>
 
-                <div>
-                    <%: Html.LabelFor(model => model.first_name) %>
-                    <%: Html.EditorFor(model => model.first_name) %>
-                    <%: Html.ValidationMessageFor(model => model.first_name) %>
-                </div>
-                <div class="clear"></div> 
-                <div>
-                    <%: Html.LabelFor(model => model.last_name) %>
-                    <%: Html.EditorFor(model => model.last_name) %>
-                    <%: Html.ValidationMessageFor(model => model.last_name) %>
-                </div>
+                <table class="details">
+                    <tr>
+                        <th><%: Html.LabelFor(model => model.first_name) %></th>
+                        <td>
+                            <%: Html.EditorFor(model => model.first_name) %>
+                            <%: Html.ValidationMessageFor(model => model.first_name) %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><%: Html.LabelFor(model => model.last_name) %></th>
+                        <td>
+                            <%: Html.EditorFor(model => model.last_name) %>
+                            <%: Html.ValidationMessageFor(model => model.last_name) %>
+                        </td>
+                    </tr>
+                </table>
+
                 <div class="clear"></div> 
                 <div>
                     <input type="submit" value="Save" class="action_button"/>
