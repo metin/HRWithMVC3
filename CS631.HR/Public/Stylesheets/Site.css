@@ -45,8 +45,8 @@ p, ul
 {
     padding: 10px;
     margin: 10px 0px 10px 0px;
-    border:solid 5px #dbd4fb;/*#b7ddf2;*/
-    background:#f8fcfe;/*#ebf4fb;*/
+    border: solid 5px #ebedfb;/*#dbd4fb;*//*#b7ddf2;*/
+    background: #fbfdfe;/*#f8fcfe;*//*#ebf4fb;*/
 }
 .section h1 {
     font-size:14px;
@@ -371,22 +371,22 @@ input[type="password"]
 
 table 
 {
-  border: solid 1px #e8eef4;
+  border: solid 1px #e6e4fe; /* #e8eef4; */
   border-collapse: collapse;
 }
 
 table td 
 {
   padding: 5px;   
-  border: solid 1px #e8eef4;
+  border: solid 1px #e6e4fe; /* #e8eef4; */
 }
 
 table th
 {
   padding: 6px 5px;
   text-align: left;
-  background-color: #e8eef4; 
-  border: solid 1px #e8eef4;   
+  background-color: #eff4fb; /* #e8eef4; */
+  border: solid 1px #e6e4fe; /* #e8eef4; */
 }
 
 /* MISC  

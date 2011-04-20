@@ -18,7 +18,7 @@
     <div class="grid_12">
         <div class="section"> 
             <h1>New Project</h1>
-            <p>>New Project</p>
+            <p>Creat new project</p>
             <br />
             <% using (Html.BeginForm()) { %>
                 <%: Html.ValidationSummary(true) %>
