@@ -37,7 +37,7 @@ namespace CS631.HR.Controllers
                 Text = x.Name,
                 Value = x.Id.ToString()
             }).ToList();
-            ViewBag.buildings = selectList;
+            ViewBag.buildings = new Building().All(); //selectList;
             return View();
         } 
 
