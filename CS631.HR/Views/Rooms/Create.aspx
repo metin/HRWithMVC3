@@ -27,6 +27,7 @@
                         <th> <%: Html.LabelFor(model => model.BuildingId)%></th>
                         <td>
                             <%: Html.EditorFor(model => model.BuildingId) %>
+                            <%: Html.DropDownList("buiding_id", ViewBag.buildings as SelectList)%>
                             <%: Html.ValidationMessageFor(model => model.BuildingId)%>
                         </td>
                     </tr>

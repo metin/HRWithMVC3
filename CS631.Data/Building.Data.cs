@@ -9,7 +9,7 @@ namespace CS631.Data
     public partial class Building
     {
 
-        public ICollection<Building> All()
+        public IEnumerable<Building> All()
         {
             List<Building> buildings = new List<Building>();
             MySqlCommand cmd = connection.CreateCommand();

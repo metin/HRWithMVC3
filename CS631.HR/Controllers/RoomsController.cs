@@ -32,6 +32,12 @@ namespace CS631.HR.Controllers
 
         public ActionResult Create()
         {
+            var selectList = new Building().All().Select(x => new SelectListItem
+            {
+                Text = x.Name,
+                Value = x.Id.ToString()
+            }).ToList();
+            ViewBag.buildings = selectList;
             return View();
         } 
 
