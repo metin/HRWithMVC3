@@ -58,11 +58,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BuildingsController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -107,6 +109,12 @@
     <Content Include="Public\Stylesheets\960.css" />
     <Content Include="Public\Stylesheets\reset.css" />
     <Content Include="Public\Stylesheets\text.css" />
+    <Content Include="Views\Buildings\Edit.aspx" />
+    <Content Include="Views\Buildings\Create.aspx" />
+    <Content Include="Views\Buildings\Details.aspx" />
+    <Content Include="Views\Buildings\Index.aspx" />
+    <Content Include="Views\Buildings\LeftMenu.ascx" />
+    <Content Include="Views\Buildings\SubMenu.ascx" />
     <Content Include="Views\Departments\Create.aspx" />
     <Content Include="Views\Departments\Details.aspx" />
     <Content Include="Views\Departments\Edit.aspx" />
@@ -131,6 +139,12 @@
     <Content Include="Views\Projects\Index.aspx" />
     <Content Include="Views\Projects\LeftMenu.ascx" />
     <Content Include="Views\Projects\SubMenu.ascx" />
+    <Content Include="Views\Rooms\Create.aspx" />
+    <Content Include="Views\Rooms\Details.aspx" />
+    <Content Include="Views\Rooms\Edit.aspx" />
+    <Content Include="Views\Rooms\Index.aspx" />
+    <Content Include="Views\Rooms\LeftMenu.ascx" />
+    <Content Include="Views\Rooms\SubMenu.ascx" />
     <Content Include="Views\Shared\Header.ascx" />
     <Content Include="Views\Shared\TopMenu.ascx" />
     <Content Include="Web.config" />

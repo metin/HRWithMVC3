@@ -10,17 +10,27 @@
             <%: Html.ActionLink("Home", "Index", "Home") %>
         </li>
         <li class="<%: curController=="Divisions" ? "current" : "" %>">
-                <%: Html.ActionLink("Divisions", "Index", "Divisions")%>
+            <%: Html.ActionLink("Divisions", "Index", "Divisions")%>
         </li>    
 
+        <li class="<%: curController=="Departments" ? "current" : "" %>">
+            <%: Html.ActionLink("Departments", "Index", "Departments")%>
+        </li>    
+
+        <li class="<%: (curController=="Buildings") ? "current" : "" %>">
+            <%: Html.ActionLink("Buildings", "Index", "Buildings")%>
+        </li>
+
+
+        <li class="<%: (curController=="Rooms") ? "current" : "" %>">
+            <%: Html.ActionLink("Rooms", "Index", "Rooms")%>
+        </li>
+
         <li class="<%: curController=="Employees" ? "current" : "" %>">
-                <%: Html.ActionLink("Employees", "Index", "Employees") %>
+            <%: Html.ActionLink("Employees", "Index", "Employees") %>
         </li>
         <li class="<%: curController=="Projects" ? "current" : "" %>">
-                <%: Html.ActionLink("Projects", "Index", "Projects") %>
-        </li>    
-        <li class="<%: curController=="Departments" ? "current" : "" %>">
-                <%: Html.ActionLink("Departments", "Index", "Departments")%>
+            <%: Html.ActionLink("Projects", "Index", "Projects") %>
         </li>    
 
     </ul>

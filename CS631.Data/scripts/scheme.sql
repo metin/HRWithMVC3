@@ -17,7 +17,8 @@ drop table if exists buildings;
 create table buildings(
  id int NOT NULL AUTO_INCREMENT,
  name varchar(255),
- year varchar(255),
+ code varchar(255),
+ year int,
  cost decimal(15, 2),
  primary key (id)
 ) AUTO_INCREMENT = 234;
@@ -47,7 +48,8 @@ create table departments(
 drop table if exists rooms;
 create table rooms(
  id int NOT NULL AUTO_INCREMENT, 
- building_code int,
+ building_id int,
+ code varchar(255),
  primary key (id)
 ) AUTO_INCREMENT = 712;
 

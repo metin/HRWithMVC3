@@ -51,6 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="Building.Base.cs" />
+    <Compile Include="Building.Data.cs" />
+    <Compile Include="Room.Data.cs" />
+    <Compile Include="Room.Base.cs" />
     <Compile Include="Employee.Data.cs" />
     <Compile Include="Department.Data.cs" />
     <Compile Include="Division.Data.cs" />

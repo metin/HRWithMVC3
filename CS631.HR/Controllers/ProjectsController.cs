@@ -62,8 +62,6 @@ namespace CS631.HR.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection, Project project)
         {
-            Project p = new Project { name = collection["name"], id = id };
-            //p.Update();
             project.id = id;
             project.Update();
             return RedirectToAction("Index");
