@@ -1,8 +1,0 @@
-D:\NJIT\CS631\Projects\CS631\CS631.HR\bin\CS631.HR.dll
-D:\NJIT\CS631\Projects\CS631\CS631.HR\bin\CS631.HR.pdb
-D:\NJIT\CS631\Projects\CS631\CS631.HR\bin\CS631.Data.dll
-D:\NJIT\CS631\Projects\CS631\CS631.HR\bin\MySql.Data.dll
-D:\NJIT\CS631\Projects\CS631\CS631.HR\bin\CS631.Data.pdb
-D:\NJIT\CS631\Projects\CS631\CS631.HR\obj\Debug\ResolveAssemblyReference.cache
-D:\NJIT\CS631\Projects\CS631\CS631.HR\obj\Debug\CS631.HR.dll
-D:\NJIT\CS631\Projects\CS631\CS631.HR\obj\Debug\CS631.HR.pdb
