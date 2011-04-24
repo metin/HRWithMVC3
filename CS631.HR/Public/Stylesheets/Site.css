@@ -45,7 +45,7 @@ p, ul
 {
     padding: 10px;
     margin: 10px 0px 10px 0px;
-    border: solid 5px #ebedfb;/*#dbd4fb;*//*#b7ddf2;*/
+    border: solid 5px #e3e5fb;/*#dbd4fb;*//*#b7ddf2;*/
     background: #fbfdfe;/*#f8fcfe;*//*#ebf4fb;*/
 }
 .section h1 {
@@ -253,7 +253,7 @@ p, ul
 
 #left_list li.current a 
 {
-    background: #dbd4fb;
+    background: #e3e5fb;
 }
 
 /*

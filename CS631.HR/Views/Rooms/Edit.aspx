@@ -32,7 +32,7 @@
                     <tr>
                         <th> <%: Html.LabelFor(model => model.BuildingId)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.BuildingId)%>
+                            <%: Html.DropDownListFor(model => model.BuildingId, ViewBag.buildings as SelectList)%>
                             <%: Html.ValidationMessageFor(model => model.BuildingId)%>
                         </td>
                     </tr>

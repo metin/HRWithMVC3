@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<CS631.Data.Division>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<CS631.Data.Division>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Index
@@ -21,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% foreach (var d in ViewBag.divisions)  { %>
+                    <% foreach (var d in Model)  { %>
                         <tr>
                             <td><%: d.DivisionNo %> </td>
                             <td><%: d.name %> </td>

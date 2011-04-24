@@ -26,13 +26,11 @@
                     <tr>
                         <th> <%: Html.LabelFor(model => model.BuildingId)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.BuildingId) %>
-                            <% foreach( var l in  (ViewBag.buildings)){ %>
-                                <%: l.Code %> <br />
-                            <% } %>
+                            <%: Html.DropDownListFor(model => model.BuildingId, ViewBag.buildings as SelectList)%>
                             <%: Html.ValidationMessageFor(model => model.BuildingId)%>
                         </td>
                     </tr>
+
                 </table>
                 <div class="clear"></div> 
                 <div>

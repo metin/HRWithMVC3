@@ -15,7 +15,7 @@ namespace CS631.HR.Controllers
         public ActionResult Index()
         {
             Building b = new Building();
-            return View(b.All());
+            return View(Building.FindAll());
         }
 
         //
@@ -23,8 +23,7 @@ namespace CS631.HR.Controllers
 
         public ActionResult Details(int id)
         {
-            Building b = new Building { Id = id };
-            return View(b.Load());
+            return View(Building.FindById(id));
         }
 
         //
@@ -50,8 +49,7 @@ namespace CS631.HR.Controllers
  
         public ActionResult Edit(int id)
         {
-            Building b = new Building { Id = id };
-            return View(b.Load());
+            return View(Building.FindById(id));
         }
 
         //
@@ -63,6 +61,11 @@ namespace CS631.HR.Controllers
             buiding.Id = id;
             buiding.Update();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Rooms(int id)
+        {
+            return View(Building.FindById(id));
         }
 
         //

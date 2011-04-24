@@ -15,7 +15,7 @@
         </li>
 
         <li class="<%: curAction=="Rooms" ? "current" : "" %>">
-            <%: Html.ActionLink("Rooms", "Index", "Rooms", new { id = b.Id },  new{}  ) %>
+            <%: Html.ActionLink("Rooms", "Rooms", new { id = b.Id },  new{}  ) %>
         </li>   
      </ul>
 </div>

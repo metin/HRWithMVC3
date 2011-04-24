@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<CS631.Data.Department>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Index
@@ -15,15 +15,15 @@
             <table width="100%">
                 <thead>
                     <tr>
-                        <th> Department ID </th>
+                        <th> Department No </th>
                         <th> Name </th>
-                        <th>Actions</th>
+                        <th> Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% foreach (var d in ViewBag.departments) { %>
+                    <% foreach (var d in Model) { %>
                         <tr>
-                            <td><%: d.id %> </td>
+                            <td><%: d.DepartmentNo %> </td>
                             <td><%: d.name %> </td>
 
                             <td class="action_buttons"> 

@@ -14,10 +14,7 @@ namespace CS631.Controllers
 
         public ActionResult Index()
         {
-            Department d = new Department();
-            ICollection<Department> departments = d.All();
-            ViewBag.departments = departments;
-            return View();
+            return View(Department.FindAll());
         }
 
         //
@@ -25,8 +22,7 @@ namespace CS631.Controllers
 
         public ActionResult Details(int id)
         {
-            Department d = new Department { id = id };
-            return View(d.Load());
+            return View(Department.FindById(id));
         }
 
         //
@@ -53,8 +49,7 @@ namespace CS631.Controllers
  
         public ActionResult Edit(int id)
         {
-            Department d = new Department { id = id };
-            return View(d.Load());
+            return View(Department.FindById(id));
         }
 
         //

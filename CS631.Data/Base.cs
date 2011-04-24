@@ -24,5 +24,12 @@ namespace CS631.Data
             //cmd.ExecuteReader();
             //c.Close();
         }
+
+        public static MySqlConnection getConnection()
+        {
+            MySqlConnection c = new MySqlConnection();
+            c.ConnectionString = "Server=localhost;Database=cs631;Uid=ODBC;Pwd=;";
+            return c;
+        }
     }
 }

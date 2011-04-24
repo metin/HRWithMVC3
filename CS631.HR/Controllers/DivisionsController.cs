@@ -14,10 +14,7 @@ namespace CS631.Controllers
 
         public ActionResult Index()
         {
-            Division d = new Division();
-            ICollection<Division> divisions = d.All();
-            ViewBag.divisions = divisions;
-            return View();
+            return View(Division.FindAll());
         }
 
         //
@@ -25,8 +22,7 @@ namespace CS631.Controllers
 
         public ActionResult Details(int id)
         {
-            Division d = new Division { id = id };
-            return View(d.Load());
+            return View(Division.FindByID(id));
         }
 
         //
@@ -53,8 +49,7 @@ namespace CS631.Controllers
  
         public ActionResult Edit(int id)
         {
-            Division d = new Division { id = id };
-            return View(d.Load());
+            return View(Division.FindByID(id));
         }
 
         //

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<CS631.Data.Employee>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Index
@@ -17,15 +17,15 @@
                         <th> Empoyee No </th>
                         <th> First Name </th>
                         <th> Last Name </th>
-                        <th>Actions</th>
+                        <th> Actions </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% foreach (var e in ViewBag.employees)  { %>
+                    <% foreach (var e in Model)  { %>
                         <tr>
-                            <td><%: e.EmployeeNO%> </td>
-                            <td><%: e.first_name %> </td>
-                            <td><%: e.last_name %> </td>
+                            <td><%: e.EmployeeNO %> </td>
+                            <td><%: e.EmpFName %> </td>
+                            <td><%: e.EmpLName %> </td>
                             <td class="action_buttons"> 
                                 <%: Html.ActionLink("Show", "Details", new { id = e.id }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
                                 <%: Html.ActionLink("Edit", "Edit", new { id = e.id }, new { @class = "jqui_button_edit" })%> 

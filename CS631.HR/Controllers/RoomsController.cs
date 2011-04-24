@@ -15,7 +15,7 @@ namespace CS631.HR.Controllers
         public ActionResult Index()
         {
             Room r = new Room();
-            return View(r.All());
+            return View(Room.FindAll());
         }
 
         //
@@ -23,8 +23,7 @@ namespace CS631.HR.Controllers
 
         public ActionResult Details(int id)
         {
-            Room r = new Room { Id = id };
-            return View(r.Load());
+            return View(Room.FindById(id) );
         }
 
         //
@@ -32,12 +31,7 @@ namespace CS631.HR.Controllers
 
         public ActionResult Create()
         {
-            var selectList = new Building().All().Select(x => new SelectListItem
-            {
-                Text = x.Name,
-                Value = x.Id.ToString()
-            }).ToList();
-            ViewBag.buildings = new Building().All(); //selectList;
+            ViewBag.buildings = new SelectList(Building.FindAll(), "id", "code");
             return View();
         } 
 
@@ -56,8 +50,8 @@ namespace CS631.HR.Controllers
  
         public ActionResult Edit(int id)
         {
-            Room r = new Room { Id = id };
-            return View(r.Load());
+            ViewBag.buildings = new SelectList(Building.FindAll(), "id", "code");
+            return View(Room.FindById(id));
         }
 
         //

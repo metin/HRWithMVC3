@@ -11,6 +11,9 @@ namespace CS631.Data
     {
 
         public int Id { get; set; }
+
+        [Required]
+        [DisplayName("Building")]
         public int BuildingId { get; set; }
 
         [Required]

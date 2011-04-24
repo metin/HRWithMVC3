@@ -8,8 +8,19 @@ create table divisions(
 drop table if exists employees;
 create table employees(
  id int NOT NULL AUTO_INCREMENT,
- first_name varchar(255),
- last_name varchar(255),
+ EmpLName varchar(255),
+ EmpFName varchar(255),
+ EmpMI varchar(3),
+ EmpTitle varchar(255),
+ EmpBuilding int,
+ EmpOffice int,
+ EmpPhone int,
+ EmpDept int,
+ EmpDiv int,
+ EmpProj int,
+ EmpType varchar(255),
+ HourRate decimal(10,2),
+ MonthHours int,
  primary key (id)
 ) AUTO_INCREMENT = 123;
 

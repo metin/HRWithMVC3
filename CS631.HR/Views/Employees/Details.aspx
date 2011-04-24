@@ -24,12 +24,49 @@
                 </tr>
                 <tr>
                     <th><label>Fist Name</label>:</th>
-                    <td><%: Model.first_name %></td>
+                    <td><%: Model.EmpFName %></td>
                 </tr>
                 <tr>
-                    <th><label> Last Name </label>:</th>
-                    <td><%: Model.last_name %></td>
+                    <th><%: Html.LabelFor(model => model.EmpMI)%>:</th>
+                    <td><%: Model.EmpMI%></td>
                 </tr>
+                <tr>
+                    <th><%: Html.LabelFor(model => model.EmpLName) %>:</th>
+                    <td><%: Model.EmpLName %></td>
+                </tr>                
+                <tr>
+                    <th><%: Html.LabelFor(model => model.EmpTitle)%>:</th>
+                    <td><%: Model.EmpTitle%></td>
+                </tr>                
+                <tr>
+                    <th><%: Html.LabelFor(model => model.EmpBuilding)%>:</th>
+                    <td><%: Model.EmpBuilding%></td>
+                </tr>                
+                <tr>
+                    <th><%: Html.LabelFor(model => model.EmpOffice)%>:</th>
+                    <td><%: Model.EmpOffice%></td>
+                </tr>                
+                <tr>
+                    <th><%: Html.LabelFor(model => model.EmpPhone)%>:</th>
+                    <td><%: Model.EmpPhone%></td>
+                </tr>                
+                <tr>
+                    <th><%: Html.LabelFor(model => model.EmpDept)%>:</th>
+                    <td><%: Model.EmpDept%></td>
+                </tr>                
+                <tr>
+                    <th><%: Html.LabelFor(model => model.EmpDiv)%>:</th>
+                    <td><%: Model.EmpDiv%></td>
+                </tr>                
+                <tr>
+                    <th><%: Html.LabelFor(model => model.EmpType)%>:</th>
+                    <td><%: Model.EmpType%></td>
+                </tr>                
+                <tr>
+                    <th><%: Html.LabelFor(model => model.HourRate)%>:</th>
+                    <td><%: Model.HourRate%></td>
+                </tr>               
+
             </table>
         </div>
     </div>

@@ -114,6 +114,7 @@
     <Content Include="Views\Buildings\Details.aspx" />
     <Content Include="Views\Buildings\Index.aspx" />
     <Content Include="Views\Buildings\LeftMenu.ascx" />
+    <Content Include="Views\Buildings\Rooms.aspx" />
     <Content Include="Views\Buildings\SubMenu.ascx" />
     <Content Include="Views\Departments\Create.aspx" />
     <Content Include="Views\Departments\Details.aspx" />

@@ -52,12 +52,17 @@
   <ItemGroup>
     <Compile Include="Base.cs" />
     <Compile Include="Building.Base.cs" />
-    <Compile Include="Building.Data.cs" />
-    <Compile Include="Room.Data.cs" />
+    <Compile Include="Building.Instance.cs" />
+    <Compile Include="Building.Finders.cs" />
+    <Compile Include="Division.Finders.cs" />
+    <Compile Include="Department.Instance.cs" />
+    <Compile Include="Employee.Instance.cs" />
+    <Compile Include="Room.Instance.cs" />
+    <Compile Include="Room.Finders.cs" />
     <Compile Include="Room.Base.cs" />
-    <Compile Include="Employee.Data.cs" />
-    <Compile Include="Department.Data.cs" />
-    <Compile Include="Division.Data.cs" />
+    <Compile Include="Employee.Finders.cs" />
+    <Compile Include="Department.Finders.cs" />
+    <Compile Include="Division.Instance.cs" />
     <Compile Include="Division.Base.cs" />
     <Compile Include="Department.Base.cs" />
     <Compile Include="Project.Base.cs" />
