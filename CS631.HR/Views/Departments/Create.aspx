@@ -23,6 +23,13 @@
                             <%: Html.ValidationMessageFor(model => model.name) %>
                         </td>
                     </tr>
+                    <tr>
+                        <th> Division </th>
+                        <td>
+                            Division
+                            
+                        </td>
+                    </tr>
                 </table>
                 <div class="clear"></div> 
                 <div>

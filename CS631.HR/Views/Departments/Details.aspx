@@ -31,6 +31,13 @@
                         <%: Model.name %>
                     </td>
                 </tr>
+                <tr>
+                    <th> Division </th>
+                    <td>
+                        Division
+                            
+                    </td>
+                </tr>
             </table>
 
 
