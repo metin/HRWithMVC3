@@ -29,9 +29,6 @@
         <li class="<%: curController=="Employees" ? "current" : "" %>">
             <%: Html.ActionLink("Employees", "Index", "Employees") %>
         </li>
-        <li class="<%: curController=="Projects" ? "current" : "" %>">
-            <%: Html.ActionLink("Projects", "Index", "Projects") %>
-        </li>    
 
     </ul>
 </div>

@@ -11,5 +11,15 @@
         <li class="<%: curAction=="Edit" ? "current" : "" %>">
             <%: Html.ActionLink("Edit", "Edit", new { id = p.id })%>
         </li>
+        <li class="<%: curAction=="Members" ? "current" : "" %>">
+            <%: Html.ActionLink("Members", "Details", new { id = p.id })%>
+        </li>
+        <li class="<%: curAction=="Progress" ? "current" : "" %>">
+            <%: Html.ActionLink("Progress", "Details", new { id = p.id })%>
+        </li>
+        <li class="<%: curAction=="Milestones" ? "current" : "" %>">
+            <%: Html.ActionLink("Milestones", "Details", new { id = p.id })%>
+        </li>
+
     </ul>
 </div>

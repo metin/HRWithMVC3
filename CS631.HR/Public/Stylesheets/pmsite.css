@@ -1,6 +1,6 @@
 ﻿body
 {
-    background-color: #565;
+    background-color: #667;
     font-size: 75%;
     font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
     margin: 0;
@@ -141,7 +141,7 @@ p, ul
 {
     padding-left: 0;
     margin-left: 0;
-    background-color: #052;
+    background-color: #036;
     color: White;
     float: left;
     width: 100%;
@@ -155,7 +155,7 @@ p, ul
 #menu_container ul li a
 {
     padding: 0.5em 1.2em;
-    background-color: #052;
+    background-color: #036;
     color: #cecece;
     text-decoration: none;
     float: left;
@@ -164,13 +164,13 @@ p, ul
 
 #menu_container ul li a:hover
 {
-    background-color: #275;
+    background-color: #369;
     color: #fff;
 }
 
 #menu_container ul li.current  a
 {
-    background-color: #275;
+    background-color: #369;
     color: #fff;
 }
 
@@ -182,7 +182,7 @@ p, ul
 {
     padding-left: 0;
     margin-left: 0;
-    background-color: #275;
+    background-color: #369;
     color: White;
     float: left;
     width: 100%;
@@ -190,12 +190,12 @@ p, ul
     margin: 0px;
 }
 
-#submenu_container ul li { display: inline;}
+#submenu_container ul li { display: inline; }
 
 #submenu_container ul li a
 {
     padding: 0.2em 0.6em;
-    background-color: #275;
+    background-color: #369;
     color: #cecece;
     text-decoration: none;
     float: left;
@@ -205,13 +205,13 @@ p, ul
 
 #submenu_container ul li a:hover
 {
-    background-color: #084;
+    background-color: #025;
     color: #fff;
 }
 
 #submenu_container ul li.current  a
 {
-    background-color: #052;
+    background-color: #048;;
     color: #fff;
 }
 

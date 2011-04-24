@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BuildingsController.cs" />
+    <Compile Include="Controllers\PmHomeController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
@@ -73,6 +74,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Public\Images\calendar.gif" />
+    <Content Include="Public\Stylesheets\pmsite.css" />
     <Content Include="Public\Stylesheets\site.css" />
     <Content Include="Public\Stylesheets\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Public\Stylesheets\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -135,6 +137,9 @@
     <Content Include="Views\Employees\Index.aspx" />
     <Content Include="Views\Employees\LeftMenu.ascx" />
     <Content Include="Views\Employees\SubMenu.ascx" />
+    <Content Include="Views\Home\SubMenu.ascx" />
+    <Content Include="Views\PmHome\Index.aspx" />
+    <Content Include="Views\PmHome\SubMenu.ascx" />
     <Content Include="Views\Projects\Create.aspx" />
     <Content Include="Views\Projects\Details.aspx" />
     <Content Include="Views\Projects\Edit.aspx" />
@@ -147,6 +152,8 @@
     <Content Include="Views\Rooms\Index.aspx" />
     <Content Include="Views\Rooms\LeftMenu.ascx" />
     <Content Include="Views\Rooms\SubMenu.ascx" />
+    <Content Include="Views\Shared\PmHeader.ascx" />
+    <Content Include="Views\Shared\PmTopMenu.ascx" />
     <Content Include="Views\Shared\Header.ascx" />
     <Content Include="Views\Shared\TopMenu.ascx" />
     <Content Include="Web.config" />
@@ -158,13 +165,9 @@
     </Content>
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
-    <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\Copy of Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -177,6 +180,9 @@
       <Project>{8232B553-6F9F-4FFA-B8A8-61CD02B099BF}</Project>
       <Name>CS631.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Pm.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

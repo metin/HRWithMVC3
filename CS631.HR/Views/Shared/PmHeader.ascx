@@ -2,14 +2,14 @@
 
 <div class="grid_12">
     <div id="header">
-        Human Resources
+        Project Management
     </div>
 </div>
 <div class="clear"></div> 
 <div class="grid_12">
     <div style="text-align:right">
         <span style="border:1px solid #f00;background-color:#744;padding:3px;">
-            <%: Html.ActionLink("PM Site", "Index", "Projects", new{},  new { style="color:#fefefe"}) %>
+            <%: Html.ActionLink("HR Site", "Index", "Employees", new { }, new { style = "color:#fefefe" })%>
         </span>
     </div>
 </div>
