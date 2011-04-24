@@ -24,6 +24,14 @@
                             <%: Html.ValidationMessageFor(model => model.name) %>
                         </td>
                     </tr>
+
+                    <tr>
+                        <th><%: Html.LabelFor(model => model.DivHead)%></th>
+                        <td>
+                            <%: Html.DropDownListFor(model => model.DivHead, ViewBag.employees as SelectList, "")%>
+                            <%: Html.ValidationMessageFor(model => model.DivHead)%>
+                        </td>
+                    </tr>
                 </table>
                 <div class="clear"></div> 
                 <div>

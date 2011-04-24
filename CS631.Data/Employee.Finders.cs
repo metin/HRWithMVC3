@@ -25,16 +25,16 @@ namespace CS631.Data
                 e = new Employee();
                 e.id = dr.GetInt32("id");
                 e.EmpFName = dr.GetString("EmpFName");
-                e.EmpMI = dr.GetString("EmpMI");
+                e.EmpMI = dr["EmpMI"] as string;  //dr.GetString("EmpMI");
                 e.EmpLName = dr.GetString("EmpLName");
                 e.EmpTitle = dr.GetString("EmpTitle");
-                e.EmpBuilding = dr.GetInt32("EmpBuilding");
-                e.EmpOffice = dr.GetInt32("EmpOffice");
-                e.EmpPhone = dr.GetInt32("EmpPhone");
+                e.EmpBuilding = dr["EmpBuilding"] as int?;//dr.GetInt32("EmpBuilding");
+                e.EmpOffice = dr["EmpOffice"] as int?;// dr.GetInt32("EmpOffice");
+                e.EmpPhone = dr["EmpPhone"] as int?;// dr.GetInt32("EmpPhone");
                 e.EmpDept = dr.GetInt32("EmpDept");
                 e.EmpDiv = dr.GetInt32("EmpDiv");
-                e.EmpType = dr.GetString("EmpType");
-                e.HourRate = dr.GetInt32("HourRate");
+                e.EmpType = dr["EmpType"] as string;  //dr.GetString("EmpType");
+                e.HourRate = dr["HourRate"] as int?;// dr.GetInt32("HourRate");
                 l.Add(e);
             }
             c.Close();
@@ -56,16 +56,16 @@ namespace CS631.Data
             {
                 e.id = dr.GetInt32("id");
                 e.EmpFName = dr.GetString("EmpFName");
-                e.EmpMI = dr.GetString("EmpMI");
+                e.EmpMI = dr["EmpMI"] as string;  //dr.GetString("EmpMI");
                 e.EmpLName = dr.GetString("EmpLName");
                 e.EmpTitle = dr.GetString("EmpTitle");
-                e.EmpBuilding = dr.GetInt32("EmpBuilding");
-                e.EmpOffice = dr.GetInt32("EmpOffice");
-                e.EmpPhone = dr.GetInt32("EmpPhone");
+                e.EmpBuilding = dr["EmpBuilding"] as int?;//dr.GetInt32("EmpBuilding");
+                e.EmpOffice = dr["EmpOffice"] as int?;// dr.GetInt32("EmpOffice");
+                e.EmpPhone = dr["EmpPhone"] as int?;// dr.GetInt32("EmpPhone");
                 e.EmpDept = dr.GetInt32("EmpDept");
                 e.EmpDiv = dr.GetInt32("EmpDiv");
-                e.EmpType = dr.GetString("EmpType");
-                e.HourRate = dr.GetInt32("HourRate");
+                e.EmpType = dr["EmpType"] as string;  //dr.GetString("EmpType");
+                e.HourRate = dr["HourRate"] as int?;// dr.GetInt32("HourRate");
             }
             c.Close();
             return e;

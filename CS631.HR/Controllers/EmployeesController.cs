@@ -61,7 +61,7 @@ namespace CS631.HR.Controllers
             // ViewBag.offices = new SelectList(Office.FindAll(), "id", "code");
             ViewBag.divisions = new SelectList(Division.FindAll(), "id", "name");
 
-            ViewBag.employment = new SelectList(new string[] { null, "H", "S" });
+            ViewBag.employment = new SelectList(new string[] {"H", "S" });
 
             return View(Employee.FindById(id));
         }

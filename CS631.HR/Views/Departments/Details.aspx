@@ -32,10 +32,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <th> Division </th>
+                    <th> <label>Department Head</label> </th>
                     <td>
-                        Division
-                            
+                        <%: Model.DepartmentHead %>
+                    </td>
+                </tr>
+                <tr>
+                    <th> <label> Division Name</label> </th>
+                    <td>
+                        <%: Model.DivisionName %>
                     </td>
                 </tr>
             </table>

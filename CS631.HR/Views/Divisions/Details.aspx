@@ -30,6 +30,12 @@
                         <%: Model.name %>
                     </td>
                 </tr>
+                <tr>
+                    <th> <label>Division Head</label> </th>
+                    <td>
+                        <%: Model.DivisionHead %>
+                    </td>
+                </tr>
             </table>
 
             <div class="clear"></div> 

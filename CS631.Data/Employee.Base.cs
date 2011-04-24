@@ -28,13 +28,13 @@ namespace CS631.Data
         public string EmpTitle {get; set;}
 
         [DisplayName("Building")]
-        public int EmpBuilding { get; set; }
+        public int? EmpBuilding { get; set; }
 
         [DisplayName("Office")]
-        public int EmpOffice { get; set; }
+        public int? EmpOffice { get; set; }
 
         [DisplayName("Phone")]
-        public int EmpPhone { get; set; }
+        public int? EmpPhone { get; set; }
 
         [DisplayName("Department")]
         public int EmpDept { get; set; }
@@ -43,22 +43,29 @@ namespace CS631.Data
         public int EmpDiv { get; set; }
 
         [DisplayName("Project")]
-        public int EmpProj { get; set; }
+        public int? EmpProj { get; set; }
 
-        [Required(AllowEmptyStrings=false)]
         [DisplayName("Employment Type")]
         public string EmpType { get; set; }
 
         [DisplayName("Hourly Rate")]
-        public decimal HourRate { get; set; }
+        public decimal? HourRate { get; set; }
 
         [DisplayName("Month Hours")]
-        public decimal MonthHours { get; set; }
+        public decimal? MonthHours { get; set; }
 
         public string EmployeeNO
         {
             get {
                 return "EMP-" + id;
+            }
+        }
+
+        public string FullName
+        {
+            get
+            {
+                return (EmpFName +  " " + EmpLName);
             }
         }
 

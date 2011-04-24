@@ -30,6 +30,8 @@ namespace CS631.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.employees = new SelectList(Employee.FindAll(), "id", "EmpFName");
+            ViewBag.divisions = new SelectList(Division.FindAll(), "id", "name");
             return View();
         } 
 
@@ -37,11 +39,10 @@ namespace CS631.Controllers
         // POST: /Departments/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(FormCollection collection, Department d)
         {
-            Department p = new Department { name = collection["name"] };
-            p.Save();
-            return RedirectToAction("Index", new { id = p.id });
+            d.Save();
+            return RedirectToAction("Index", new { id = d.id });
         }
         
         //
@@ -49,6 +50,8 @@ namespace CS631.Controllers
  
         public ActionResult Edit(int id)
         {
+            ViewBag.employees = new SelectList(Employee.FindAll(), "id", "EmpFName");
+            ViewBag.divisions = new SelectList(Division.FindAll(), "id", "name");
             return View(Department.FindById(id));
         }
 
@@ -56,9 +59,9 @@ namespace CS631.Controllers
         // POST: /Departments/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, FormCollection collection, Department d)
         {
-            Department d = new Department { name = collection["name"], id = id };
+            d.id = id;
             d.Update();
             return RedirectToAction("Index");
         }

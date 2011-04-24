@@ -123,6 +123,7 @@
     <Content Include="Views\Departments\LeftMenu.ascx" />
     <Content Include="Views\Departments\SubMenu.ascx" />
     <Content Include="Views\Divisions\Create.aspx" />
+    <Content Include="Views\Divisions\Departments.aspx" />
     <Content Include="Views\Divisions\Details.aspx" />
     <Content Include="Views\Divisions\Edit.aspx" />
     <Content Include="Views\Divisions\Index.aspx" />

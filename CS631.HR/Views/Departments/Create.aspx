@@ -24,12 +24,21 @@
                         </td>
                     </tr>
                     <tr>
-                        <th> Division </th>
+                        <th><%: Html.LabelFor(model => model.DeptHead)%></th>
                         <td>
-                            Division
-                            
+                            <%: Html.DropDownListFor(model => model.DeptHead, ViewBag.employees as SelectList, "")%>
+                            <%: Html.ValidationMessageFor(model => model.DeptHead)%>
                         </td>
                     </tr>
+
+                    <tr>
+                        <th><%: Html.LabelFor(model => model.DivId)%></th>
+                        <td>
+                            <%: Html.DropDownListFor(model => model.DivId, ViewBag.divisions as SelectList, "")%>
+                            <%: Html.ValidationMessageFor(model => model.DivId)%>
+                        </td>
+                    </tr>
+
                 </table>
                 <div class="clear"></div> 
                 <div>

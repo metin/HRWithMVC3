@@ -25,6 +25,8 @@ namespace CS631.Data
                 p = new Department();
                 p.id = dr.GetInt32("id");
                 p.name = dr.GetString("name");
+                p.DeptHead = dr.GetInt32("DeptHead");
+                p.DivId = dr.GetInt32("DivId");
                 Departments.Add(p);
             }
             c.Close();
@@ -46,11 +48,38 @@ namespace CS631.Data
             {
                 d.id = dr.GetInt32("id");
                 d.name = dr.GetString("name");
+                d.DeptHead = dr.GetInt32("DeptHead");
+                d.DivId = dr.GetInt32("DivId");
             }
             c.Close();
             return d;
         }
 
+        public static ICollection<Department> FindByDivisionID(int DivId)
+        {
+            List<Department> Departments = new List<Department>();
+            MySqlConnection c = getConnection();
+            MySqlCommand cmd = c.CreateCommand();
+            c.Open();
+            cmd.CommandText = "SELECT * FROM Departments  where DivId = @DivId;";
+            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@DivId", DivId);
+            cmd.CommandType = System.Data.CommandType.Text;
+            MySqlDataReader dr = cmd.ExecuteReader();
+            Department p = null;
+
+            while (dr.Read())
+            {
+                p = new Department();
+                p.id = dr.GetInt32("id");
+                p.name = dr.GetString("name");
+                p.DeptHead = dr.GetInt32("DeptHead");
+                p.DivId = dr.GetInt32("DivId");
+                Departments.Add(p);
+            }
+            c.Close();
+            return Departments;
+        }
 
     }
 }

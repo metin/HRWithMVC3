@@ -13,9 +13,14 @@ namespace CS631.Data
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "INSERT INTO Departments (name) VALUES(@name);";
+            cmd.CommandText = @"INSERT INTO Departments 
+                                    (name, DeptHead, DivID) 
+                                VALUES
+                                    (@name, @DeptHead, @DivID);";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@name", this.name);
+            cmd.Parameters.AddWithValue("@DeptHead", this.DeptHead.GetValueOrDefault());
+            cmd.Parameters.AddWithValue("@DivID", this.DivId);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             cmd.CommandText = "SELECT LAST_INSERT_ID();";
@@ -28,9 +33,15 @@ namespace CS631.Data
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "UPDATE Departments set name = @name WHERE id = @id;";
+            cmd.CommandText = @"UPDATE Departments 
+                                SET 
+                                    name = @name, DeptHead = @DeptHead, DivID = @DivID 
+                                WHERE id = @id;";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@name", this.name);
+            cmd.Parameters.AddWithValue("@DeptHead", this.DeptHead.GetValueOrDefault());
+            cmd.Parameters.AddWithValue("@DivID", this.DivId);
+
             cmd.Parameters.AddWithValue("@id", this.id);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();

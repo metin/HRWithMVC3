@@ -17,12 +17,23 @@ namespace CS631.Data
         [DisplayName("Division Name")]
         public string name { get; set; }
 
+        [DisplayName("Division Head")]
+        public int? DivHead { get; set; }
+        
+
         public string DivisionNo {
             get {
                 return "DV-" + id;
             }
         }
 
+        public String DivisionHead
+        {
+            get {
+                var e = Employee.FindById(this.DivHead.GetValueOrDefault());
+                return e.FullName;
+            }
+        }
 
         public Division() 
         { 

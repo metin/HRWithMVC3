@@ -2,6 +2,7 @@ drop table if exists divisions;
 create table divisions(
  id int NOT NULL AUTO_INCREMENT,
  name varchar(255),
+ DivHead int  default 0,
  primary key (id)
 ) AUTO_INCREMENT = 345;
 
@@ -50,6 +51,8 @@ create table departments(
  id int NOT NULL AUTO_INCREMENT, 
  name varchar(255),
  division_no int,
+ DeptHead int default 0,
+ DivID int  default 0,
  budget decimal(17,2),
  primary key (id),
  unique(name)

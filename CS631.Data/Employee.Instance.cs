@@ -55,7 +55,7 @@ namespace CS631.Data
                                WHERE id = @id;";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@EmpFName", this.EmpFName);
-            cmd.Parameters.AddWithValue("@EmpMI", this.EmpMI);
+            cmd.Parameters.AddWithValue("@EmpMI", (this.EmpMI==null ? " " : this.EmpMI));
             cmd.Parameters.AddWithValue("@EmpLName", this.EmpLName);
             cmd.Parameters.AddWithValue("@EmpTitle", this.EmpTitle);
             cmd.Parameters.AddWithValue("@EmpBuilding", this.EmpBuilding);
