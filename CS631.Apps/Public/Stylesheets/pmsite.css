@@ -45,7 +45,7 @@ p, ul
 {
     padding: 10px;
     margin: 10px 0px 10px 0px;
-    border: solid 5px #e3e5fb;/*#dbd4fb;*//*#b7ddf2;*/
+    border: solid 5px #d3d5f8;/*#dbd4fb;*//*#b7ddf2;*/
     background: #fbfdfe;/*#f8fcfe;*//*#ebf4fb;*/
 }
 .section h1 {
@@ -249,12 +249,12 @@ p, ul
 
 #left_list li a:hover
 {
-    background: #dbd4fb;
+    background: #d3d5f8;
 }
 
 #left_list li.current a 
 {
-    background: #e3e5fb;
+    background: #d3d5f8;
 }
 
 /*

@@ -45,8 +45,8 @@ p, ul
 {
     padding: 10px;
     margin: 10px 0px 10px 0px;
-    border: solid 5px #e3e5fb;/*#dbd4fb;*//*#b7ddf2;*/
-    background: #fbfdfe;/*#f8fcfe;*//*#ebf4fb;*/
+    border: solid 5px #caeec2;/*#dbd4fb;*//*#b7ddf2;*/
+    background: #fbfefd;/*#f8fcfe;*//*#ebf4fb;*/
 }
 .section h1 {
     font-size:14px;
@@ -245,17 +245,17 @@ p, ul
     text-decoration: none;
 }
 
-#left_list li a:link { color: #448; }
-#left_list li a:visited { color: #667; }
+#left_list li a:link { color: #484; }
+#left_list li a:visited { color: #676; }
 
 #left_list li a:hover
 {
-    background: #dbd4fb;
+    background: #caf2c2;
 }
 
 #left_list li.current a 
 {
-    background: #e3e5fb;
+    background: #caeec2;
 }
 
 /*
