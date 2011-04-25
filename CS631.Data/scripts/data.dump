@@ -1,0 +1,219 @@
+-- MySQL dump 10.13  Distrib 5.1.54, for Win32 (ia32)
+--
+-- Host: localhost    Database: cs631
+-- ------------------------------------------------------
+-- Server version	5.1.54-community
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `buildings`
+--
+
+DROP TABLE IF EXISTS `buildings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `buildings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `year` int(11) DEFAULT NULL,
+  `cost` decimal(15,2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=237 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `buildings`
+--
+
+LOCK TABLES `buildings` WRITE;
+/*!40000 ALTER TABLE `buildings` DISABLE KEYS */;
+INSERT INTO `buildings` VALUES (234,'West Tower','TWR1',1980,'1212323.00'),(235,'East Tower','ETWR2',1983,'1121234.00'),(236,'City Center','CC112',2000,'4535023.00');
+/*!40000 ALTER TABLE `buildings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `departments`
+--
+
+DROP TABLE IF EXISTS `departments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `departments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `division_no` int(11) DEFAULT NULL,
+  `DeptHead` int(11) DEFAULT '0',
+  `DivID` int(11) DEFAULT '0',
+  `budget` decimal(17,2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `departments`
+--
+
+LOCK TABLES `departments` WRITE;
+/*!40000 ALTER TABLE `departments` DISABLE KEYS */;
+INSERT INTO `departments` VALUES (1,'Marketing',NULL,0,345,NULL),(2,'Human Resources',NULL,0,345,NULL),(3,'Operations',NULL,0,345,NULL),(4,'Development',NULL,0,345,NULL),(6,'Marketing',NULL,0,346,NULL),(7,'Prodcution',NULL,0,346,NULL),(8,'Quality',NULL,0,346,NULL);
+/*!40000 ALTER TABLE `departments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `divisions`
+--
+
+DROP TABLE IF EXISTS `divisions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `divisions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `DivHead` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=349 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `divisions`
+--
+
+LOCK TABLES `divisions` WRITE;
+/*!40000 ALTER TABLE `divisions` DISABLE KEYS */;
+INSERT INTO `divisions` VALUES (345,'Acme Videos',0),(346,'Acme Printing',0),(347,'Acme Publishing',0),(348,'Acme Science',0);
+/*!40000 ALTER TABLE `divisions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `employees`
+--
+
+DROP TABLE IF EXISTS `employees`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `employees` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `EmpLName` varchar(255) DEFAULT NULL,
+  `EmpFName` varchar(255) DEFAULT NULL,
+  `EmpMI` varchar(3) DEFAULT NULL,
+  `EmpTitle` varchar(255) DEFAULT NULL,
+  `EmpBuilding` int(11) DEFAULT NULL,
+  `EmpOffice` int(11) DEFAULT NULL,
+  `EmpPhone` int(11) DEFAULT NULL,
+  `EmpDept` int(11) DEFAULT NULL,
+  `EmpDiv` int(11) DEFAULT NULL,
+  `EmpProj` int(11) DEFAULT NULL,
+  `EmpType` varchar(255) DEFAULT NULL,
+  `HourRate` decimal(10,2) DEFAULT NULL,
+  `MonthHours` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employees`
+--
+
+LOCK TABLES `employees` WRITE;
+/*!40000 ALTER TABLE `employees` DISABLE KEYS */;
+INSERT INTO `employees` VALUES (123,'Yorulmaz','Metin',NULL,'Developer',234,NULL,NULL,7,345,NULL,'S',NULL,NULL),(124,'Doe','John',NULL,'Accountant',234,NULL,NULL,2,347,NULL,'S',NULL,NULL);
+/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `offices`
+--
+
+DROP TABLE IF EXISTS `offices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `offices` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `area` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2325 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `offices`
+--
+
+LOCK TABLES `offices` WRITE;
+/*!40000 ALTER TABLE `offices` DISABLE KEYS */;
+/*!40000 ALTER TABLE `offices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `projects`
+--
+
+DROP TABLE IF EXISTS `projects`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `projects` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `manager_id` int(11) DEFAULT NULL,
+  `budget` decimal(15,2) DEFAULT NULL,
+  `date_started` date DEFAULT NULL,
+  `date_ended` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=569 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `projects`
+--
+
+LOCK TABLES `projects` WRITE;
+/*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+INSERT INTO `projects` VALUES (567,'Payroll Management',NULL,'560000.00','2011-04-22','2011-04-22'),(568,'Accouning System',NULL,'870000.00','2011-09-24','2011-09-24');
+/*!40000 ALTER TABLE `projects` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rooms`
+--
+
+DROP TABLE IF EXISTS `rooms`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rooms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `building_id` int(11) DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=718 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rooms`
+--
+
+LOCK TABLES `rooms` WRITE;
+/*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
+INSERT INTO `rooms` VALUES (712,234,'TWR-100'),(713,234,'TWR-101'),(714,234,'TWR-200'),(715,234,'TWR-201'),(716,235,'WTWR2-F12'),(717,235,'ETWR2-F61');
+/*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2011-04-24 22:43:35

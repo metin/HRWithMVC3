@@ -39,7 +39,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </div>
         
-        <div style="height:500px;background-color:#7c97b2;">
+        <div style="height:500px;background-color:#111;">
             <div style="text-align:center">
                 Project management
             </div>

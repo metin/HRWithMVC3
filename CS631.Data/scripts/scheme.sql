@@ -54,9 +54,7 @@ create table departments(
  DeptHead int default 0,
  DivID int  default 0,
  budget decimal(17,2),
- primary key (id),
- unique(name)
-
+ primary key (id)
 );
 
 drop table if exists rooms;
