@@ -24,11 +24,11 @@
                     <% foreach (var d in Model)  { %>
                         <tr>
                             <td><%: d.DivisionNo %> </td>
-                            <td><%: d.name %> </td>
+                            <td><%: d.DivName %> </td>
                             <td class="action_buttons"> 
-                                <%: Html.ActionLink("Show", "Details", new { id = d.id }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
-                                <%: Html.ActionLink("Edit", "Edit", new { id = d.id }, new { @class = "jqui_button_edit" })%> 
-                                <%: Html.ActionLink("Delete", "Delete", new { id = d.id }, new { @class = "jqui_button_delete" })%>
+                                <%: Html.ActionLink("Show", "Details", new { id = d.DivID }, new { @class = "jqui_button_show", style = "padding: 0px;" })%> 
+                                <%: Html.ActionLink("Edit", "Edit", new { id = d.DivID }, new { @class = "jqui_button_edit" })%> 
+                                <%: Html.ActionLink("Delete", "Delete", new { id = d.DivID }, new { @class = "jqui_button_delete" })%>
                             </td>
                         </tr>
                     <% } %>

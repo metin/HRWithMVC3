@@ -61,7 +61,7 @@
                     <tr>
                         <th><%: Html.LabelFor(model => model.EmpOffice)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.EmpOffice)%>
+                            <%: Html.DropDownListFor(model => model.EmpOffice, ViewBag.offices as SelectList, "")%>
                             <%: Html.ValidationMessageFor(model => model.EmpOffice)%>
                         </td>
                     </tr>

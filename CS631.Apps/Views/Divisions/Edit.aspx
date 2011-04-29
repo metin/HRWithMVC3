@@ -15,17 +15,17 @@
     <div class="grid_10">
         <div class="section">
             <h1>Edit Division</h1>
-            <p>Edit division <%: Model.name %></p>
+            <p>Edit division <%: Model.DivName %></p>
 
             <% using (Html.BeginForm()) { %>
-                <%: Html.HiddenFor(model => model.id) %>
+                <%: Html.HiddenFor(model => model.DivID) %>
                 <%: Html.ValidationSummary(true) %>
                 <table class="details">
                     <tr>
-                        <th> <%: Html.LabelFor(model => model.name) %></th>
+                        <th> <%: Html.LabelFor(model => model.DivName) %></th>
                         <td>
-                            <%: Html.EditorFor(model => model.name) %>
-                            <%: Html.ValidationMessageFor(model => model.name) %>
+                            <%: Html.EditorFor(model => model.DivName)%>
+                            <%: Html.ValidationMessageFor(model => model.DivName)%>
                         </td>
                     </tr>
                     <tr>

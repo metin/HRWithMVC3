@@ -1,14 +1,15 @@
 drop table if exists divisions;
 create table divisions(
- id int NOT NULL AUTO_INCREMENT,
- name varchar(255),
+ DivID int NOT NULL AUTO_INCREMENT,
+ DivName varchar(255),
  DivHead int  default 0,
- primary key (id)
+ DivHeadDept int,
+ primary key (DivID)
 ) AUTO_INCREMENT = 345;
 
 drop table if exists employees;
 create table employees(
- id int NOT NULL AUTO_INCREMENT,
+ EmpID int NOT NULL AUTO_INCREMENT,
  EmpLName varchar(255),
  EmpFName varchar(255),
  EmpMI varchar(3),
@@ -22,7 +23,7 @@ create table employees(
  EmpType varchar(255),
  HourRate decimal(10,2),
  MonthHours int,
- primary key (id)
+ primary key (EmpID)
 ) AUTO_INCREMENT = 123;
 
 drop table if exists buildings;
@@ -37,23 +38,23 @@ create table buildings(
 
 drop table if exists projects;
 create table projects(
- id int NOT NULL AUTO_INCREMENT,
- name varchar(255),
- manager_id int,
- budget decimal(15, 2),
- date_started date,
- date_ended date,
- primary key (id)
+ ProjID int NOT NULL AUTO_INCREMENT,
+ ProjName varchar(255),
+ ProjBudget decimal(15, 2),
+ ProjManager int,
+ StartDate date,
+ EndDate date,
+ ProjDept int,
+ primary key (ProjID)
 ) AUTO_INCREMENT = 567;
 
 drop table if exists departments;
 create table departments(
- id int NOT NULL AUTO_INCREMENT, 
- name varchar(255),
- division_no int,
+ DeptID int NOT NULL AUTO_INCREMENT, 
+ DeptName varchar(255),
  DeptHead int default 0,
+ DeptBudget decimal(17,2),
  DivID int  default 0,
- budget decimal(17,2),
  primary key (id)
 );
 

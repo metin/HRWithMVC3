@@ -56,9 +56,9 @@ namespace CS631.HR.Controllers
         // POST: /Buildings/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection, Building buiding)
+        public ActionResult Edit(int BuildingID, FormCollection collection, Building buiding)
         {
-            buiding.Id = id;
+            buiding.BuildingID = BuildingID;
             buiding.Update();
             return RedirectToAction("Index");
         }
@@ -73,7 +73,7 @@ namespace CS631.HR.Controllers
  
         public ActionResult Delete(int id)
         {
-            Building p = new Building { Id = id };
+            Building p = new Building { BuildingID = id };
             p.Delete();
             return RedirectToAction("Index");
         }

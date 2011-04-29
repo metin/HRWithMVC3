@@ -9,80 +9,70 @@ namespace CS631.HR.Controllers
 {
     public class EmployeesController : Controller
     {
-        //
-        // GET: /Employees/
 
         public ActionResult Index()
         {
             return View(Employee.FindAll());
         }
 
-        //
-        // GET: /Employees/Details/5
-
         public ActionResult Details(int id)
         {
             return View(Employee.FindById(id));
         }
 
-        //
-        // GET: /Employees/Create
-
         public ActionResult Create()
         {
-            ViewBag.buildings = new SelectList(Building.FindAll(), "id", "name");
-            ViewBag.departments = new SelectList(Department.FindAll(), "id", "name");
-           // ViewBag.offices = new SelectList(Office.FindAll(), "id", "code");
-            ViewBag.divisions = new SelectList(Division.FindAll(), "id", "name");
-
+            ViewBag.buildings = new SelectList(Building.FindAll(), "BuildingID", "BuildingName");
+            ViewBag.departments = new SelectList(Department.FindAll(), "DeptID", "DeptName");
+            ViewBag.offices = new SelectList(Office.FindAll(), "OfficeID", "OfficeNumber");
+            ViewBag.divisions = new SelectList(Division.FindAll(), "DivID", "DivName");
             ViewBag.employment = new SelectList(new string[] {"H", "S" });
-            
-
             return View();
         } 
-
-        //
-        // POST: /Employees/Create
 
         [HttpPost]
         public ActionResult Create(FormCollection collection, Employee e)
         {
             e.Save();
-            return RedirectToAction("Index", new {id = e.id} ) ;
+            return RedirectToAction("Index", new {id = e.EmpID} ) ;
         }
         
-        //
-        // GET: /Employees/Edit/5
- 
         public ActionResult Edit(int id)
         {
-            ViewBag.buildings = new SelectList(Building.FindAll(), "id", "name");
-            ViewBag.departments = new SelectList(Department.FindAll(), "id", "name");
-            // ViewBag.offices = new SelectList(Office.FindAll(), "id", "code");
-            ViewBag.divisions = new SelectList(Division.FindAll(), "id", "name");
-
-            ViewBag.employment = new SelectList(new string[] {"H", "S" });
-
+            ViewBag.buildings = new SelectList(Building.FindAll(), "BuildingID", "BuildingName");
+            ViewBag.departments = new SelectList(Department.FindAll(), "DeptID", "DeptName");
+            ViewBag.offices = new SelectList(Office.FindAll(), "OfficeID", "OfficeNumber");
+            ViewBag.divisions = new SelectList(Division.FindAll(), "DivID", "DivName");
+            ViewBag.employment = new SelectList(new string[] { "H", "S" });
             return View(Employee.FindById(id));
         }
 
-        //
-        // POST: /Employees/Edit/5
-
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection, Employee e)
+        public ActionResult Edit(int EmpID, FormCollection collection, Employee e)
         {
-            e.id = id;
+            e.EmpID = EmpID;
             e.Update();
             return RedirectToAction("Index");
         }
 
-        //
-        // GET: /Employees/Delete/5
- 
+
+        public ActionResult Salary(int id)
+        {
+            Employee emp = Employee.FindById(id);
+            return View(emp);
+        }
+
+        [HttpPost]
+        public ActionResult Salary(int EmpID, EmployeeSalary employeeSalary)
+        {
+            employeeSalary.EmpID = EmpID;
+            employeeSalary.Save();
+            return RedirectToAction("Salary", new { id = EmpID});
+        }
+
         public ActionResult Delete(int id)
         {
-            Employee e = new Employee { id = id };
+            Employee e = new Employee { EmpID = id };
             e.Delete();
             return RedirectToAction("Index");
         }

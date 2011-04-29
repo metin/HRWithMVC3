@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BuildingsController.cs" />
+    <Compile Include="Controllers\OfficesController.cs" />
     <Compile Include="Controllers\PmHomeController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -136,8 +137,15 @@
     <Content Include="Views\Employees\Edit.aspx" />
     <Content Include="Views\Employees\Index.aspx" />
     <Content Include="Views\Employees\LeftMenu.ascx" />
+    <Content Include="Views\Employees\Salary.aspx" />
     <Content Include="Views\Employees\SubMenu.ascx" />
     <Content Include="Views\Home\SubMenu.ascx" />
+    <Content Include="Views\Offices\Create.aspx" />
+    <Content Include="Views\Offices\Details.aspx" />
+    <Content Include="Views\Offices\Edit.aspx" />
+    <Content Include="Views\Offices\Index.aspx" />
+    <Content Include="Views\Offices\LeftMenu.ascx" />
+    <Content Include="Views\Offices\SubMenu.ascx" />
     <Content Include="Views\PmHome\Index.aspx" />
     <Content Include="Views\PmHome\SubMenu.ascx" />
     <Content Include="Views\Projects\Create.aspx" />

@@ -23,10 +23,10 @@ namespace CS631.Data
             while(dr.Read())
             {
                 p = new Department();
-                p.id = dr.GetInt32("id");
-                p.name = dr.GetString("name");
+                p.DeptID = dr.GetInt32("DeptID");
+                p.DeptName = dr.GetString("DeptName");
                 p.DeptHead = dr.GetInt32("DeptHead");
-                p.DivId = dr.GetInt32("DivId");
+                p.DivID = dr.GetInt32("DivID");
                 Departments.Add(p);
             }
             c.Close();
@@ -37,8 +37,8 @@ namespace CS631.Data
         {
             MySqlConnection c = getConnection();
             MySqlCommand cmd = c.CreateCommand();
-            c.Open(); 
-            cmd.CommandText = "SELECT * FROM Departments where id = @id;";
+            c.Open();
+            cmd.CommandText = "SELECT * FROM Departments where DeptID = @id;";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandType = System.Data.CommandType.Text;
@@ -46,10 +46,10 @@ namespace CS631.Data
             Department d = new Department();
             while (dr.Read())
             {
-                d.id = dr.GetInt32("id");
-                d.name = dr.GetString("name");
+                d.DeptID = dr.GetInt32("DeptID");
+                d.DeptName = dr.GetString("DeptName");
                 d.DeptHead = dr.GetInt32("DeptHead");
-                d.DivId = dr.GetInt32("DivId");
+                d.DivID = dr.GetInt32("DivId");
             }
             c.Close();
             return d;
@@ -61,9 +61,9 @@ namespace CS631.Data
             MySqlConnection c = getConnection();
             MySqlCommand cmd = c.CreateCommand();
             c.Open();
-            cmd.CommandText = "SELECT * FROM Departments  where DivId = @DivId;";
+            cmd.CommandText = "SELECT * FROM Departments  where DivID = @DivID;";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@DivId", DivId);
+            cmd.Parameters.AddWithValue("@DivID", DivId);
             cmd.CommandType = System.Data.CommandType.Text;
             MySqlDataReader dr = cmd.ExecuteReader();
             Department p = null;
@@ -71,10 +71,10 @@ namespace CS631.Data
             while (dr.Read())
             {
                 p = new Department();
-                p.id = dr.GetInt32("id");
-                p.name = dr.GetString("name");
+                p.DeptID = dr.GetInt32("DeptID");
+                p.DeptName = dr.GetString("DeptName");
                 p.DeptHead = dr.GetInt32("DeptHead");
-                p.DivId = dr.GetInt32("DivId");
+                p.DivID = dr.GetInt32("DivId");
                 Departments.Add(p);
             }
             c.Close();

@@ -26,14 +26,14 @@
                 <tbody>
                     <% foreach (var p in Model)  { %>
                         <tr>
-                            <td><%: p.Code %> </td>
-                            <td><%: p.Name %> </td>
-                            <td><%: p.Year %> </td>
-                            <td> <%: String.Format("${0:F}", p.Cost) %></td>
+                            <td><%: p.BuildingCode %> </td>
+                            <td><%: p.BuildingName %> </td>
+                            <td><%: p.YearAcquired %> </td>
+                            <td> <%: String.Format("${0:F}", p.BuildingCost) %></td>
                             <td class="action_buttons"> 
-                                <%: Html.ActionLink("Show", "Details", new { id = p.Id }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
-                                <%: Html.ActionLink("Edit", "Edit", new { id = p.Id }, new { @class = "jqui_button_edit" })%> 
-                                <%: Html.ActionLink("Delete", "Delete", new { id = p.Id }, new { @class = "jqui_button_delete" })%>
+                                <%: Html.ActionLink("Show", "Details", new { id = p. BuildingID }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
+                                <%: Html.ActionLink("Edit", "Edit", new { id = p.BuildingID }, new { @class = "jqui_button_edit" })%> 
+                                <%: Html.ActionLink("Delete", "Delete", new { id = p.BuildingID }, new { @class = "jqui_button_delete" })%>
                             </td>
                         </tr>
                     <% } %>

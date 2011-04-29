@@ -20,7 +20,7 @@
             <% using (Html.BeginForm()) { %>
                 <%: Html.ValidationSummary(true) %>
 
-                <%: Html.HiddenFor(model => model.id) %>
+                <%: Html.HiddenFor(model => model.EmpID)%>
                 <table class="details">
                     <tr>
                         <th><%: Html.LabelFor(model => model.EmpFName) %></th>
@@ -64,7 +64,7 @@
                     <tr>
                         <th><%: Html.LabelFor(model => model.EmpOffice)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.EmpOffice)%>
+                            <%: Html.DropDownListFor(model => model.EmpOffice, ViewBag.offices as SelectList, "")%>
                             <%: Html.ValidationMessageFor(model => model.EmpOffice)%>
                         </td>
                     </tr>

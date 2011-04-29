@@ -23,7 +23,7 @@ namespace CS631.Data
             while(dr.Read())
             {
                 e = new Employee();
-                e.id = dr.GetInt32("id");
+                e.EmpID = dr.GetInt32("EmpID");
                 e.EmpFName = dr.GetString("EmpFName");
                 e.EmpMI = dr["EmpMI"] as string;  //dr.GetString("EmpMI");
                 e.EmpLName = dr.GetString("EmpLName");
@@ -46,7 +46,7 @@ namespace CS631.Data
             MySqlConnection c = getConnection();
             MySqlCommand cmd = c.CreateCommand();
             c.Open(); 
-            cmd.CommandText = "SELECT * FROM employees where id = @id;";
+            cmd.CommandText = "SELECT * FROM employees where EmpID = @id;";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandType = System.Data.CommandType.Text;
@@ -54,7 +54,7 @@ namespace CS631.Data
             Employee e = new Employee();
             while (dr.Read())
             {
-                e.id = dr.GetInt32("id");
+                e.EmpID = dr.GetInt32("EmpID");
                 e.EmpFName = dr.GetString("EmpFName");
                 e.EmpMI = dr["EmpMI"] as string;  //dr.GetString("EmpMI");
                 e.EmpLName = dr.GetString("EmpLName");

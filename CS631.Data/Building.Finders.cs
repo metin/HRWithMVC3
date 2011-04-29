@@ -23,11 +23,11 @@ namespace CS631.Data
             while(dr.Read())
             {
                 p = new Building();
-                p.Id = dr.GetInt32("id");
-                p.Code = dr.GetString("code");
-                p.Name = dr.GetString("name");
-                p.Year = dr.GetInt32("year");
-                p.Cost = dr.GetDecimal("cost");
+                p.BuildingID = dr.GetInt32("BuildingID");
+                p.BuildingCode = dr.GetString("BuildingCode");
+                p.BuildingName = dr.GetString("BuildingName");
+                p.YearAcquired = dr.GetInt32("YearAcquired");
+                p.BuildingCost = dr.GetDecimal("BuildingCost");
                 buildings.Add(p);
             }
             c.Close();
@@ -40,7 +40,7 @@ namespace CS631.Data
             MySqlConnection c = getConnection();
             MySqlCommand cmd = c.CreateCommand();
             c.Open();
-            cmd.CommandText = "SELECT * FROM buildings where id = @id;";
+            cmd.CommandText = "SELECT * FROM buildings where BuildingID = @id;";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandType = System.Data.CommandType.Text;
@@ -48,11 +48,11 @@ namespace CS631.Data
             Building b = new Building();
             while (dr.Read())
             {
-                b.Id = dr.GetInt32("id");
-                b.Code = dr.GetString("code");
-                b.Name = dr.GetString("name");
-                b.Year = dr.GetInt32("year");
-                b.Cost = dr.GetDecimal("cost");
+                b.BuildingID = dr.GetInt32("BuildingID");
+                b.BuildingCode = dr.GetString("BuildingCode");
+                b.BuildingName = dr.GetString("BuildingName");
+                b.YearAcquired = dr.GetInt32("YearAcquired");
+                b.BuildingCost = dr.GetDecimal("BuildingCost");
             }
             c.Close();
             return b;

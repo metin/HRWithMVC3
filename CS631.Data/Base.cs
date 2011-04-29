@@ -17,7 +17,7 @@ namespace CS631.Data
         public Base()
         {
             _connection = new MySqlConnection();
-            _connection.ConnectionString = "Server=localhost;Database=cs631;Uid=ODBC;Pwd=;";
+            _connection.ConnectionString = "Server=localhost;Database=cs2;Uid=ODBC;Pwd=;";
             //MySqlCommand cmd = c.CreateCommand();
             //cmd.CommandText = "Select * from tbl1";
             //c.Open();
@@ -28,7 +28,7 @@ namespace CS631.Data
         public static MySqlConnection getConnection()
         {
             MySqlConnection c = new MySqlConnection();
-            c.ConnectionString = "Server=localhost;Database=cs631;Uid=ODBC;Pwd=;";
+            c.ConnectionString = "Server=localhost;Database=cs2;Uid=ODBC;Pwd=;";
             return c;
         }
     }

@@ -17,31 +17,31 @@
                 <%: Html.ValidationSummary(true) %>
                 <table class="details">
                     <tr>
-                        <th><%: Html.LabelFor(model => model.Name) %></th>
+                        <th><%: Html.LabelFor(model => model.BuildingName)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.Name) %>
-                            <%: Html.ValidationMessageFor(model => model.Name) %>
+                            <%: Html.EditorFor(model => model.BuildingName)%>
+                            <%: Html.ValidationMessageFor(model => model.BuildingName)%>
                         </td>
                     </tr>
                     <tr>
-                        <th> <%: Html.LabelFor(model => model.Code)%></th>
+                        <th> <%: Html.LabelFor(model => model.BuildingCode)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.Code) %>
-                            <%: Html.ValidationMessageFor(model => model.Code)%>
+                            <%: Html.EditorFor(model => model.BuildingCode)%>
+                            <%: Html.ValidationMessageFor(model => model.BuildingCode)%>
                         </td>
                     </tr>
                     <tr>
-                        <th><%: Html.LabelFor(model => model.Year)%></th>
+                        <th><%: Html.LabelFor(model => model.YearAcquired)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.Year) %>
-                            <%: Html.ValidationMessageFor(model => model.Year)%>
+                            <%: Html.EditorFor(model => model.YearAcquired)%>
+                            <%: Html.ValidationMessageFor(model => model.YearAcquired)%>
                         </td>
                     </tr>
                     <tr>
-                        <th><%: Html.LabelFor(model => model.Cost)%></th>
+                        <th><%: Html.LabelFor(model => model.BuildingCost)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.Cost)%>
-                            <%: Html.ValidationMessageFor(model => model.Cost)%>
+                            <%: Html.EditorFor(model => model.BuildingCost)%>
+                            <%: Html.ValidationMessageFor(model => model.BuildingCost)%>
                         </td>
                     </tr>
                 </table>

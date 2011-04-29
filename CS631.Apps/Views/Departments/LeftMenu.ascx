@@ -6,10 +6,10 @@
 <div id="left_menu">
     <ul id="left_list">
         <li class="<%: curAction=="Details" ? "current" : "" %>">
-            <%: Html.ActionLink("Show", "Details", new { id = d.id })%>
+            <%: Html.ActionLink("Show", "Details", new { id = d.DeptID })%>
         </li>
         <li class="<%: curAction=="Edit" ? "current" : "" %>">
-            <%: Html.ActionLink("Edit", "Edit", new { id = d.id })%>
+            <%: Html.ActionLink("Edit", "Edit", new { id = d.DeptID })%>
         </li>
     </ul>
 </div>

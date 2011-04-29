@@ -10,24 +10,28 @@ namespace CS631.Data
     public partial class Building : Base
     {
 
-        public int Id { get; set; }
+        public int BuildingID { get; set; }
 
         [Required]
         [DisplayName("Building Name")]
-        public string Name { get; set; }
+        public string BuildingName { get; set; }
 
 
         [Required]
         [DisplayName("Building Code")]
-        public string Code { get; set; }
+        public string BuildingCode { get; set; }
 
         [Required]
         [DisplayName("Year Build")]
-        public int Year { get; set; }
+        public int YearAcquired { get; set; }
 
         [Required]
         [DisplayName("Built Cost")]
-        public decimal Cost { get; set; }
+        public decimal BuildingCost { get; set; }
+
+        
+        [DisplayName("Built Cost")]
+        public string AcqType { get; set; }
 
         public Building() 
         { 

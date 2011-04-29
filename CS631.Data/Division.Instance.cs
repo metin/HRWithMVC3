@@ -13,14 +13,14 @@ namespace CS631.Data
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "INSERT INTO Divisions (name, DivHead) VALUES(@name, @DivHead);";
+            cmd.CommandText = "INSERT INTO Divisions (DivName, DivHead) VALUES(@name, @DivHead);";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@name", this.name);
+            cmd.Parameters.AddWithValue("@name", this.DivName);
             cmd.Parameters.AddWithValue("@DivHead", this.DivHead.GetValueOrDefault());
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             cmd.CommandText = "SELECT LAST_INSERT_ID();";
-            this.id = Convert.ToInt32(cmd.ExecuteScalar());
+            this.DivID = Convert.ToInt32(cmd.ExecuteScalar());
             connection.Close();
             return this;
         }
@@ -30,12 +30,12 @@ namespace CS631.Data
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = @"UPDATE Divisions set 
-                                name = @name, DivHead = @DivHead 
-                                WHERE id = @id;";
+                                DivName = @name, DivHead = @DivHead 
+                                WHERE DivID = @id;";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@name", this.name);
+            cmd.Parameters.AddWithValue("@name", this.DivName);
             cmd.Parameters.AddWithValue("@DivHead", this.DivHead.GetValueOrDefault());
-            cmd.Parameters.AddWithValue("@id", this.id);
+            cmd.Parameters.AddWithValue("@id", this.DivID);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             connection.Close();
@@ -43,16 +43,16 @@ namespace CS631.Data
 
         public IEnumerable<Department> Departments()
         {
-            return Department.FindByDivisionID(this.id);
+            return Department.FindByDivisionID(this.DivID);
         }
 
         public void Delete()
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "DELETE FROM Divisions WHERE id = @id;";
+            cmd.CommandText = "DELETE FROM Divisions WHERE DivID = @id;";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@id", this.id);
+            cmd.Parameters.AddWithValue("@id", this.DivID);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             connection.Close();

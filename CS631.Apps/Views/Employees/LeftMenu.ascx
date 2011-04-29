@@ -6,16 +6,16 @@
 <div id="left_menu">
     <ul id="left_list">
         <li class="<%: curAction=="Details" ? "current" : "" %>">
-            <%: Html.ActionLink("Show", "Details", new { id = e.id })%>
+            <%: Html.ActionLink("Show", "Details", new { id = e.EmpID })%>
         </li>
         <li class="<%: curAction=="Edit" ? "current" : "" %>">
-            <%: Html.ActionLink("Edit", "Edit", new { id = e.id })%>
+            <%: Html.ActionLink("Edit", "Edit", new { id = e.EmpID })%>
         </li>
-        <li class="<%: curAction=="Employmeny History" ? "current" : "" %>">
-            <%: Html.ActionLink("Salary", "Edit", new { id = e.id })%>
+        <li class="<%: curAction=="Salary" ? "current" : "" %>">
+            <%: Html.ActionLink("Salary", "Salary", new { id = e.EmpID })%>
         </li>
-        <li class="<%: curAction=="Employmeny History" ? "current" : "" %>">
-            <%: Html.ActionLink("Employmeny History", "Edit", new { id = e.id })%>
+        <li class="<%: curAction=="Payroll" ? "current" : "" %>">
+            <%: Html.ActionLink("Payroll", "Edit", new { id = e.EmpID })%>
         </li>
 
     </ul>

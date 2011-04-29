@@ -20,10 +20,14 @@
         <li class="<%: (curController=="Buildings") ? "current" : "" %>">
             <%: Html.ActionLink("Buildings", "Index", "Buildings")%>
         </li>
-
-
+        <!--
         <li class="<%: (curController=="Rooms") ? "current" : "" %>">
             <%: Html.ActionLink("Rooms", "Index", "Rooms")%>
+        </li>
+        -->
+
+        <li class="<%: (curController=="Offices") ? "current" : "" %>">
+            <%: Html.ActionLink("Offices", "Index", "Offices")%>
         </li>
 
         <li class="<%: curController=="Employees" ? "current" : "" %>">

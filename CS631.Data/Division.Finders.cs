@@ -23,8 +23,8 @@ namespace CS631.Data
             while(dr.Read())
             {
                 p = new Division();
-                p.id = dr.GetInt32("id");
-                p.name = dr.GetString("name");
+                p.DivID = dr.GetInt32("DivID");
+                p.DivName = dr.GetString("DivName");
                 p.DivHead = dr.GetInt32("DivHead");
                 divisions.Add(p);
             }
@@ -36,9 +36,9 @@ namespace CS631.Data
         {
             MySqlConnection c = getConnection();
             MySqlCommand cmd = c.CreateCommand();
-            c.Open(); 
+            c.Open();
 
-            cmd.CommandText = "SELECT * FROM Divisions where id = @id;";
+            cmd.CommandText = "SELECT * FROM Divisions where DivID = @id;";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@id", id);
             cmd.CommandType = System.Data.CommandType.Text;
@@ -46,8 +46,8 @@ namespace CS631.Data
             Division d = new Division();
             while (dr.Read())
             {
-                d.id = dr.GetInt32("id");
-                d.name = dr.GetString("name");
+                d.DivID = dr.GetInt32("DivID");
+                d.DivName = dr.GetString("DivName");
                 d.DivHead = dr.GetInt32("DivHead");
             }
             c.Close();

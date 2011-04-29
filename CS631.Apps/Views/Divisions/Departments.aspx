@@ -17,7 +17,7 @@
 
         <div class="section" > 
             <h1>Departments</h1>
-            <p>List Of Departments in division <%: Model.name %> </p>
+            <p>List Of Departments in division <%: Model.DivName %> </p>
             <table width="100%">
                 <thead>
                     <tr>
@@ -30,11 +30,11 @@
                     <% foreach (var d in Model.Departments())  { %>
                         <tr>
                             <td><%: d.DepartmentNo %> </td>
-                            <td><%: d.name %> </td>
+                            <td><%: d.DeptName %> </td>
 
                             <td class="action_buttons"> 
-                                <%: Html.ActionLink("Show", "Details", new { id = d.id }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
-                                <%: Html.ActionLink("Edit", "Edit", new { id = d.id }, new { @class = "jqui_button_edit" })%> 
+                                <%: Html.ActionLink("Show", "Details", new { id = d.DeptID }, new { @class = "jqui_button_show", style = "padding: 0px;" })%> 
+                                <%: Html.ActionLink("Edit", "Edit", new { id = d.DeptID }, new { @class = "jqui_button_edit" })%> 
                             </td>
                         </tr>
                     <% } %>

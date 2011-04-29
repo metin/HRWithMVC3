@@ -28,7 +28,7 @@
                 <tr>
                     <th> <label>Departmen Name</label> </th>
                     <td>
-                        <%: Model.name %>
+                        <%: Model.DeptName%>
                     </td>
                 </tr>
                 <tr>

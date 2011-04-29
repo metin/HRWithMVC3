@@ -15,17 +15,17 @@
     <div class="grid_10">
         <div class="section">
             <h1>Edit Department</h1>
-            <p>Edit department <%: Model.name %></p>
+            <p>Edit department <%: Model.DeptName%></p>
 
             <% using (Html.BeginForm()) { %>
                 <%: Html.ValidationSummary(true) %>
-
+                <%: Html.HiddenFor(model => model.DeptID) %>
                 <table class="details">
                     <tr>
-                        <th> <%: Html.LabelFor(model => model.name) %></th>
+                        <th> <%: Html.LabelFor(model => model.DeptName)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.name) %>
-                            <%: Html.ValidationMessageFor(model => model.name) %>
+                            <%: Html.EditorFor(model => model.DeptName)%>
+                            <%: Html.ValidationMessageFor(model => model.DeptName)%>
                         </td>
                     </tr>
 
@@ -38,10 +38,10 @@
                     </tr>
 
                     <tr>
-                        <th><%: Html.LabelFor(model => model.DivId)%></th>
+                        <th><%: Html.LabelFor(model => model.DivID)%></th>
                         <td>
-                            <%: Html.DropDownListFor(model => model.DivId, ViewBag.divisions as SelectList, "")%>
-                            <%: Html.ValidationMessageFor(model => model.DivId)%>
+                            <%: Html.DropDownListFor(model => model.DivID, ViewBag.divisions as SelectList, "")%>
+                            <%: Html.ValidationMessageFor(model => model.DivID)%>
                         </td>
                     </tr>
 

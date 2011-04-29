@@ -13,17 +13,20 @@ namespace CS631.Data
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "INSERT INTO buildings (name, code, year, cost) VALUES(@name, @code, @year, @cost);";
+            cmd.CommandText = @"INSERT INTO buildings 
+                                    (BuildingName, BuildingCode, YearAcquired, BuildingCost) 
+                                VALUES
+                                    (@name, @code, @year, @cost);";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@name", this.Name);
-            cmd.Parameters.AddWithValue("@code", this.Code);
-            cmd.Parameters.AddWithValue("@year", this.Year);
-            cmd.Parameters.AddWithValue("@cost", this.Cost);
+            cmd.Parameters.AddWithValue("@name", this.BuildingName);
+            cmd.Parameters.AddWithValue("@code", this.BuildingCode);
+            cmd.Parameters.AddWithValue("@year", this.YearAcquired);
+            cmd.Parameters.AddWithValue("@cost", this.BuildingCost);
 
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             cmd.CommandText = "SELECT LAST_INSERT_ID();";
-            this.Id = Convert.ToInt32(cmd.ExecuteScalar());
+            this.BuildingID = Convert.ToInt32(cmd.ExecuteScalar());
             connection.Close();
             return this;
         }
@@ -32,13 +35,16 @@ namespace CS631.Data
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "UPDATE buildings set name = @name, code = @code, year = @year, cost = @cost WHERE id = @id;";
+            cmd.CommandText = @"UPDATE buildings set 
+                                    BuildingName = @name, BuildingCode = @code, 
+                                    YearAcquired = @year, BuildingCost = @cost 
+                                WHERE BuildingID = @id;";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@name", this.Name);
-            cmd.Parameters.AddWithValue("@code", this.Code);
-            cmd.Parameters.AddWithValue("@year", this.Year);
-            cmd.Parameters.AddWithValue("@cost", this.Cost);
-            cmd.Parameters.AddWithValue("@id", this.Id);
+            cmd.Parameters.AddWithValue("@name", this.BuildingName);
+            cmd.Parameters.AddWithValue("@code", this.BuildingCode);
+            cmd.Parameters.AddWithValue("@year", this.YearAcquired);
+            cmd.Parameters.AddWithValue("@cost", this.BuildingCost);
+            cmd.Parameters.AddWithValue("@id", this.BuildingID);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             connection.Close();
@@ -49,9 +55,9 @@ namespace CS631.Data
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "DELETE FROM buildings WHERE id = @id;";
+            cmd.CommandText = "DELETE FROM buildings WHERE BuildingID = @id;";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@id", this.Id);
+            cmd.Parameters.AddWithValue("@id", this.BuildingID);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             connection.Close();
@@ -59,7 +65,7 @@ namespace CS631.Data
 
         public IEnumerable<Room> Rooms()
         {
-            return Room.FindByBuildingId(this.Id);
+            return Room.FindByBuildingId(this.BuildingID);
         }
 
     }

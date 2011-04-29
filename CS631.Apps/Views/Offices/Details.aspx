@@ -1,11 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<CS631.Data.Building>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<CS631.Data.Office>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Details
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
 
 
     <% Html.RenderPartial("SubMenu"); %>
@@ -16,40 +15,45 @@
 
     <div class="grid_10">
         <div class="section">
-
-            <h1>Building Details</h1>
+            
+            <h1>Showing Office</h1>
             <p>Details of building</p>
 
             <table class="details">
                 <tr>
-                    <th><%: Html.LabelFor(model => model.BuildingName)%></th>
+                    <th><%: Html.LabelFor(model => Model.BuildingID)%></th>
                     <td>
-                        <%: Model.BuildingName%>
+                        <%: Model.BuildingID %>
                     </td>
                 </tr>
                 <tr>
-                    <th> <%: Html.LabelFor(model => model.BuildingCode)%></th>
+                    <th> <%: Html.LabelFor(model => Model.DeptID)%></th>
                     <td>
-                        <%: Model.BuildingCode%>
+                        <%: Model.DeptID %>
                     </td>   
                 </tr>
                 <tr>
-                    <th><%: Html.LabelFor(model => model.YearAcquired)%></th>
+                    <th><%: Html.LabelFor(model => Model.OfficeNumber) %></th>
                     <td>
-                        <%: Model.YearAcquired%>
+                        <%: Model.OfficeNumber %>
                     </td>
                 </tr>
                 <tr>
-                    <th><%: Html.LabelFor(model => model.BuildingCost)%></th>
+                    <th><%: Html.LabelFor(model => Model.Area)%></th>
                     <td>
-                        <%: String.Format("${0:F}", Model.BuildingCost)%>
+                        <%: String.Format("${0:F}", Model.Area)%>
+                    </td>
+                </tr>
+                <tr>
+                    <th><%: Html.LabelFor(model => Model.RoomType)%></th>
+                    <td>
+                        <%: Model.RoomType%>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
     <div class="clear"></div> 
-
 
 
 </asp:Content>

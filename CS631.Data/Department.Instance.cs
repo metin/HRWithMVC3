@@ -14,17 +14,17 @@ namespace CS631.Data
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = @"INSERT INTO Departments 
-                                    (name, DeptHead, DivID) 
+                                    (DeptName, DeptHead, DivID) 
                                 VALUES
                                     (@name, @DeptHead, @DivID);";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@name", this.name);
+            cmd.Parameters.AddWithValue("@name", this.DeptName);
             cmd.Parameters.AddWithValue("@DeptHead", this.DeptHead.GetValueOrDefault());
-            cmd.Parameters.AddWithValue("@DivID", this.DivId);
+            cmd.Parameters.AddWithValue("@DivID", this.DivID);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             cmd.CommandText = "SELECT LAST_INSERT_ID();";
-            this.id = Convert.ToInt32(cmd.ExecuteScalar());
+            this.DeptID = Convert.ToInt32(cmd.ExecuteScalar());
             connection.Close();
             return this;
         }
@@ -35,14 +35,14 @@ namespace CS631.Data
             MySqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = @"UPDATE Departments 
                                 SET 
-                                    name = @name, DeptHead = @DeptHead, DivID = @DivID 
-                                WHERE id = @id;";
+                                    DeptName = @name, DeptHead = @DeptHead, DivID = @DivID 
+                                WHERE DeptID = @id;";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@name", this.name);
+            cmd.Parameters.AddWithValue("@name", this.DeptName);
             cmd.Parameters.AddWithValue("@DeptHead", this.DeptHead.GetValueOrDefault());
-            cmd.Parameters.AddWithValue("@DivID", this.DivId);
+            cmd.Parameters.AddWithValue("@DivID", this.DivID);
 
-            cmd.Parameters.AddWithValue("@id", this.id);
+            cmd.Parameters.AddWithValue("@id", this.DeptID);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             connection.Close();
@@ -53,9 +53,9 @@ namespace CS631.Data
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "DELETE FROM Departments WHERE id = @id;";
+            cmd.CommandText = "DELETE FROM Departments WHERE DeptID = @id;";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@id", this.id);
+            cmd.Parameters.AddWithValue("@id", this.DeptID);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             connection.Close();

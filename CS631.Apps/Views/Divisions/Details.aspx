@@ -27,7 +27,7 @@
                 <tr>
                     <th> <label>Divison Name</label> </th>
                     <td>
-                        <%: Model.name %>
+                        <%: Model.DivName %>
                     </td>
                 </tr>
                 <tr>

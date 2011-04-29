@@ -8,14 +8,14 @@
 <div id="left_menu">
     <ul id="left_list">
         <li class="<%: curAction=="Details" ? "current" : "" %>">
-            <%: Html.ActionLink("Show", "Details", new { id = b.Id })%>
+            <%: Html.ActionLink("Show", "Details", new { id = b.BuildingID })%>
         </li>
         <li class="<%: curAction=="Edit" ? "current" : "" %>">
-            <%: Html.ActionLink("Edit", "Edit", new { id = b.Id })%>
+            <%: Html.ActionLink("Edit", "Edit", new { id = b.BuildingID })%>
         </li>
 
         <li class="<%: curAction=="Rooms" ? "current" : "" %>">
-            <%: Html.ActionLink("Rooms", "Rooms", new { id = b.Id },  new{}  ) %>
+            <%: Html.ActionLink("Rooms", "Rooms", new { id = b.BuildingID }, new { })%>
         </li>   
      </ul>
 </div>

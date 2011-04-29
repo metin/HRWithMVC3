@@ -11,11 +11,11 @@ namespace CS631.Data
     {
         [Required]
         [DisplayName("Division Code")]
-        public int id { get; set; }
+        public int DivID { get; set; }
 
         [Required]
         [DisplayName("Division Name")]
-        public string name { get; set; }
+        public string DivName { get; set; }
 
         [DisplayName("Division Head")]
         public int? DivHead { get; set; }
@@ -23,7 +23,7 @@ namespace CS631.Data
 
         public string DivisionNo {
             get {
-                return "DV-" + id;
+                return "DV-" + DivID;
             }
         }
 

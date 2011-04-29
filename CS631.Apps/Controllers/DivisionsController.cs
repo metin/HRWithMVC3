@@ -41,7 +41,7 @@ namespace CS631.Controllers
         public ActionResult Create(FormCollection collection, Division d)
         {
             d.Save();
-            return RedirectToAction("Index", new { id = d.id });
+            return RedirectToAction("Index", new { id = d.DivID });
         }
         
         //
@@ -49,7 +49,7 @@ namespace CS631.Controllers
  
         public ActionResult Edit(int id)
         {
-            ViewBag.employees = new SelectList(Employee.FindAll(), "id", "EmpFName");
+            ViewBag.employees = new SelectList(Employee.FindAll(), "DivID", "EmpFName");
             return View(Division.FindByID(id));
         }
 
@@ -59,7 +59,7 @@ namespace CS631.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collectio, Division d)
         {
-            d.id = id;
+            d.DivID = id;
             d.Update();
             return RedirectToAction("Index");
         }
@@ -74,7 +74,7 @@ namespace CS631.Controllers
  
         public ActionResult Delete(int id)
         {
-            Division d = new Division { id = id };
+            Division d = new Division { DivID = id };
             d.Delete();
             return RedirectToAction("Index");
         }

@@ -10,7 +10,7 @@ namespace CS631.Data
     public partial class Employee : Base
     {
         [Required]
-        public int id { get; set; }
+        public int EmpID { get; set; }
 
         [Required]
         [DisplayName("First Name")]
@@ -57,7 +57,7 @@ namespace CS631.Data
         public string EmployeeNO
         {
             get {
-                return "EMP-" + id;
+                return "EMP-" + EmpID;
             }
         }
 

@@ -10,18 +10,18 @@ namespace CS631.Data
     public partial class Department : Base
     {
         [Required]
-        public int id { get; set; }
+        public int DeptID { get; set; }
 
         [Required]
         [DisplayName("Department Name")]
-        public string name { get; set; }
+        public string DeptName { get; set; }
 
         [DisplayName("Department Head")]
         public int? DeptHead { get; set; }
 
         [Required]
         [DisplayName("Division")]
-        public int DivId { get; set; }
+        public int DivID { get; set; }
         
 
         public String DepartmentHead
@@ -37,7 +37,7 @@ namespace CS631.Data
         {
             get
             {
-                var d = Division.FindByID(this.DivId);
+                var d = Division.FindByID(this.DivID);
                 return d.DivisionNo;
             }
         }
@@ -46,7 +46,7 @@ namespace CS631.Data
         {
             get
             {
-                return "DP-" + id;
+                return "DP-" + DeptID;
             }
         }
 
