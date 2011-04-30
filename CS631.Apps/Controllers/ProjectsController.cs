@@ -97,5 +97,10 @@ namespace CS631.HR.Controllers
             projectmember.Save();
             return RedirectToAction("Members", new { id=ProjID});
         }
+
+        public ActionResult Bugs(int id)
+        {
+            return View(Project.FindById(id));
+        }
     }
 }

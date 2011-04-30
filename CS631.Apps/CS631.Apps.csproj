@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BugsController.cs" />
     <Compile Include="Controllers\BuildingsController.cs" />
     <Compile Include="Controllers\MilestonesController.cs" />
     <Compile Include="Controllers\OfficesController.cs" />
@@ -114,6 +115,12 @@
     <Content Include="Public\Stylesheets\960.css" />
     <Content Include="Public\Stylesheets\reset.css" />
     <Content Include="Public\Stylesheets\text.css" />
+    <Content Include="Views\Bugs\Create.aspx" />
+    <Content Include="Views\Bugs\Details.aspx" />
+    <Content Include="Views\Bugs\Edit.aspx" />
+    <Content Include="Views\Bugs\Index.aspx" />
+    <Content Include="Views\Bugs\LeftMenu.ascx" />
+    <Content Include="Views\Bugs\SubMenu.ascx" />
     <Content Include="Views\Buildings\Edit.aspx" />
     <Content Include="Views\Buildings\Create.aspx" />
     <Content Include="Views\Buildings\Details.aspx" />
@@ -159,6 +166,7 @@
     <Content Include="Views\Offices\SubMenu.ascx" />
     <Content Include="Views\PmHome\Index.aspx" />
     <Content Include="Views\PmHome\SubMenu.ascx" />
+    <Content Include="Views\Projects\Bugs.aspx" />
     <Content Include="Views\Projects\Create.aspx" />
     <Content Include="Views\Projects\Details.aspx" />
     <Content Include="Views\Projects\Edit.aspx" />

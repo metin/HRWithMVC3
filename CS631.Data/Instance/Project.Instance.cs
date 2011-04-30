@@ -81,5 +81,10 @@ namespace CS631.Data
         {
             return ProjectMember.FindByProjectID(this.ProjID, status);
         }
+
+        public IEnumerable<Bug> Bugs()
+        {
+            return Bug.FindByProjectID(this.ProjID);
+        }
     }
 }

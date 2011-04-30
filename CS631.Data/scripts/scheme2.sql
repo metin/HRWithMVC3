@@ -142,11 +142,14 @@ create table PAYROLLHISTORY(
 
 
 drop table if exists PROJBUGS;
-create table PROJMILESTONES(
+create table PROJBUGS(
  BugID int NOT NULL AUTO_INCREMENT,
  ProjID int,
+ Details varchar(500),
  DateReported date,
- DateClosed varchar(255),
- EmpID date,
+ DateClosed date,
+ Status varchar(255),
+ Type varchar(255),
+ EmpID int,
  primary key(BugID)
 ) AUTO_INCREMENT = 1;
