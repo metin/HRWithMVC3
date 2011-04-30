@@ -60,7 +60,7 @@ namespace CS631.Data
             return p;
         }
 
-        public static IEnumerable<Office> FindByBuildingId(int buidingId)
+        public static IEnumerable<Office> FindByBuildingID(int buidingId)
         {
             List<Office> rooms = new List<Office>();
             MySqlConnection c = getConnection();
@@ -68,7 +68,7 @@ namespace CS631.Data
             c.Open();
             cmd.CommandText = "SELECT * FROM offices where BuildingID = @BuildingID;";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@buidling_id", buidingId);
+            cmd.Parameters.AddWithValue("@BuildingID", buidingId);
             cmd.CommandType = System.Data.CommandType.Text;
             
             MySqlDataReader dr = cmd.ExecuteReader();

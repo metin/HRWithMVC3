@@ -13,9 +13,15 @@
         <li class="<%: curAction=="Edit" ? "current" : "" %>">
             <%: Html.ActionLink("Edit", "Edit", new { id = b.BuildingID })%>
         </li>
-
+        <!--
         <li class="<%: curAction=="Rooms" ? "current" : "" %>">
             <%: Html.ActionLink("Rooms", "Rooms", new { id = b.BuildingID }, new { })%>
         </li>   
+        -->
+
+        <li class="<%: curAction=="Offices" ? "current" : "" %>">
+            <%: Html.ActionLink("Offices", "Offices", new { id = b.BuildingID }, new { })%>
+        </li>   
+
      </ul>
 </div>

@@ -6,31 +6,26 @@ using MySql.Data.MySqlClient;
 
 namespace CS631.Data
 {
-    public partial class Employee
+    public partial class Payroll
     {
 
-        public Employee Save()
+        public Payroll Save()
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = @"INSERT INTO employees 
-                                (EmpFName, EmpMI, EmpLName, EmpTitle, EmpBuilding, EmpOffice, 
-                                    EmpPhone, EmpDept, EmpDiv, EmpType, HourRate) 
+            cmd.CommandText = @"INSERT INTO PAYROLLHISTORY 
+                                (EmpID, PayDate, MonthHours, MonthSalary, FedTax, StateTax, OtherTax, NetPay) 
                                 VALUES
-                                (@EmpFName, @EmpMI, @EmpLName, @EmpTitle, @EmpBuilding, @EmpOffice, 
-                                    @EmpPhone, @EmpDept, @EmpDiv, @EmpType, @HourRate)";
+                                (@EmpID, @PayDate, @MonthHours, @MonthSalary, @FedTax, @StateTax, @OtherTax, @NetPay);";
             cmd.Prepare();
-            cmd.Parameters.AddWithValue("@EmpFName", this.EmpFName);
-            cmd.Parameters.AddWithValue("@EmpMI", this.EmpMI);
-            cmd.Parameters.AddWithValue("@EmpLName", this.EmpLName);
-            cmd.Parameters.AddWithValue("@EmpTitle", this.EmpTitle);
-            cmd.Parameters.AddWithValue("@EmpBuilding", this.EmpBuilding);
-            cmd.Parameters.AddWithValue("@EmpOffice", this.EmpOffice);
-            cmd.Parameters.AddWithValue("@EmpPhone", this.EmpPhone);
-            cmd.Parameters.AddWithValue("@EmpDept", this.EmpDept);
-            cmd.Parameters.AddWithValue("@EmpDiv", this.EmpDiv);
-            cmd.Parameters.AddWithValue("@EmpType", this.EmpType);
-            cmd.Parameters.AddWithValue("@HourRate", this.HourRate);
+            cmd.Parameters.AddWithValue("@EmpID", this.EmpID);
+            cmd.Parameters.AddWithValue("@PayDate", this.PayDate);
+            cmd.Parameters.AddWithValue("@MonthHours", this.MonthHours);
+            cmd.Parameters.AddWithValue("@MonthSalary", this.MonthSalary);
+            cmd.Parameters.AddWithValue("@FedTax", this.FedTax);
+            cmd.Parameters.AddWithValue("@StateTax", this.StateTax);
+            cmd.Parameters.AddWithValue("@OtherTax", this.OtherTax);
+            cmd.Parameters.AddWithValue("@NetPay", this.NetPay);
 
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
@@ -39,13 +34,13 @@ namespace CS631.Data
             connection.Close();
             return this;
         }
-
+/*
         public void Update()
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = @"UPDATE employees set 
-                                    EmpFName = @EmpFName, EmpMI = @EmpMI,
+                                    EmpID = @EmpID, EmpMI = @EmpMI,
                                     EmpLName = @EmpLName, EmpTitle = @EmpTitle, 
                                     EmpBuilding = @EmpBuilding, EmpOffice = @EmpOffice,
                                     EmpPhone = @EmpPhone, EmpDept = @EmpDept,
@@ -83,21 +78,7 @@ namespace CS631.Data
             cmd.ExecuteNonQuery();
             connection.Close();
         }
-
-        public IEnumerable<EmployeeSalary> SalaryHistory()
-        {
-            return EmployeeSalary.FindAllByEmpID(this.EmpID);
-        }
-
-        public EmployeeSalary CurrentSalary()
-        {
-            return EmployeeSalary.FindLatestByEmpID(this.EmpID);
-        }
-
-        public IEnumerable<Payroll> PayrollHistory()
-        {
-            return Payroll.FindAllByEmpID(this.EmpID);
-        }
+ * */
 
     }
 }

@@ -117,6 +117,7 @@
     <Content Include="Views\Buildings\Details.aspx" />
     <Content Include="Views\Buildings\Index.aspx" />
     <Content Include="Views\Buildings\LeftMenu.ascx" />
+    <Content Include="Views\Buildings\Offices.aspx" />
     <Content Include="Views\Buildings\Rooms.aspx" />
     <Content Include="Views\Buildings\SubMenu.ascx" />
     <Content Include="Views\Departments\Create.aspx" />
@@ -137,6 +138,8 @@
     <Content Include="Views\Employees\Edit.aspx" />
     <Content Include="Views\Employees\Index.aspx" />
     <Content Include="Views\Employees\LeftMenu.ascx" />
+    <Content Include="Views\Employees\NewPayroll.ascx" />
+    <Content Include="Views\Employees\Payroll.aspx" />
     <Content Include="Views\Employees\Salary.aspx" />
     <Content Include="Views\Employees\SubMenu.ascx" />
     <Content Include="Views\Home\SubMenu.ascx" />

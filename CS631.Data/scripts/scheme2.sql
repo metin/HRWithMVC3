@@ -128,11 +128,11 @@ create table PAYROLLHISTORY(
  HistoryID int NOT NULL AUTO_INCREMENT,
  EmpID int,
  PayDate date NOT NULL,
- MonthHours decimal(3,2),
- MonthSalary decimal(7,2),
- FedTax decimal(7,2),
- StateTax decimal(7,2),
- OtherTax decimal(7,2),
- NetPay decimal(7,2),
+ MonthHours int,
+ MonthSalary decimal(17,2),
+ FedTax decimal(17,2),
+ StateTax decimal(17,2),
+ OtherTax decimal(17,2),
+ NetPay decimal(17,2),
  primary key (HistoryID)
 ) AUTO_INCREMENT = 1;

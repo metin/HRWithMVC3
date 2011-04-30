@@ -21,8 +21,21 @@
         <div class="section">
             <h1>Employe salary</h1>
             <p>Update employee salay, see salary history</p>
+
+            <% var curSalary = Model.CurrentSalary(); %>
+            <table class="details">
+                <thead>
+                    <tr style="border: 2px solid #aedecc;">
+                        <th> <label>Current salary is </label> </th>
+                        <td align="left"> <%: String.Format("${0:F}", curSalary.AnnualSalary) %> </td>
+                        
+                    </tr>
+                </thead>
+            </table>
             <br />
 
+            <h1>Update Salary</h1>
+            <p> </p>
             <% using (Html.BeginForm("Salary", "Employees", FormMethod.Post)) { %>
                 <%: Html.ValidationSummary(true) %>
 
@@ -64,14 +77,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% bool isFirst = true; %>
                     <% foreach (var d in Model.SalaryHistory())
                         { %>
-                        <tr style="background-color:<%: isFirst ? "#fcc" : "" %>">
+                        <tr>
                             <td><%: d.SalaryStartDate.ToString("MM/dd/yyyy")%> </td>
-                            <td><%: d.AnnualSalary %> </td>
+                            <td><%: String.Format("${0:F}", d.AnnualSalary) %> </td>
                         </tr>
-                        <% isFirst = false; %>
                     <% } %>
                 </tbody>
             </table>

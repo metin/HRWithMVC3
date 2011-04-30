@@ -54,6 +54,9 @@
     <Compile Include="Building.Base.cs" />
     <Compile Include="Building.Instance.cs" />
     <Compile Include="Building.Finders.cs" />
+    <Compile Include="Payroll.Finders.cs" />
+    <Compile Include="Payroll.Instance.cs" />
+    <Compile Include="Payroll.Base.cs" />
     <Compile Include="EmployeeSalary.Finders.cs" />
     <Compile Include="EmployeeSalary.Instance.cs" />
     <Compile Include="EmployeeSalary.Base.cs" />

@@ -33,8 +33,8 @@
                             <td><%: d.DeptName %> </td>
 
                             <td class="action_buttons"> 
-                                <%: Html.ActionLink("Show", "Details", new { id = d.DeptID }, new { @class = "jqui_button_show", style = "padding: 0px;" })%> 
-                                <%: Html.ActionLink("Edit", "Edit", new { id = d.DeptID }, new { @class = "jqui_button_edit" })%> 
+                                <%: Html.ActionLink("Show", "Details", "Departments", new { id = d.DeptID }, new { @class = "jqui_button_show", style = "padding: 0px;" })%> 
+                                <%: Html.ActionLink("Edit", "Edit", "Departments", new { id = d.DeptID }, new { @class = "jqui_button_edit" })%> 
                             </td>
                         </tr>
                     <% } %>

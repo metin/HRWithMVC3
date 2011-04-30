@@ -30,7 +30,7 @@ namespace CS631.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.employees = new SelectList(Employee.FindAll(), "id", "EmpFName");
+            ViewBag.employees = new SelectList(Employee.FindAll(), "EmpID", "EmpFName");
             return View();
         } 
 
@@ -49,7 +49,7 @@ namespace CS631.Controllers
  
         public ActionResult Edit(int id)
         {
-            ViewBag.employees = new SelectList(Employee.FindAll(), "DivID", "EmpFName");
+            ViewBag.employees = new SelectList(Employee.FindAll(), "EmpID", "EmpFName");
             return View(Division.FindByID(id));
         }
 

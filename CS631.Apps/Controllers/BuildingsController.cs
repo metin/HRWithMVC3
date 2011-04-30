@@ -68,6 +68,10 @@ namespace CS631.HR.Controllers
             return View(Building.FindById(id));
         }
 
+        public ActionResult Offices(int id)
+        {
+            return View(Building.FindById(id));   
+        }
         //
         // GET: /Buildings/Delete/5
  

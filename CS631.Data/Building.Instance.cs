@@ -68,5 +68,9 @@ namespace CS631.Data
             return Room.FindByBuildingId(this.BuildingID);
         }
 
+        public IEnumerable<Office> Offices()
+        {
+            return Office.FindByBuildingID(this.BuildingID);
+        }
     }
 }

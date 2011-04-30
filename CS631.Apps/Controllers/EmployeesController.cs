@@ -70,6 +70,21 @@ namespace CS631.HR.Controllers
             return RedirectToAction("Salary", new { id = EmpID});
         }
 
+        public ActionResult Payroll(int id)
+        {
+            Employee emp = Employee.FindById(id);
+            ViewBag.employee = emp;
+            return View(emp);
+        }
+
+        [HttpPost]
+        public ActionResult Payroll(int EmpID, Payroll payroll)
+        {
+            payroll.EmpID = EmpID;
+            payroll.Save();
+            return RedirectToAction("Payroll", new { id = EmpID });
+        }
+
         public ActionResult Delete(int id)
         {
             Employee e = new Employee { EmpID = id };

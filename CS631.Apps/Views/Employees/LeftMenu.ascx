@@ -15,7 +15,7 @@
             <%: Html.ActionLink("Salary", "Salary", new { id = e.EmpID })%>
         </li>
         <li class="<%: curAction=="Payroll" ? "current" : "" %>">
-            <%: Html.ActionLink("Payroll", "Edit", new { id = e.EmpID })%>
+            <%: Html.ActionLink("Payroll", "Payroll", new { id = e.EmpID })%>
         </li>
 
     </ul>
