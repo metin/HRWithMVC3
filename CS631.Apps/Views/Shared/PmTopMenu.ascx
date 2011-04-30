@@ -12,6 +12,9 @@
         <li class="<%: curController=="Projects" ? "current" : "" %>">
             <%: Html.ActionLink("Projects", "Index", "Projects") %>
         </li>
+        <li class="<%: curController=="Milestones" ? "current" : "" %>">
+            <%: Html.ActionLink("Milestones", "Index", "Milestones")%>
+        </li>
     </ul>
 
 </div>

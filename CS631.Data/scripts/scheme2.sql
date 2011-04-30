@@ -54,18 +54,20 @@ create table EMPLOYEES(
  EmpDept int,
  EmpDiv int,
  EmpProj int,
- EmpType varchar(1),
- HourRate decimal(4,2),
+ EmpType varchar(10),
+ HourRate decimal(14,2),
  primary key (EmpID)
 ) AUTO_INCREMENT = 1;
 
 
 drop table if exists EMPPROJECTS;
 create table EMPPROJECTS(
- EmpProj int,
+ EmpProj int NOT NULL AUTO_INCREMENT,
+ ProjID int,
  EmpID int,
  Role varchar(30),
- TotalHours decimal(3,2),
+ TotalHours decimal(17,2),
+ StartDate datetime,
  primary key (EmpProj,EmpID)
 ) AUTO_INCREMENT = 1;
 

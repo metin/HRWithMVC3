@@ -11,14 +11,14 @@
         <li class="<%: curAction=="Edit" ? "current" : "" %>">
             <%: Html.ActionLink("Edit", "Edit", new { id = p.ProjID })%>
         </li>
+        <li class="<%: curAction=="Milestones" ? "current" : "" %>">
+            <%: Html.ActionLink("Milestones", "Milestones", new { id = p.ProjID })%>
+        </li>        
         <li class="<%: curAction=="Members" ? "current" : "" %>">
-            <%: Html.ActionLink("Members", "Details", new { id = p.ProjID })%>
+            <%: Html.ActionLink("Members", "Members", new { id = p.ProjID })%>
         </li>
         <li class="<%: curAction=="Progress" ? "current" : "" %>">
             <%: Html.ActionLink("Progress", "Details", new { id = p.ProjID })%>
-        </li>
-        <li class="<%: curAction=="Milestones" ? "current" : "" %>">
-            <%: Html.ActionLink("Milestones", "Details", new { id = p.ProjID })%>
         </li>
 
     </ul>

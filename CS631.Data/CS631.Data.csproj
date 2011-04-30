@@ -52,10 +52,16 @@
   <ItemGroup>
     <Compile Include="Base.cs" />
     <Compile Include="Base\Building.Base.cs" />
+    <Compile Include="Base\ProjectMember.Base.cs" />
+    <Compile Include="Base\Milestone.Base.cs" />
+    <Compile Include="Finders\Milestone.Finders.cs" />
     <Compile Include="Finders\Project.Finders.cs" />
+    <Compile Include="Finders\ProjectMember.Finders.cs" />
     <Compile Include="Instance\Building.Instance.cs" />
     <Compile Include="Finders\Building.Finders.cs" />
     <Compile Include="Finders\Payroll.Finders.cs" />
+    <Compile Include="Instance\ProjectMember.Instance.cs" />
+    <Compile Include="Instance\Milestone.Instance.cs" />
     <Compile Include="Instance\Payroll.Instance.cs" />
     <Compile Include="Base\Payroll.Base.cs" />
     <Compile Include="Finders\EmployeeSalary.Finders.cs" />

@@ -72,5 +72,14 @@ namespace CS631.Data
             connection.Close();
         }
 
+        public IEnumerable<Milestone> Milestones()
+        {
+            return Milestone.FindByProjectID(this.ProjID);
+        }
+
+        public IEnumerable<ProjectMember> Members()
+        {
+            return ProjectMember.FindByProjectID(this.ProjID);
+        }
     }
 }

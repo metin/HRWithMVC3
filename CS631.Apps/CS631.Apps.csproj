@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BuildingsController.cs" />
+    <Compile Include="Controllers\MilestonesController.cs" />
     <Compile Include="Controllers\OfficesController.cs" />
     <Compile Include="Controllers\PmHomeController.cs" />
     <Compile Include="Controllers\DivisionsController.cs" />
@@ -143,6 +144,12 @@
     <Content Include="Views\Employees\Salary.aspx" />
     <Content Include="Views\Employees\SubMenu.ascx" />
     <Content Include="Views\Home\SubMenu.ascx" />
+    <Content Include="Views\Milestones\Create.aspx" />
+    <Content Include="Views\Milestones\Details.aspx" />
+    <Content Include="Views\Milestones\Edit.aspx" />
+    <Content Include="Views\Milestones\Index.aspx" />
+    <Content Include="Views\Milestones\LeftMenu.ascx" />
+    <Content Include="Views\Milestones\SubMenu.ascx" />
     <Content Include="Views\Offices\Create.aspx" />
     <Content Include="Views\Offices\Details.aspx" />
     <Content Include="Views\Offices\Edit.aspx" />
@@ -156,6 +163,9 @@
     <Content Include="Views\Projects\Edit.aspx" />
     <Content Include="Views\Projects\Index.aspx" />
     <Content Include="Views\Projects\LeftMenu.ascx" />
+    <Content Include="Views\Projects\Members.aspx" />
+    <Content Include="Views\Projects\Milestones.aspx" />
+    <Content Include="Views\Projects\NewMember.ascx" />
     <Content Include="Views\Projects\SubMenu.ascx" />
     <Content Include="Views\Rooms\Create.aspx" />
     <Content Include="Views\Rooms\Details.aspx" />

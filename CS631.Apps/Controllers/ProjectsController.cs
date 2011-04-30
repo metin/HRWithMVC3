@@ -73,6 +73,27 @@ namespace CS631.HR.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Milestones(int id)
+        {
+            return View(Project.FindById(id));
+        }
 
+        public ActionResult Members(int id)
+        {
+
+            ViewBag.employees = new SelectList(Employee.FindAll(), "EmpID", "EmpFName");
+            ViewBag.roles = new SelectList(new string[] { "Developer", "DBA", "Manager" });
+
+            ViewBag.project = Project.FindById(id);
+            return View(ViewBag.project);
+        }
+
+        [HttpPost]
+        public ActionResult Members(int ProjID, FormCollection collection, ProjectMember projectmember)
+        {
+            projectmember.ProjID = ProjID;
+            projectmember.Save();
+            return RedirectToAction("Members", new { id=ProjID});
+        }
     }
 }
