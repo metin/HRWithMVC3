@@ -68,6 +68,7 @@ create table EMPPROJECTS(
  Role varchar(30),
  TotalHours decimal(17,2),
  StartDate datetime,
+ EndDate datetime,
  primary key (EmpProj,EmpID)
 ) AUTO_INCREMENT = 1;
 
@@ -137,4 +138,15 @@ create table PAYROLLHISTORY(
  OtherTax decimal(17,2),
  NetPay decimal(17,2),
  primary key (HistoryID)
+) AUTO_INCREMENT = 1;
+
+
+drop table if exists PROJBUGS;
+create table PROJMILESTONES(
+ BugID int NOT NULL AUTO_INCREMENT,
+ ProjID int,
+ DateReported date,
+ DateClosed varchar(255),
+ EmpID date,
+ primary key(BugID)
 ) AUTO_INCREMENT = 1;

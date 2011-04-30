@@ -63,6 +63,20 @@ namespace CS631.Data
             connection.Close();
         }
 
+        public void Finish()
+        {
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = @"UPDATE empprojects 
+                                SET EndDate = NOW() 
+                                WHERE EmpProj = @EmpProj;";
+            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@EmpProj", this.EmpProj);
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
         public Employee EmployeeObj()
         {
             return Employee.FindById(this.EmpID);

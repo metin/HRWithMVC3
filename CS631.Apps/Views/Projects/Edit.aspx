@@ -56,6 +56,13 @@
                         </td>
                     </tr>
                     <tr>
+                        <th><%: Html.LabelFor(model => model.ProjDept) %></th>
+                        <td>
+                            <%: Html.DropDownListFor(model => model.ProjDept, ViewBag.departments as SelectList, "")%>
+                            <%: Html.ValidationMessageFor(model => model.ProjDept)%>
+                        </td>
+                    </tr>
+                    <tr>
                         <th><%: Html.LabelFor(model => model.EndDate)%></th>
                         <td>
                             <%: Html.EditorFor(model => model.EndDate)%>

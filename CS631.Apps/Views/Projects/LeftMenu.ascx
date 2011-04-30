@@ -17,9 +17,6 @@
         <li class="<%: curAction=="Members" ? "current" : "" %>">
             <%: Html.ActionLink("Members", "Members", new { id = p.ProjID })%>
         </li>
-        <li class="<%: curAction=="Progress" ? "current" : "" %>">
-            <%: Html.ActionLink("Progress", "Details", new { id = p.ProjID })%>
-        </li>
 
     </ul>
 </div>

@@ -77,9 +77,9 @@ namespace CS631.Data
             return Milestone.FindByProjectID(this.ProjID);
         }
 
-        public IEnumerable<ProjectMember> Members()
+        public IEnumerable<ProjectMember> Members(ProjectMember.MembershipStatus status)
         {
-            return ProjectMember.FindByProjectID(this.ProjID);
+            return ProjectMember.FindByProjectID(this.ProjID, status);
         }
     }
 }

@@ -6,8 +6,9 @@
     <div id="submenu_container">
         <ul id="submenu">
             <li class="<%: curAction=="Index" ? "current" : "" %>">
-                <%: Html.ActionLink("About", "Index")%>
+                <%: Html.ActionLink("Dashboard", "Index")%>
             </li>
+
             <li class="<%: curAction=="Create" ? "current" : "" %>">
                 <%: Html.ActionLink("Help", "Index")%>
             </li>

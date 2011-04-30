@@ -7,8 +7,15 @@ using System.ComponentModel;
 
 namespace CS631.Data
 {
+
+
     public partial class ProjectMember : Base
     {
+        public enum MembershipStatus
+        {
+            Current, Ended, All
+        }
+
         public int EmpProj { get; set; }
 
         [Required]
@@ -31,6 +38,9 @@ namespace CS631.Data
         [DisplayName("Since")]
         public DateTime StartDate { get; set; }
 
+        [DisplayName("Date Ended")]
+        public DateTime? EndDate { get; set; }
+
         public string EmpName {
             get {
                 return this.EmployeeObj().EmpFName;
@@ -42,6 +52,16 @@ namespace CS631.Data
             get
             {
                 return this.ProjectObj().ProjectNO;
+            }
+        }
+
+        public double DaysWorked {
+            get { 
+                if (EndDate.HasValue)
+                {
+                    return EndDate.Value.Subtract(StartDate).TotalHours;
+                }
+                return DateTime.Today.Subtract(StartDate).TotalHours;
             }
         }
 

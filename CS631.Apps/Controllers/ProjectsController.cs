@@ -31,6 +31,7 @@ namespace CS631.HR.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.departments = new SelectList(Department.FindAll(), "DeptID", "DeptName");
             return View();
         } 
 
@@ -49,6 +50,7 @@ namespace CS631.HR.Controllers
  
         public ActionResult Edit(int id)
         {
+            ViewBag.departments = new SelectList(Department.FindAll(), "DeptID", "DeptName");
             return View(Project.FindById(id));
         }
 
@@ -81,7 +83,7 @@ namespace CS631.HR.Controllers
         public ActionResult Members(int id)
         {
 
-            ViewBag.employees = new SelectList(Employee.FindAll(), "EmpID", "EmpFName");
+            ViewBag.employees = new SelectList(Employee.FindForProjectId(id), "EmpID", "EmpFName");
             ViewBag.roles = new SelectList(new string[] { "Developer", "DBA", "Manager" });
 
             ViewBag.project = Project.FindById(id);

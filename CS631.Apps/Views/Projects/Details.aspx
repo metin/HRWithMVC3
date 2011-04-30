@@ -43,6 +43,19 @@
                         <%: Model.EndDate %>
                     </td>
                 </tr>
+                <tr>
+                    <th><label>Members</label></th>
+                    <td>
+                        <%: Model.Members(CS631.Data.ProjectMember.MembershipStatus.Current).Count<CS631.Data.ProjectMember>() %>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label>Milestones</label></th>
+                    <td>
+                        <%: Model.Milestones().Count<CS631.Data.Milestone>()%>
+                    </td>
+                </tr>
+                
             </table>
         </div>
     </div>

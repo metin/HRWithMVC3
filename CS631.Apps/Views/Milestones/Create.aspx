@@ -25,7 +25,7 @@
                     <tr>
                         <th><%: Html.LabelFor(model => model.ProjID) %></th>
                         <td>
-                            <%: Html.DropDownListFor(model => model.ProjID, ViewBag.projects as SelectList)%>
+                            <%: Html.DropDownListFor(model => model.ProjID, ViewBag.projects as SelectList, "")%>
                             <%: Html.ValidationMessageFor(model => model.ProjID)%>
                         </td>
                     </tr>
