@@ -1,6 +1,6 @@
 drop table if exists DIVISIONS;
 create table DIVISIONS(
- 	 int NOT NULL AUTO_INCREMENT,
+ DivID int NOT NULL AUTO_INCREMENT,
  DivName varchar(255),
  DivHead int,
  DivHeadDept int,
