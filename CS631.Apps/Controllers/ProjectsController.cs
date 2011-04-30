@@ -14,10 +14,8 @@ namespace CS631.HR.Controllers
 
         public ActionResult Index()
         {
-            Project p = new Project();
-            ICollection<Project> projects = p.All();
-            ViewBag.projects = projects;
-            return View();
+
+            return View( Project.FindAll());
         }
 
         //
@@ -25,8 +23,7 @@ namespace CS631.HR.Controllers
 
         public ActionResult Details(int id)
         {
-            Project p = new Project { id = id };
-            return View(p.Load());
+            return View(Project.FindById(id));
         }
 
         //
@@ -52,8 +49,7 @@ namespace CS631.HR.Controllers
  
         public ActionResult Edit(int id)
         {
-            Project p = new Project { id = id };
-            return View(p.Load());
+            return View(Project.FindById(id));
         }
 
         //
@@ -62,7 +58,7 @@ namespace CS631.HR.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection, Project project)
         {
-            project.id = id;
+            project.ProjID = id;
             project.Update();
             return RedirectToAction("Index");
         }
@@ -72,7 +68,7 @@ namespace CS631.HR.Controllers
  
         public ActionResult Delete(int id)
         {
-            Project p = new Project { id = id };
+            Project p = new Project { ProjID = id };
             p.Delete();
             return RedirectToAction("Index");
         }

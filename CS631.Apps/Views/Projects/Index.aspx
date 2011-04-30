@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Pm.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/PM.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<CS631.Data.Project>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Index
@@ -25,17 +25,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% foreach (var p in ViewBag.projects)  { %>
+                    <% foreach (var p in Model)  { %>
                         <tr>
                             <td><%: p.ProjectNO %> </td>
-                            <td><%: p.name %> </td>
-                            <td><%: p.Budget %> </td>
-                            <td><%: p.DateStarted.ToString("MM/dd/yyyy")%> </td>
-                            <td><%: p.DateEnded.ToString("MM/dd/yyyy")%> </td>
+                            <td><%: p.ProjName %> </td>
+                            <td><%: p.ProjBudget %> </td>
+                            <td><%: p.StartDate.ToString("MM/dd/yyyy") %> </td>
+                            <td><%: p.EndDate %> </td>
                             <td class="action_buttons"> 
-                                <%: Html.ActionLink("Show", "Details", new { id = p.id }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
-                                <%: Html.ActionLink("Edit", "Edit", new { id = p.id }, new { @class = "jqui_button_edit" })%> 
-                                <%: Html.ActionLink("Delete", "Delete", new { id = p.id }, new { @class = "jqui_button_delete" })%>
+                                <%: Html.ActionLink("Show", "Details", new { id = p.ProjID }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
+                                <%: Html.ActionLink("Edit", "Edit", new { id = p.ProjID }, new { @class = "jqui_button_edit" })%> 
+                                <%: Html.ActionLink("Delete", "Delete", new { id = p.ProjID }, new { @class = "jqui_button_delete" })%>
                             </td>
                         </tr>
                     <% } %>

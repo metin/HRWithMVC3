@@ -6,19 +6,19 @@
 <div id="left_menu">
     <ul id="left_list">
         <li class="<%: curAction=="Details" ? "current" : "" %>">
-            <%: Html.ActionLink("Show", "Details", new { id = p.id })%>
+            <%: Html.ActionLink("Show", "Details", new { id = p.ProjID })%>
         </li>
         <li class="<%: curAction=="Edit" ? "current" : "" %>">
-            <%: Html.ActionLink("Edit", "Edit", new { id = p.id })%>
+            <%: Html.ActionLink("Edit", "Edit", new { id = p.ProjID })%>
         </li>
         <li class="<%: curAction=="Members" ? "current" : "" %>">
-            <%: Html.ActionLink("Members", "Details", new { id = p.id })%>
+            <%: Html.ActionLink("Members", "Details", new { id = p.ProjID })%>
         </li>
         <li class="<%: curAction=="Progress" ? "current" : "" %>">
-            <%: Html.ActionLink("Progress", "Details", new { id = p.id })%>
+            <%: Html.ActionLink("Progress", "Details", new { id = p.ProjID })%>
         </li>
         <li class="<%: curAction=="Milestones" ? "current" : "" %>">
-            <%: Html.ActionLink("Milestones", "Details", new { id = p.id })%>
+            <%: Html.ActionLink("Milestones", "Details", new { id = p.ProjID })%>
         </li>
 
     </ul>

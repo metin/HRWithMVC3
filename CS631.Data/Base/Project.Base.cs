@@ -9,30 +9,32 @@ namespace CS631.Data
 {
     public partial class Project : Base
     {
-        [Required]
-        public int id { get; set; }
+        public int ProjID { get; set; }
 
         [Required]
         [DisplayName("Project Name")]
-        public string name { get; set; }
+        public string ProjName { get; set; }
 
         [Required]
         [DisplayName("Date Started")]
-        public DateTime DateStarted { get; set; }
+        public DateTime StartDate { get; set; }
 
-        [Required]
         [DisplayName("Date Ended")]
-        public DateTime DateEnded { get; set; }
+        public DateTime? EndDate { get; set; }
 
         [Required]
         [DisplayName("Budget")]
-        public decimal Budget { get; set; }
+        public decimal ProjBudget { get; set; }
+
+        [Required]
+        [DisplayName("Department")]
+        public int ProjDept { get; set; }        
 
         public string ProjectNO
         {
             get
             {
-                return "P-" + id;
+                return "P-" + ProjID;
             }
         }
 

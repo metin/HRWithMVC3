@@ -7,11 +7,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script type="text/javascript">
         $(function () {
-            $("#DateStarted").datepicker({ showOn: 'both', buttonImage: "/Public/Images/calendar.gif", buttonImageOnly: true, dateFormat: 'mm/dd/yy' });
-            $("#DateStarted").datepicker("option", "dateFormat", 'mm/dd/yy');
+            $("#StartDate").datepicker({ showOn: 'both', buttonImage: "/Public/Images/calendar.gif", buttonImageOnly: true, dateFormat: 'mm/dd/yy' });
+            $("#StartDate").datepicker("option", "dateFormat", 'mm/dd/yy');
 
-            $("#DateEnded").datepicker({ showOn: 'both', buttonImage: "/Public/Images/calendar.gif", buttonImageOnly: true, dateFormat: 'mm/dd/yy' });
-            $("#DateEnded").datepicker("option", "dateFormat", 'mm/dd/yy');
+            $("#EndDate").datepicker({ showOn: 'both', buttonImage: "/Public/Images/calendar.gif", buttonImageOnly: true, dateFormat: 'mm/dd/yy' });
+            $("#EndDate").datepicker("option", "dateFormat", 'mm/dd/yy');
+
         });
 	</script>
 
@@ -25,40 +26,40 @@
     <div class="grid_10">
         <div class="section">
             <h1>Edit Project</h1>
-            <p>Edit project <%: Model.name %></p>
+            <p>Edit project <%: Model.ProjName %></p>
             <br />
             <% using (Html.BeginForm()) { %>
                 <%: Html.ValidationSummary(true) %>
 
-                <%: Html.HiddenFor(model => model.id) %>
+                <%: Html.HiddenFor(model => model.ProjID) %>
 
                 <table class="details">
                     <tr>
-                        <th><%: Html.LabelFor(model => model.name) %></th>
+                        <th><%: Html.LabelFor(model => model.ProjName) %></th>
                         <td>
-                            <%: Html.EditorFor(model => model.name) %>
-                            <%: Html.ValidationMessageFor(model => model.name) %>
+                            <%: Html.EditorFor(model => model.ProjName)%>
+                            <%: Html.ValidationMessageFor(model => model.ProjName)%>
                         </td>
                     </tr>
                     <tr>
-                        <th> <%: Html.LabelFor(model => model.Budget)%></th>
+                        <th> <%: Html.LabelFor(model => model.ProjBudget)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.Budget) %>
-                            <%: Html.ValidationMessageFor(model => model.Budget)%>
+                            <%: Html.EditorFor(model => model.ProjBudget)%>
+                            <%: Html.ValidationMessageFor(model => model.ProjBudget)%>
                         </td>
                     </tr>
                     <tr>
-                        <th><%: Html.LabelFor(model => model.DateStarted)%></th>
+                        <th><%: Html.LabelFor(model => model.StartDate)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.DateStarted) %>
-                            <%: Html.ValidationMessageFor(model => model.DateStarted)%>
+                            <%: Html.EditorFor(model => model.StartDate)%>
+                            <%: Html.ValidationMessageFor(model => model.StartDate)%>
                         </td>
                     </tr>
                     <tr>
-                        <th><%: Html.LabelFor(model => model.DateEnded)%></th>
+                        <th><%: Html.LabelFor(model => model.EndDate)%></th>
                         <td>
-                            <%: Html.EditorFor(model => model.DateEnded)%>
-                            <%: Html.ValidationMessageFor(model => model.DateEnded)%>
+                            <%: Html.EditorFor(model => model.EndDate)%>
+                            <%: Html.ValidationMessageFor(model => model.EndDate)%>
                         </td>
                     </tr>
                 </table>

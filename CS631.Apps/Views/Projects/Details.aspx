@@ -20,27 +20,27 @@
 
             <table class="details">
                 <tr>
-                    <th><%: Html.LabelFor(model => model.name) %></th>
+                    <th><%: Html.LabelFor(model => model.ProjName) %></th>
                     <td>
-                        <%: Model.name  %>
+                        <%: Model.ProjName  %>
                     </td>
                 </tr>
                 <tr>
-                    <th> <%: Html.LabelFor(model => model.Budget)%></th>
+                    <th> <%: Html.LabelFor(model => model.ProjBudget)%></th>
                     <td>
-                        <%: Model.Budget %>
+                        <%: Model.ProjBudget %>
                     </td>
                 </tr>
                 <tr>
-                    <th><%: Html.LabelFor(model => model.DateStarted)%></th>
+                    <th><%: Html.LabelFor(model => model.StartDate )%></th>
                     <td>
-                        <%: Model.DateStarted %>
+                        <%: Model.StartDate %>
                     </td>
                 </tr>
                 <tr>
-                    <th><%: Html.LabelFor(model => model.DateEnded)%></th>
+                    <th><%: Html.LabelFor(model => model.EndDate)%></th>
                     <td>
-                        <%: Model.DateEnded %>
+                        <%: Model.EndDate %>
                     </td>
                 </tr>
             </table>
