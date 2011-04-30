@@ -15,8 +15,8 @@
             <table width="100%">
                 <thead>
                     <tr>
-                        <th>Building</th>
-                        <th>Code</th>
+                        <th>OfficeNumber</th>
+                        <th>Areas</th>
                         <th>Actions</th>
                     </tr>
                 </thead>

@@ -28,7 +28,11 @@ namespace CS631.Data
 
         [Required]
         [DisplayName("Department")]
-        public int ProjDept { get; set; }        
+        public int ProjDept { get; set; }
+
+        [Required]
+        [DisplayName("Manager")]
+        public int ProjManager { get; set; }  
 
         public string ProjectNO
         {

@@ -19,7 +19,7 @@ namespace CS631.Data
                                     (@name, @DeptHead, @DivID);";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@name", this.DeptName);
-            cmd.Parameters.AddWithValue("@DeptHead", this.DeptHead.GetValueOrDefault());
+            cmd.Parameters.AddWithValue("@DeptHead", this.DeptHead);
             cmd.Parameters.AddWithValue("@DivID", this.DivID);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
@@ -39,7 +39,7 @@ namespace CS631.Data
                                 WHERE DeptID = @id;";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@name", this.DeptName);
-            cmd.Parameters.AddWithValue("@DeptHead", this.DeptHead.GetValueOrDefault());
+            cmd.Parameters.AddWithValue("@DeptHead", this.DeptHead);
             cmd.Parameters.AddWithValue("@DivID", this.DivID);
 
             cmd.Parameters.AddWithValue("@id", this.DeptID);

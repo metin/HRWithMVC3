@@ -29,6 +29,7 @@ namespace CS631.Data
                 p.EndDate = dr["EndDate"] as DateTime?;
                 p.ProjBudget = dr.GetDecimal("ProjBudget");
                 p.ProjDept = dr.GetInt32("ProjDept");
+                p.ProjManager = dr.GetInt32("ProjManager");
                 projects.Add(p);
             }
             c.Close();
@@ -54,6 +55,7 @@ namespace CS631.Data
                 p.EndDate = dr["EndDate"] as DateTime?;
                 p.ProjBudget = dr.GetDecimal("ProjBudget");
                 p.ProjDept = dr.GetInt32("ProjDept");
+                p.ProjManager = dr.GetInt32("ProjManager");
             }
             c.Close();
             return p;

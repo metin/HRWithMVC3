@@ -16,7 +16,7 @@ namespace CS631.Data
             cmd.CommandText = "INSERT INTO Divisions (DivName, DivHead) VALUES(@name, @DivHead);";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@name", this.DivName);
-            cmd.Parameters.AddWithValue("@DivHead", this.DivHead.GetValueOrDefault());
+            cmd.Parameters.AddWithValue("@DivHead", this.DivHead);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             cmd.CommandText = "SELECT LAST_INSERT_ID();";
@@ -34,7 +34,7 @@ namespace CS631.Data
                                 WHERE DivID = @id;";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@name", this.DivName);
-            cmd.Parameters.AddWithValue("@DivHead", this.DivHead.GetValueOrDefault());
+            cmd.Parameters.AddWithValue("@DivHead", this.DivHead);
             cmd.Parameters.AddWithValue("@id", this.DivID);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();

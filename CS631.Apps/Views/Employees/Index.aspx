@@ -11,6 +11,37 @@
         <div class="section" > 
             <h1>List Of Employees</h1>
             <p />
+
+            <div>
+                <% using (Html.BeginForm(FormMethod.Get))
+                   { %>
+                        <table class="filter" >
+                            <tr>
+                                <td class="noborder"> 
+                                    Department: <br />    
+                                    <%: Html.DropDownList("DeptID", ViewBag.departments as SelectList, "")%>
+                                </td>
+                                <td class="noborder">&nbsp;</td>
+                                <td class="noborder"> 
+                                    Division: <br />    
+                                    <%: Html.DropDownList("DivID", ViewBag.divisions as SelectList, "")%>
+                                </td>
+                                <td class="noborder">&nbsp;</td>
+                                <td class="noborder"> 
+                                    Office: <br />    
+                                    <%: Html.DropDownList("OfficeID", ViewBag.offices as SelectList, "")%>
+                                </td>
+                                <td class="noborder">&nbsp;</td>
+                                <td class="noborder" style="width:30px;" valign="bottom">
+                                    &nbsp;<br />
+                                    <input type="submit" value="Search" class="jqui_button_edit1" style="width:50px;"/>
+                                </td>
+                            </tr>
+                        </table>
+                       
+                <% } %>
+            </div>
+
             <table width="100%">
                 <thead>
                     <tr>

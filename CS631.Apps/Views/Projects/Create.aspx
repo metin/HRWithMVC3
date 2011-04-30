@@ -45,6 +45,13 @@
                         </td>
                     </tr>
                     <tr>
+                        <th><%: Html.LabelFor(model => model.ProjManager) %></th>
+                        <td>
+                            <%: Html.DropDownListFor(model => model.ProjManager, ViewBag.employees as SelectList, "")%>
+                            <%: Html.ValidationMessageFor(model => model.ProjManager)%>
+                        </td>
+                    </tr>
+                    <tr>
                         <th><%: Html.LabelFor(model => model.ProjDept) %></th>
                         <td>
                             <%: Html.DropDownListFor(model => model.ProjDept, ViewBag.departments as SelectList, "")%>

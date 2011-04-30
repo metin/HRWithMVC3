@@ -5,14 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using CS631.Data;
 
-namespace CS631.HR.Controllers
+namespace CS631.Apps.Controllers
 {
     public class EmployeesController : Controller
     {
 
-        public ActionResult Index()
+        public ActionResult Index(int? DeptID, int? DivID, int? OfficeID)
         {
-            return View(Employee.FindAll());
+            ViewBag.departments = new SelectList(Department.FindAll(), "DeptID", "DeptName");
+            ViewBag.offices = new SelectList(Office.FindAll(), "OfficeID", "OfficeNumber");
+            ViewBag.divisions = new SelectList(Division.FindAll(), "DivID", "DivName");
+            ViewBag.employment = new SelectList(new string[] { "H", "S" });
+
+            return View(Employee.FilterAll(DeptID, DivID, OfficeID));
         }
 
         public ActionResult Details(int id)

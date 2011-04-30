@@ -25,7 +25,7 @@ namespace CS631.Data
                 p = new Department();
                 p.DeptID = dr.GetInt32("DeptID");
                 p.DeptName = dr.GetString("DeptName");
-                p.DeptHead = dr.GetInt32("DeptHead");
+                p.DeptHead = dr["DeptHead"] as int?;
                 p.DivID = dr.GetInt32("DivID");
                 Departments.Add(p);
             }
@@ -48,8 +48,8 @@ namespace CS631.Data
             {
                 d.DeptID = dr.GetInt32("DeptID");
                 d.DeptName = dr.GetString("DeptName");
-                d.DeptHead = dr.GetInt32("DeptHead");
-                d.DivID = dr.GetInt32("DivId");
+                d.DeptHead = dr["DeptHead"] as int?;
+                d.DivID = dr.GetInt32("DivID");
             }
             c.Close();
             return d;
@@ -73,8 +73,8 @@ namespace CS631.Data
                 p = new Department();
                 p.DeptID = dr.GetInt32("DeptID");
                 p.DeptName = dr.GetString("DeptName");
-                p.DeptHead = dr.GetInt32("DeptHead");
-                p.DivID = dr.GetInt32("DivId");
+                p.DeptHead = dr["DeptHead"] as int?;
+                p.DivID = dr.GetInt32("DivID");
                 Departments.Add(p);
             }
             c.Close();

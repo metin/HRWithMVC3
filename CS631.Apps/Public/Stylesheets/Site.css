@@ -391,6 +391,19 @@ table th
   border: solid 1px #e6e4fe; /* #e8eef4; */
 }
 
+table.filter
+{
+  border: solid 0px #e6e4fe; /* #e8eef4; */
+  border-collapse: collapse;
+}
+
+table.filter td.noborder
+{
+  padding: 2px;
+  border: none; /* #e8eef4; */
+}
+
+
 /* MISC  
 ----------------------------------------------------------*/
 .clear

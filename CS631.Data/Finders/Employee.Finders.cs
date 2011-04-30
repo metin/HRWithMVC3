@@ -27,6 +27,42 @@ namespace CS631.Data
             return l;
         }
 
+        public static IEnumerable<Employee> FilterAll(int? DeptID, int? DivID, int? OfficeID)
+        {
+            List<Employee> l = new List<Employee>();
+            MySqlConnection c = getConnection();
+            MySqlCommand cmd = c.CreateCommand();
+            c.Open();
+
+            cmd.CommandText = "SELECT * FROM employees WHERE 1=1 ";
+            cmd.Prepare();
+            if (DeptID.HasValue)
+            {
+                cmd.CommandText += " AND EmpDept = @DeptID ";
+                cmd.Parameters.AddWithValue("@DeptID", DeptID.GetValueOrDefault());
+            }
+
+            if (DeptID.HasValue)
+            {
+                cmd.CommandText += " AND EmpDiv = @DivID ";
+                cmd.Parameters.AddWithValue("@DivID", DivID.GetValueOrDefault());
+            }
+            if (OfficeID.HasValue)
+            {
+                cmd.CommandText += " AND EmpOffice = @OfficeID ";
+                cmd.Parameters.AddWithValue("@OfficeID", OfficeID.GetValueOrDefault());
+            } 
+            cmd.CommandType = System.Data.CommandType.Text;
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                l.Add(FillEmployee(dr));
+            }
+            c.Close();
+            return l;
+        }
+
         public static Employee FindById(int id)
         {
             MySqlConnection c = getConnection();

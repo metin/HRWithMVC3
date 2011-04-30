@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CS631.HR.Controllers
+namespace CS631.Apps.Controllers
 {
     public class PmHomeController : Controller
     {

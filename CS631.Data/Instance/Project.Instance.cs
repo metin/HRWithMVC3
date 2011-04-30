@@ -16,9 +16,9 @@ namespace CS631.Data
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = @"INSERT INTO projects 
-                                (ProjName, StartDate, EndDate, ProjBudget, ProjDept) 
+                                (ProjName, StartDate, EndDate, ProjBudget, ProjDept, ProjManager) 
                                VALUES
-                                (@ProjName, @StartDate, @EndDate, @ProjBudget, @ProjDept);"; 
+                                (@ProjName, @StartDate, @EndDate, @ProjBudget, @ProjDept, @ProjManager);"; 
 
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@ProjName", this.ProjName);
@@ -26,6 +26,7 @@ namespace CS631.Data
             cmd.Parameters.AddWithValue("@EndDate", this.EndDate);
             cmd.Parameters.AddWithValue("@ProjBudget", this.ProjBudget);
             cmd.Parameters.AddWithValue("@ProjDept", this.ProjDept);
+            cmd.Parameters.AddWithValue("@ProjManager", this.ProjManager);
             
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
@@ -42,7 +43,7 @@ namespace CS631.Data
             cmd.CommandText = @"UPDATE projects SET 
                                     ProjName = @ProjName, StartDate = @StartDate, 
                                     EndDate = @EndDate, ProjBudget = @ProjBudget,
-                                    ProjDept = @ProjDept
+                                    ProjDept = @ProjDept, ProjManager = @ProjManager
                                 WHERE ProjID = @ProjID;";
 
             cmd.Prepare();
@@ -52,6 +53,8 @@ namespace CS631.Data
             cmd.Parameters.AddWithValue("@ProjBudget", this.ProjBudget);
             cmd.Parameters.AddWithValue("@ProjDept", this.ProjDept);
             cmd.Parameters.AddWithValue("@ProjID", this.ProjID);
+            cmd.Parameters.AddWithValue("@ProjManager", this.ProjManager);
+
 
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();

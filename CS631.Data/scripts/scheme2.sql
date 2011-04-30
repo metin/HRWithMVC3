@@ -1,20 +1,28 @@
+SET foreign_key_checks = 0;
 drop table if exists DIVISIONS;
 create table DIVISIONS(
  DivID int NOT NULL AUTO_INCREMENT,
  DivName varchar(255),
- DivHead int,
- DivHeadDept int,
- primary key (DivID)
-) AUTO_INCREMENT = 145;
+ DivHead int NULL,
+ DivHeadDept int NULL,
+ primary key (DivID),
+ KEY (DivHead),
+ CONSTRAINT FOREIGN KEY (DivHead) REFERENCES Employees(EmpID)
+) AUTO_INCREMENT = 472;
 
 drop table if exists DEPARTMENTS;
 create table DEPARTMENTS(
  DeptID int NOT NULL AUTO_INCREMENT, 
  DeptName varchar(255),
- DeptHead int,
+ DeptHead  int NULL,
  DeptBudget decimal(17,2),
  DivID int,
- primary key (DeptID)
+ primary key (DeptID),
+ KEY (DeptHead),
+ KEY (DivID),
+ CONSTRAINT FOREIGN KEY (DeptHead) REFERENCES Employees(EmpID),
+ CONSTRAINT FOREIGN KEY (DivID) REFERENCES Divisions(DivID)
+
 ) AUTO_INCREMENT = 341;
 
 drop table if exists PROJECTS;
@@ -26,8 +34,10 @@ create table PROJECTS(
  StartDate date,
  EndDate date,
  ProjDept int,
-  primary key (ProjID)
-) AUTO_INCREMENT = 238;
+ primary key (ProjID),
+ CONSTRAINT FOREIGN KEY (ProjManager) REFERENCES Employees(EmpID),
+ CONSTRAINT FOREIGN KEY (ProjDept) REFERENCES Departments(DeptID)
+) AUTO_INCREMENT = 23928;
 
 drop table if exists PROJMILESTONES;
 create table PROJMILESTONES(
@@ -39,7 +49,7 @@ create table PROJMILESTONES(
  Delivered varchar(255),
  ToBeDelivered varchar(255),
  primary key(MilestoneID)
-) AUTO_INCREMENT = 1;
+) AUTO_INCREMENT = 1242;
 
 drop table if exists EMPLOYEES;
 create table EMPLOYEES(
@@ -57,7 +67,7 @@ create table EMPLOYEES(
  EmpType varchar(10),
  HourRate decimal(14,2),
  primary key (EmpID)
-) AUTO_INCREMENT = 1;
+) AUTO_INCREMENT = 13412;
 
 
 drop table if exists EMPPROJECTS;
@@ -81,7 +91,7 @@ create table BUILDINGS(
  BuildingCost decimal(15,2),
  AcqType varchar(1),
  primary key (BuildingID)
-) AUTO_INCREMENT = 1;
+) AUTO_INCREMENT = 10000;
 
 drop table if exists OFFICES;
 create table OFFICES(
@@ -92,7 +102,7 @@ create table OFFICES(
  RoomType varchar(10),
  DeptID int,
   primary key (OfficeID)
-) AUTO_INCREMENT = 1;
+) AUTO_INCREMENT = 1000;
 
 drop table if exists PHONES;
 create table PHONES(
@@ -140,7 +150,6 @@ create table PAYROLLHISTORY(
  primary key (HistoryID)
 ) AUTO_INCREMENT = 1;
 
-
 drop table if exists PROJBUGS;
 create table PROJBUGS(
  BugID int NOT NULL AUTO_INCREMENT,
@@ -152,4 +161,6 @@ create table PROJBUGS(
  Type varchar(255),
  EmpID int,
  primary key(BugID)
-) AUTO_INCREMENT = 1;
+) AUTO_INCREMENT = 10000;
+
+SET foreign_key_checks = 1;

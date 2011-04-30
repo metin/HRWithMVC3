@@ -17,9 +17,7 @@ namespace CS631.Data
             c.Open();
             cmd.CommandText = "SELECT * FROM PROJBUGS;";
             cmd.CommandType = System.Data.CommandType.Text;
-
             MySqlDataReader dr = cmd.ExecuteReader();
-            Bug p = null;
             while(dr.Read())
             {
                 bugs.Add(FillBug(dr));
@@ -49,7 +47,6 @@ namespace CS631.Data
             cmd.CommandType = System.Data.CommandType.Text;
 
             MySqlDataReader dr = cmd.ExecuteReader();
-            Bug p = null;
             while (dr.Read())
             {
                 bugs.Add(FillBug(dr));

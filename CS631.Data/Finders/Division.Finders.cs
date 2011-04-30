@@ -25,7 +25,7 @@ namespace CS631.Data
                 p = new Division();
                 p.DivID = dr.GetInt32("DivID");
                 p.DivName = dr.GetString("DivName");
-                p.DivHead = dr.GetInt32("DivHead");
+                p.DivHead = dr["DivHead"] as int?;
                 divisions.Add(p);
             }
             c.Close();
@@ -48,7 +48,7 @@ namespace CS631.Data
             {
                 d.DivID = dr.GetInt32("DivID");
                 d.DivName = dr.GetString("DivName");
-                d.DivHead = dr.GetInt32("DivHead");
+                d.DivHead = dr["DivHead"] as int?;
             }
             c.Close();
             return d;

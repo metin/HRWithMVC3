@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using CS631.Data;
 
-namespace CS631.HR.Controllers
+namespace CS631.Apps.Controllers
 {
     public class ProjectsController : Controller
     {
@@ -31,6 +31,7 @@ namespace CS631.HR.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.employees = new SelectList(Employee.FindAll(), "EmpID", "FullName");
             ViewBag.departments = new SelectList(Department.FindAll(), "DeptID", "DeptName");
             return View();
         } 
@@ -50,6 +51,7 @@ namespace CS631.HR.Controllers
  
         public ActionResult Edit(int id)
         {
+            ViewBag.employees = new SelectList(Employee.FindAll(), "EmpID", "FullName");
             ViewBag.departments = new SelectList(Department.FindAll(), "DeptID", "DeptName");
             return View(Project.FindById(id));
         }

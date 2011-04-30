@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using CS631.Data;
 
-namespace CS631.HR.Controllers
+namespace CS631.Apps.Controllers
 {
     public class OfficesController : Controller
     {
