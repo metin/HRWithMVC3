@@ -1,0 +1,476 @@
+-- MySQL dump 10.11
+--
+-- Host: localhost    Database: cs631
+-- ------------------------------------------------------
+-- Server version	5.0.87-community-nt
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `buildings`
+--
+
+DROP TABLE IF EXISTS `buildings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `buildings` (
+  `BuildingID` int(11) NOT NULL auto_increment,
+  `BuildingCode` varchar(10) NOT NULL,
+  `BuildingName` varchar(255) default NULL,
+  `YearAcquired` int(11) default NULL,
+  `BuildingCost` decimal(15,2) default NULL,
+  `AcqType` varchar(1) default NULL,
+  PRIMARY KEY  (`BuildingID`)
+) ENGINE=InnoDB AUTO_INCREMENT=10005 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `buildings`
+--
+
+LOCK TABLES `buildings` WRITE;
+/*!40000 ALTER TABLE `buildings` DISABLE KEYS */;
+INSERT INTO `buildings` VALUES (10000,'BLDG1','A Hall',1923,'121123.00',NULL),(10001,'BLDG2','B Hall',1923,'129211123.00',NULL),(10002,'BLDG3','C Hall',1983,'7821123.00',NULL),(10003,'BLDG4','Building D',1973,'34121123.00',NULL),(10004,'BLDG5','Building E',1993,'97521123.00',NULL);
+/*!40000 ALTER TABLE `buildings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `departments`
+--
+
+DROP TABLE IF EXISTS `departments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `departments` (
+  `DeptID` int(11) NOT NULL auto_increment,
+  `DeptName` varchar(255) default NULL,
+  `DeptHead` int(11) default NULL,
+  `DeptBudget` decimal(17,2) default NULL,
+  `DivID` int(11) default NULL,
+  PRIMARY KEY  (`DeptID`),
+  KEY `DeptHead` (`DeptHead`),
+  KEY `DivID` (`DivID`),
+  CONSTRAINT `departments_ibfk_1` FOREIGN KEY (`DeptHead`) REFERENCES `employees` (`EmpID`),
+  CONSTRAINT `departments_ibfk_2` FOREIGN KEY (`DivID`) REFERENCES `divisions` (`DivID`)
+) ENGINE=InnoDB AUTO_INCREMENT=353 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `departments`
+--
+
+LOCK TABLES `departments` WRITE;
+/*!40000 ALTER TABLE `departments` DISABLE KEYS */;
+INSERT INTO `departments` VALUES (341,'Acme Web Development',NULL,NULL,472),(342,'Acme Web Marketing',NULL,NULL,472),(343,'Acme Web Operations',NULL,NULL,472),(344,'Acme Web HR',NULL,NULL,472),(345,'Acme Publishing Development',NULL,NULL,473),(346,'Acme Publishing Marketing',NULL,NULL,473),(347,'Acme Publishing Operations',NULL,NULL,473),(348,'Acme Publishing HR',NULL,NULL,473),(349,'Acme Research Development',NULL,NULL,474),(350,'Acme Research Marketing',NULL,NULL,474),(351,'Acme Research Operations',NULL,NULL,474),(352,'Acme Research HR',NULL,NULL,474);
+/*!40000 ALTER TABLE `departments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `divisions`
+--
+
+DROP TABLE IF EXISTS `divisions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `divisions` (
+  `DivID` int(11) NOT NULL auto_increment,
+  `DivName` varchar(255) default NULL,
+  `DivHead` int(11) default NULL,
+  `DivHeadDept` int(11) default NULL,
+  PRIMARY KEY  (`DivID`),
+  KEY `DivHead` (`DivHead`),
+  CONSTRAINT `divisions_ibfk_1` FOREIGN KEY (`DivHead`) REFERENCES `employees` (`EmpID`)
+) ENGINE=InnoDB AUTO_INCREMENT=475 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `divisions`
+--
+
+LOCK TABLES `divisions` WRITE;
+/*!40000 ALTER TABLE `divisions` DISABLE KEYS */;
+INSERT INTO `divisions` VALUES (472,'Acme Web',NULL,NULL),(473,'Acme Publishing',NULL,NULL),(474,'Acme Research',NULL,NULL);
+/*!40000 ALTER TABLE `divisions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `empjobs`
+--
+
+DROP TABLE IF EXISTS `empjobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `empjobs` (
+  `EmpID` int(11) NOT NULL default '0',
+  `JobID` int(11) NOT NULL default '0',
+  `JobStartDate` date default NULL,
+  PRIMARY KEY  (`EmpID`,`JobID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `empjobs`
+--
+
+LOCK TABLES `empjobs` WRITE;
+/*!40000 ALTER TABLE `empjobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `empjobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `employees`
+--
+
+DROP TABLE IF EXISTS `employees`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `employees` (
+  `EmpID` int(11) NOT NULL auto_increment,
+  `EmpLName` varchar(50) default NULL,
+  `EmpFName` varchar(50) default NULL,
+  `EmpMI` varchar(1) default NULL,
+  `EmpTitle` varchar(50) default NULL,
+  `EmpBuilding` int(11) default NULL,
+  `EmpOffice` int(11) default NULL,
+  `EmpPhone` int(11) default NULL,
+  `EmpDept` int(11) default NULL,
+  `EmpDiv` int(11) default NULL,
+  `EmpProj` int(11) default NULL,
+  `EmpType` varchar(10) default NULL,
+  `HourRate` decimal(14,2) default NULL,
+  PRIMARY KEY  (`EmpID`),
+  KEY `EmpDiv` (`EmpDiv`),
+  KEY `EmpDept` (`EmpDept`),
+  KEY `EmpBuilding` (`EmpBuilding`),
+  CONSTRAINT `employees_ibfk_1` FOREIGN KEY (`EmpDept`) REFERENCES `departments` (`DeptID`),
+  CONSTRAINT `employees_ibfk_2` FOREIGN KEY (`EmpBuilding`) REFERENCES `buildings` (`BuildingID`),
+  CONSTRAINT `employees_ibfk_3` FOREIGN KEY (`EmpDiv`) REFERENCES `divisions` (`DivID`)
+) ENGINE=InnoDB AUTO_INCREMENT=13416 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employees`
+--
+
+LOCK TABLES `employees` WRITE;
+/*!40000 ALTER TABLE `employees` DISABLE KEYS */;
+INSERT INTO `employees` VALUES (13412,'Doe','John',NULL,'Developer',10000,1000,NULL,341,472,NULL,'S',NULL),(13413,'Doe','Jack',NULL,'Developer',10001,1003,NULL,342,473,NULL,'S',NULL),(13414,'Mark','Jesse',NULL,'DBA',10001,1003,NULL,342,473,NULL,'S',NULL),(13415,'Mark','Martin',NULL,'DBA',10002,1006,NULL,343,474,NULL,'S',NULL);
+/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `empprojects`
+--
+
+DROP TABLE IF EXISTS `empprojects`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `empprojects` (
+  `EmpProj` int(11) NOT NULL auto_increment,
+  `ProjID` int(11) default NULL,
+  `EmpID` int(11) default NULL,
+  `Role` varchar(30) default NULL,
+  `TotalHours` decimal(17,2) default NULL,
+  `StartDate` datetime default NULL,
+  `EndDate` datetime default NULL,
+  PRIMARY KEY  (`EmpProj`),
+  KEY `EmpID` (`EmpID`),
+  KEY `ProjID` (`ProjID`),
+  CONSTRAINT `empprojects_ibfk_1` FOREIGN KEY (`ProjID`) REFERENCES `projects` (`ProjID`),
+  CONSTRAINT `empprojects_ibfk_2` FOREIGN KEY (`EmpID`) REFERENCES `employees` (`EmpID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `empprojects`
+--
+
+LOCK TABLES `empprojects` WRITE;
+/*!40000 ALTER TABLE `empprojects` DISABLE KEYS */;
+INSERT INTO `empprojects` VALUES (1,23928,13412,'Developer','0.00','2011-01-01 00:00:00',NULL),(2,23928,13413,'DBA','0.00','2011-01-01 00:00:00',NULL);
+/*!40000 ALTER TABLE `empprojects` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `empsalaries`
+--
+
+DROP TABLE IF EXISTS `empsalaries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `empsalaries` (
+  `EmpID` int(11) NOT NULL auto_increment,
+  `SalaryStartDate` date NOT NULL default '0000-00-00',
+  `AnnualSalary` decimal(8,2) default NULL,
+  PRIMARY KEY  (`EmpID`,`SalaryStartDate`),
+  KEY `EmpID` (`EmpID`),
+  CONSTRAINT `empsalaries_ibfk_1` FOREIGN KEY (`EmpID`) REFERENCES `employees` (`EmpID`)
+) ENGINE=InnoDB AUTO_INCREMENT=13416 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `empsalaries`
+--
+
+LOCK TABLES `empsalaries` WRITE;
+/*!40000 ALTER TABLE `empsalaries` DISABLE KEYS */;
+INSERT INTO `empsalaries` VALUES (13412,'2010-01-01','80000.00'),(13412,'2011-01-01','85000.00'),(13413,'2011-01-01','86000.00'),(13414,'2011-01-01','86000.00'),(13415,'2011-01-01','86000.00');
+/*!40000 ALTER TABLE `empsalaries` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jobs`
+--
+
+DROP TABLE IF EXISTS `jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `jobs` (
+  `JobID` int(11) NOT NULL default '0',
+  `JobTitle` varchar(255) default NULL,
+  PRIMARY KEY  (`JobID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jobs`
+--
+
+LOCK TABLES `jobs` WRITE;
+/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `offices`
+--
+
+DROP TABLE IF EXISTS `offices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `offices` (
+  `OfficeID` int(11) NOT NULL auto_increment,
+  `BuildingID` int(11) default NULL,
+  `OfficeNumber` varchar(10) default NULL,
+  `Area` decimal(7,2) default NULL,
+  `RoomType` varchar(10) default NULL,
+  `DeptID` int(11) default NULL,
+  PRIMARY KEY  (`OfficeID`),
+  KEY `BuildingID` (`BuildingID`),
+  KEY `DeptID` (`DeptID`),
+  CONSTRAINT `offices_ibfk_1` FOREIGN KEY (`DeptID`) REFERENCES `departments` (`DeptID`),
+  CONSTRAINT `offices_ibfk_2` FOREIGN KEY (`BuildingID`) REFERENCES `buildings` (`BuildingID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1012 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `offices`
+--
+
+LOCK TABLES `offices` WRITE;
+/*!40000 ALTER TABLE `offices` DISABLE KEYS */;
+INSERT INTO `offices` VALUES (1000,10000,'346554','2323.00','O',341),(1001,10000,'2346456','2323.00','O',346),(1002,10000,'457897','2323.00','O',351),(1003,10001,'5678','2323.00','O',342),(1004,10001,'3245','2323.00','O',347),(1005,10001,'6578','2323.00','O',352),(1006,10002,'567','2323.00','O',343),(1007,10002,'8675','2323.00','O',348),(1008,10003,'789','2323.00','O',344),(1009,10002,'7689','2323.00','O',349),(1010,10004,'4356','2323.00','O',345),(1011,10002,'5678','2323.00','O',350);
+/*!40000 ALTER TABLE `offices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `payrollhistory`
+--
+
+DROP TABLE IF EXISTS `payrollhistory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `payrollhistory` (
+  `HistoryID` int(11) NOT NULL auto_increment,
+  `EmpID` int(11) default NULL,
+  `PayDate` date NOT NULL,
+  `MonthHours` int(11) default NULL,
+  `MonthSalary` decimal(17,2) default NULL,
+  `FedTax` decimal(17,2) default NULL,
+  `StateTax` decimal(17,2) default NULL,
+  `OtherTax` decimal(17,2) default NULL,
+  `NetPay` decimal(17,2) default NULL,
+  PRIMARY KEY  (`HistoryID`),
+  KEY `EmpID` (`EmpID`),
+  CONSTRAINT `payrollhistory_ibfk_1` FOREIGN KEY (`EmpID`) REFERENCES `employees` (`EmpID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `payrollhistory`
+--
+
+LOCK TABLES `payrollhistory` WRITE;
+/*!40000 ALTER TABLE `payrollhistory` DISABLE KEYS */;
+INSERT INTO `payrollhistory` VALUES (1,13412,'2011-04-01',12,'12123.00','435.00','343.00',NULL,'123235.00');
+/*!40000 ALTER TABLE `payrollhistory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `phones`
+--
+
+DROP TABLE IF EXISTS `phones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `phones` (
+  `PhoneID` int(11) NOT NULL auto_increment,
+  `PhoneNo` int(10) NOT NULL,
+  `BuildingID` int(11) default NULL,
+  `OfficeID` int(11) default NULL,
+  PRIMARY KEY  (`PhoneID`),
+  KEY `BuildingID` (`BuildingID`),
+  CONSTRAINT `phones_ibfk_1` FOREIGN KEY (`BuildingID`) REFERENCES `buildings` (`BuildingID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `phones`
+--
+
+LOCK TABLES `phones` WRITE;
+/*!40000 ALTER TABLE `phones` DISABLE KEYS */;
+/*!40000 ALTER TABLE `phones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `projbugs`
+--
+
+DROP TABLE IF EXISTS `projbugs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `projbugs` (
+  `BugID` int(11) NOT NULL auto_increment,
+  `ProjID` int(11) default NULL,
+  `Details` varchar(500) default NULL,
+  `DateReported` date default NULL,
+  `DateClosed` date default NULL,
+  `Status` varchar(255) default NULL,
+  `Type` varchar(255) default NULL,
+  `EmpID` int(11) default NULL,
+  PRIMARY KEY  (`BugID`),
+  KEY `EmpID` (`EmpID`),
+  KEY `ProjID` (`ProjID`),
+  CONSTRAINT `projbugs_ibfk_1` FOREIGN KEY (`EmpID`) REFERENCES `employees` (`EmpID`),
+  CONSTRAINT `projbugs_ibfk_2` FOREIGN KEY (`ProjID`) REFERENCES `projects` (`ProjID`)
+) ENGINE=InnoDB AUTO_INCREMENT=10002 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `projbugs`
+--
+
+LOCK TABLES `projbugs` WRITE;
+/*!40000 ALTER TABLE `projbugs` DISABLE KEYS */;
+INSERT INTO `projbugs` VALUES (10000,23928,'This and that','2011-04-27',NULL,'Open','Bug',NULL),(10001,23928,'This and that','2011-04-27',NULL,'Open','Request',NULL);
+/*!40000 ALTER TABLE `projbugs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `projects`
+--
+
+DROP TABLE IF EXISTS `projects`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `projects` (
+  `ProjID` int(11) NOT NULL auto_increment,
+  `ProjName` varchar(255) default NULL,
+  `ProjBudget` decimal(15,2) default NULL,
+  `ProjManager` int(11) default NULL,
+  `StartDate` date default NULL,
+  `EndDate` date default NULL,
+  `ProjDept` int(11) default NULL,
+  PRIMARY KEY  (`ProjID`),
+  KEY `ProjDept` (`ProjDept`),
+  KEY `ProjManager` (`ProjManager`),
+  CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`ProjManager`) REFERENCES `employees` (`EmpID`),
+  CONSTRAINT `projects_ibfk_2` FOREIGN KEY (`ProjDept`) REFERENCES `departments` (`DeptID`)
+) ENGINE=InnoDB AUTO_INCREMENT=23929 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `projects`
+--
+
+LOCK TABLES `projects` WRITE;
+/*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+INSERT INTO `projects` VALUES (23928,'Project A','345632.00',13412,'2011-01-01',NULL,341);
+/*!40000 ALTER TABLE `projects` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `projmilestones`
+--
+
+DROP TABLE IF EXISTS `projmilestones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `projmilestones` (
+  `MilestoneID` int(11) NOT NULL auto_increment,
+  `ProjID` int(11) default NULL,
+  `MilestonePlannedDate` date default NULL,
+  `MilestoneDeliverable` varchar(255) default NULL,
+  `MilestoneDeliveryDate` date default NULL,
+  `Delivered` varchar(255) default NULL,
+  `ToBeDelivered` varchar(255) default NULL,
+  PRIMARY KEY  (`MilestoneID`),
+  KEY `ProjID` (`ProjID`),
+  CONSTRAINT `projmilestones_ibfk_1` FOREIGN KEY (`ProjID`) REFERENCES `projects` (`ProjID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1244 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `projmilestones`
+--
+
+LOCK TABLES `projmilestones` WRITE;
+/*!40000 ALTER TABLE `projmilestones` DISABLE KEYS */;
+INSERT INTO `projmilestones` VALUES (1242,23928,'2011-01-15','Deliverable','2011-01-16',NULL,'To Be deliveres'),(1243,23928,'2011-01-25','Deliverable of milestone 2','2011-01-27',NULL,'To Be deliveres');
+/*!40000 ALTER TABLE `projmilestones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rooms`
+--
+
+DROP TABLE IF EXISTS `rooms`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rooms` (
+  `id` int(11) NOT NULL auto_increment,
+  `building_id` int(11) default NULL,
+  `code` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rooms`
+--
+
+LOCK TABLES `rooms` WRITE;
+/*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2011-04-30 23:22:38

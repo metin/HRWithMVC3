@@ -16,7 +16,8 @@
                 <thead>
                     <tr>
                         <th>OfficeNumber</th>
-                        <th>Areas</th>
+                        <th>Area</th>
+                        <th>Department</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -25,6 +26,7 @@
                         <tr>
                             <td><%: r.OfficeNumber %> </td>
                             <td><%: r.Area %> </td>
+                            <td><%: r.DepartmentName %> </td>
                             <td class="action_buttons"> 
                                 <%: Html.ActionLink("Show", "Details", new { id = r.OfficeID }, new { @class="jqui_button_show", style="padding: 0px;" })%> 
                                 <%: Html.ActionLink("Edit", "Edit", new { id = r.OfficeID }, new { @class = "jqui_button_edit" })%> 

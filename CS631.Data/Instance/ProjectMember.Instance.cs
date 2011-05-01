@@ -16,12 +16,16 @@ namespace CS631.Data
             cmd.CommandText = @"INSERT INTO empprojects 
                                     (EmpID, ProjID, Role, TotalHours, StartDate) 
                                 VALUES
-                                    (@EmpID, @ProjID, @Role, @TotalHours, NOW());";
+                                    (@EmpID, @ProjID, @Role, @TotalHours, @StartDate);";
             cmd.Prepare();
             cmd.Parameters.AddWithValue("@EmpID", this.EmpID);
             cmd.Parameters.AddWithValue("@ProjID", this.ProjID);
             cmd.Parameters.AddWithValue("@Role", this.Role);
             cmd.Parameters.AddWithValue("@TotalHours", this.TotalHours);
+            DateTime startDate = this.StartDate;
+            if (this.StartDate == DateTime.MinValue)
+                startDate = DateTime.Today;
+            cmd.Parameters.AddWithValue("@StartDate", startDate);
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.ExecuteNonQuery();
             cmd.CommandText = "SELECT LAST_INSERT_ID();";

@@ -39,18 +39,18 @@ namespace CS631.Data
             if (DeptID.HasValue)
             {
                 cmd.CommandText += " AND EmpDept = @DeptID ";
-                cmd.Parameters.AddWithValue("@DeptID", DeptID.GetValueOrDefault());
+                cmd.Parameters.AddWithValue("@DeptID", DeptID);
             }
 
-            if (DeptID.HasValue)
+            if (DivID.HasValue)
             {
                 cmd.CommandText += " AND EmpDiv = @DivID ";
-                cmd.Parameters.AddWithValue("@DivID", DivID.GetValueOrDefault());
+                cmd.Parameters.AddWithValue("@DivID", DivID);
             }
             if (OfficeID.HasValue)
             {
                 cmd.CommandText += " AND EmpOffice = @OfficeID ";
-                cmd.Parameters.AddWithValue("@OfficeID", OfficeID.GetValueOrDefault());
+                cmd.Parameters.AddWithValue("@OfficeID", OfficeID);
             } 
             cmd.CommandType = System.Data.CommandType.Text;
 

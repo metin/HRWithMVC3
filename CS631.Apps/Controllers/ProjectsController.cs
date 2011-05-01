@@ -85,7 +85,7 @@ namespace CS631.Apps.Controllers
         public ActionResult Members(int id)
         {
 
-            ViewBag.employees = new SelectList(Employee.FindForProjectId(id), "EmpID", "EmpFName");
+            ViewBag.employees = new SelectList(Employee.FindForProjectId(id), "EmpID", "FullName");
             ViewBag.roles = new SelectList(new string[] { "Developer", "DBA", "Manager" });
 
             ViewBag.project = Project.FindById(id);

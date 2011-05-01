@@ -17,7 +17,7 @@ namespace CS631.Data
 
         [Required]
         [DisplayName("Assigned To")]
-        public int EmpID { get; set; }
+        public int? EmpID { get; set; }
 
         [Required]
         [DisplayName("Details")]
@@ -49,7 +49,7 @@ namespace CS631.Data
         {
             get
             {
-                var emp = Employee.FindById(this.EmpID);
+                var emp = Employee.FindById(this.EmpID.GetValueOrDefault());
                 return emp.FullName;
             }
         }

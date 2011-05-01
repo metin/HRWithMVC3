@@ -9,11 +9,12 @@ namespace CS631.Apps.Controllers
 {
     public class BugsController : Controller
     {
-        public ActionResult Index(string status, string type)
+        public ActionResult Index(string status, string type, int? ProjID)
         {
             ViewBag.statees = new SelectList(new string[] { "Open", "In Process", "Closed" }, status);
             ViewBag.types = new SelectList(new string[] { "Bug", "Feature", "Request" }, type);
-            return View(Bug.FilterAll(status, type));
+            ViewBag.projects = new SelectList(Project.FindAll(), "ProjID", "ProjectNO");
+            return View(Bug.FilterAll(status, type, ProjID));
         }
 
         public ActionResult Details(int id)

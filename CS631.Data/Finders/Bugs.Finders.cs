@@ -26,7 +26,7 @@ namespace CS631.Data
             return bugs;
         }
 
-        public static ICollection<Bug> FilterAll(string status, string type)
+        public static ICollection<Bug> FilterAll(string status, string type, int? ProjID)
         {
             List<Bug> bugs = new List<Bug>();
             MySqlConnection c = getConnection();
@@ -43,6 +43,11 @@ namespace CS631.Data
             {
                 cmd.CommandText += " AND Type = @Type";
                 cmd.Parameters.AddWithValue("@Type", type);
+            }
+            if (ProjID.HasValue)
+            {
+                cmd.CommandText += " AND ProjID = @ProjID";
+                cmd.Parameters.AddWithValue("@ProjID", ProjID);
             }
             cmd.CommandType = System.Data.CommandType.Text;
 
@@ -102,7 +107,7 @@ namespace CS631.Data
             b.DateClosed = dr["DateClosed"] as DateTime?;
             b.DateReported = dr.GetDateTime("DateReported");
             b.Details = dr.GetString("Details");
-            b.EmpID = dr.GetInt32("EmpID");
+            b.EmpID = dr["EmpID"] as int?;
             b.Type = dr["Type"] as string ;
             b.Status = dr["Status"] as string; 
             return b;

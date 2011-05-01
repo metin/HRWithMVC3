@@ -1,77 +1,191 @@
-drop table if exists divisions;
-create table divisions(
- DivID int NOT NULL AUTO_INCREMENT,
- DivName varchar(255),
- DivHead int  default 0,
- DivHeadDept int,
- primary key (DivID)
-) AUTO_INCREMENT = 345;
+SET foreign_key_checks = 0;
+drop table if exists DIVISIONS;
+create table DIVISIONS(
+  DivID int NOT NULL AUTO_INCREMENT,
+  DivName varchar(255),
+  DivHead int NULL,
+  DivHeadDept int NULL,
+  primary key (DivID),
+  INDEX (DivHead),
+  CONSTRAINT FOREIGN KEY (DivHead) REFERENCES Employees(EmpID)
+)AUTO_INCREMENT = 472;
 
-drop table if exists employees;
-create table employees(
- EmpID int NOT NULL AUTO_INCREMENT,
- EmpLName varchar(255),
- EmpFName varchar(255),
- EmpMI varchar(3),
- EmpTitle varchar(255),
- EmpBuilding int,
- EmpOffice int,
- EmpPhone int,
- EmpDept int,
- EmpDiv int,
- EmpProj int,
- EmpType varchar(255),
- HourRate decimal(10,2),
- MonthHours int,
- primary key (EmpID)
-) AUTO_INCREMENT = 123;
+drop table if exists DEPARTMENTS;
+create table DEPARTMENTS(
+  DeptID int NOT NULL AUTO_INCREMENT, 
+  DeptName varchar(255),
+  DeptHead  int NULL,
+  DeptBudget decimal(17,2),
+  DivID int,
+  primary key (DeptID),
+  INDEX (DeptHead),
+  INDEX (DivID),
+  CONSTRAINT FOREIGN KEY (DeptHead) REFERENCES Employees(EmpID),
+  CONSTRAINT FOREIGN KEY (DivID) REFERENCES Divisions(DivID)
+) AUTO_INCREMENT = 341;
 
-drop table if exists buildings;
-create table buildings(
- id int NOT NULL AUTO_INCREMENT,
- name varchar(255),
- code varchar(255),
- year int,
- cost decimal(15, 2),
- primary key (id)
-) AUTO_INCREMENT = 234;
+drop table if exists PROJECTS;
+create table PROJECTS(
+  ProjID int NOT NULL AUTO_INCREMENT,
+  ProjName varchar(255),
+  ProjBudget decimal(15, 2),
+  ProjManager int,
+  StartDate date,
+  EndDate date,
+  ProjDept int,
+  primary key (ProjID),
+  INDEX(ProjDept),
+  INDEX(ProjManager),
+  CONSTRAINT FOREIGN KEY (ProjManager) REFERENCES Employees(EmpID),
+  CONSTRAINT FOREIGN KEY (ProjDept) REFERENCES Departments(DeptID)
+) AUTO_INCREMENT = 23928;
 
-drop table if exists projects;
-create table projects(
- ProjID int NOT NULL AUTO_INCREMENT,
- ProjName varchar(255),
- ProjBudget decimal(15, 2),
- ProjManager int,
- StartDate date,
- EndDate date,
- ProjDept int,
- primary key (ProjID)
-) AUTO_INCREMENT = 567;
+drop table if exists PROJMILESTONES;
+create table PROJMILESTONES(
+  MilestoneID int NOT NULL AUTO_INCREMENT,
+  ProjID int,
+  MilestonePlannedDate date,
+  MilestoneDeliverable varchar(255),
+  MilestoneDeliveryDate date,
+  Delivered varchar(255),
+  ToBeDelivered varchar(255),
+  primary key(MilestoneID),
+  INDEX(ProjID),
+  CONSTRAINT FOREIGN KEY (ProjID) REFERENCES Projects(ProjID)
+) AUTO_INCREMENT = 1242;
 
-drop table if exists departments;
-create table departments(
- DeptID int NOT NULL AUTO_INCREMENT, 
- DeptName varchar(255),
- DeptHead int default 0,
- DeptBudget decimal(17,2),
- DivID int  default 0,
- primary key (id)
-);
-
-drop table if exists rooms;
-create table rooms(
- id int NOT NULL AUTO_INCREMENT, 
- building_id int,
- code varchar(255),
- primary key (id)
-) AUTO_INCREMENT = 712;
-
-drop table if exists offices;
-create table offices(
- id int NOT NULL AUTO_INCREMENT, 
- area varchar(255),
- primary key (id)
-) AUTO_INCREMENT = 2325;
+drop table if exists EMPLOYEES;
+create table EMPLOYEES(
+  EmpID int NOT NULL AUTO_INCREMENT,
+  EmpLName varchar(50),
+  EmpFName varchar(50),
+  EmpMI varchar(1),
+  EmpTitle varchar(50),
+  EmpBuilding int,
+  EmpOffice int,
+  EmpPhone int,
+  EmpDept int,
+  EmpDiv int,
+  EmpProj int,
+  EmpType varchar(10),
+  HourRate decimal(14,2),
+  primary key (EmpID),
+  INDEX(EmpDiv),
+  INDEX(EmpDept),
+  CONSTRAINT FOREIGN KEY (EmpDept) REFERENCES Departments(DeptID),
+  CONSTRAINT FOREIGN KEY (EmpBuilding) REFERENCES Buildings(BuildingID),
+  CONSTRAINT FOREIGN KEY (EmpDiv) REFERENCES Divisions(DivID)
+) AUTO_INCREMENT = 13412;
 
 
+drop table if exists EMPPROJECTS;
+create table EMPPROJECTS(
+  EmpProj int NOT NULL AUTO_INCREMENT,
+  ProjID int,
+  EmpID int,
+  Role varchar(30),
+  TotalHours decimal(17,2),
+  StartDate datetime,
+  EndDate datetime,
+  primary key (EmpProj),
+  INDEX(EmpID),
+  INDEX(ProjID),
+  CONSTRAINT FOREIGN KEY (ProjID) REFERENCES Projects(ProjID),
+  CONSTRAINT FOREIGN KEY (EmpID) REFERENCES Employees(EmpID)
+) AUTO_INCREMENT = 1;
 
+drop table if exists BUILDINGS;
+create table BUILDINGS(
+  BuildingID int NOT NULL AUTO_INCREMENT,
+  BuildingCode varchar(10) NOT NULL,
+  BuildingName varchar(255),
+  YearAcquired int,
+  BuildingCost decimal(15,2),
+  AcqType varchar(1),
+  primary key (BuildingID)
+) AUTO_INCREMENT = 10000;
+
+drop table if exists OFFICES;
+create table OFFICES(
+  OfficeID int NOT NULL AUTO_INCREMENT,
+  BuildingID int,
+  OfficeNumber varchar(10), 
+  Area decimal(7,2),
+  RoomType varchar(10),
+  DeptID int,
+  primary key (OfficeID),
+  INDEX(BuildingID),
+  INDEX(DeptID),
+  CONSTRAINT FOREIGN KEY (DeptID) REFERENCES Departments(DeptID),
+  CONSTRAINT FOREIGN KEY (BuildingID) REFERENCES Buildings(BuildingID)
+) AUTO_INCREMENT = 1000;
+
+drop table if exists PHONES;
+create table PHONES(
+  PhoneID int NOT NULL AUTO_INCREMENT,
+  PhoneNo int(10) NOT NULL, 
+  BuildingID int,
+  OfficeID int, 
+  primary key (PhoneID),
+  CONSTRAINT FOREIGN KEY (BuildingID) REFERENCES Buildings(BuildingID)
+)AUTO_INCREMENT = 1;
+
+drop table if exists JOBS;
+create table JOBS(
+  JobID int, 
+  JobTitle varchar(255),
+  primary key (JobID)
+) AUTO_INCREMENT = 1;
+
+drop table if exists EMPJOBS;
+create table EMPJOBS(
+  EmpID int,
+  JobID int, 
+  JobStartDate date,
+  primary key (EmpID,JobID)
+) AUTO_INCREMENT = 1;
+
+drop table if exists EMPSALARIES;
+create table EMPSALARIES(
+  EmpID int NOT NULL AUTO_INCREMENT,
+  SalaryStartDate date,
+  AnnualSalary decimal(8,2),
+  primary key (EmpID,SalaryStartDate),
+  INDEX(EmpID),
+  CONSTRAINT FOREIGN KEY (EmpID) REFERENCES Employees(EmpID)
+) AUTO_INCREMENT = 1;
+
+drop table if exists PAYROLLHISTORY;
+create table PAYROLLHISTORY(
+  HistoryID int NOT NULL AUTO_INCREMENT,
+  EmpID int,
+  PayDate date NOT NULL,
+  MonthHours int,
+  MonthSalary decimal(17,2),
+  FedTax decimal(17,2),
+  StateTax decimal(17,2),
+  OtherTax decimal(17,2),
+  NetPay decimal(17,2),
+  primary key (HistoryID),
+  INDEX(EmpID),
+  CONSTRAINT FOREIGN KEY (EmpID) REFERENCES Employees(EmpID)
+) AUTO_INCREMENT = 1;
+
+drop table if exists PROJBUGS;
+create table PROJBUGS(
+  BugID int NOT NULL AUTO_INCREMENT,
+  ProjID int,
+  Details varchar(500),
+  DateReported date,
+  DateClosed date,
+  Status varchar(255),
+  Type varchar(255),
+  EmpID int,
+  primary key(BugID),
+  INDEX(EmpID),
+  INDEX(ProjID),
+  CONSTRAINT FOREIGN KEY (EmpID) REFERENCES Employees(EmpID),
+  CONSTRAINT FOREIGN KEY (ProjID) REFERENCES Projects(ProjID)
+) AUTO_INCREMENT = 10000;
+
+SET foreign_key_checks = 1;

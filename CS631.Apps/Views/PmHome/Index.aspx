@@ -63,19 +63,19 @@
                 <tr>
                     <th style="width:180px;">Open:</th>
                     <td>
-                        <%: Html.ActionLink(CS631.Data.Bug.FilterAll("Open", "").Count.ToString(), "Index", "Bugs", new { status = "Open" }, new { })%>
+                        <%: Html.ActionLink(CS631.Data.Bug.FilterAll("Open", "", null).Count.ToString(), "Index", "Bugs", new { status = "Open" }, new { })%>
                     </td>
                 </tr>
                 <tr>
                     <th style="width:180px;">In Process:</th>
                     <td>
-                        <%: Html.ActionLink(CS631.Data.Bug.FilterAll("In Process", "").Count.ToString(), "Index", "Bugs", new { status = "In Process" }, new { })%>
+                        <%: Html.ActionLink(CS631.Data.Bug.FilterAll("In Process", "", null).Count.ToString(), "Index", "Bugs", new { status = "In Process" }, new { })%>
                     </td>
                 </tr>
                 <tr>
                     <th style="width:180px;">Closed:</th>
                     <td>
-                        <%: Html.ActionLink(CS631.Data.Bug.FilterAll("Closed", "").Count.ToString(), "Index", "Bugs", new { status = "Closed" }, new { })%>
+                        <%: Html.ActionLink(CS631.Data.Bug.FilterAll("Closed", "", null).Count.ToString(), "Index", "Bugs", new { status = "Closed" }, new { })%>
                     </td>
                 </tr>
 

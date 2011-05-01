@@ -19,6 +19,11 @@
                         <table class="filter" >
                             <tr>
                                 <td class="noborder"> 
+                                    Project: <br />    
+                                    <%: Html.DropDownList("ProjID", ViewBag.projects as SelectList, "")%>
+                                </td>
+                                <td class="noborder">&nbsp;</td>
+                                <td class="noborder"> 
                                     Status: <br />    
                                     <%: Html.DropDownList("status", ViewBag.statees as SelectList, "")%>
                                 </td>

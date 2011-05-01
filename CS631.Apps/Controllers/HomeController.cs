@@ -18,5 +18,12 @@ namespace CS631.Apps.Controllers
         {
             return View();
         }
+
+        public ActionResult Populate()
+        {
+            CS631.Data.Base.PopulateTestData();
+
+            return RedirectToAction("Index");
+        }
     }
 }

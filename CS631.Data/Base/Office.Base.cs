@@ -30,6 +30,15 @@ namespace CS631.Data
         [DisplayName("Room Type")]
         public string RoomType { get; set; }
 
+        public String DepartmentName
+        {
+            get
+            {
+                var d = Department.FindById(this.DeptID);
+                return d.DeptName;
+            }
+        }
+
         public Office() 
         { 
 
